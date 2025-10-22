@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AdminApp
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -38,6 +38,12 @@ namespace AdminApp
 
 
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Loading lding = new Loading();
+            lding.Show();
         }
     }
 }
