@@ -19,7 +19,7 @@ namespace AdminApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            //tien dep try
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
