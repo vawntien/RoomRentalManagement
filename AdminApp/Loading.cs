@@ -19,7 +19,7 @@ namespace AdminApp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(guna2CircleProgressBar1.Value == 99)
+            if(guna2CircleProgressBar1.Value == 100)
             {
                 timer1.Stop();
                 //this.Hide();

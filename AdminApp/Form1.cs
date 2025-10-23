@@ -42,8 +42,15 @@ namespace AdminApp
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Loading lding = new Loading();
-            lding.Show();
+            if (txtUser.Text == "tien" && txtPassword.Text == "123")
+            {
+                Loading lding = new Loading();
+                lding.Show();
+            }
+            else             {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }
