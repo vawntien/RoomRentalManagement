@@ -24,7 +24,10 @@ namespace AdminApp
                 timer1.Stop();
                 //this.Hide();
                 //Login loginForm = new Login();
-                //loginForm.Show();
+                Principal p = new Principal();
+                p.Show();
+                this.Hide();
+
             }
             else
             {

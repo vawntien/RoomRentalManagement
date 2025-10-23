@@ -46,6 +46,7 @@ namespace AdminApp
             {
                 Loading lding = new Loading();
                 lding.Show();
+                this.Hide();
             }
             else             {
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
