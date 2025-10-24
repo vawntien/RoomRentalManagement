@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContactMana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactMana.Designer.cs">
+      <DependentUpon>ContactMana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomManagement.Designer.cs">
+      <DependentUpon>RoomManagement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ContactMana.resx">
+      <DependentUpon>ContactMana.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +117,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RoomManagement.resx">
+      <DependentUpon>RoomManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,16 +48,6 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(383, 364);
             this.guna2ShadowPanel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Location = new System.Drawing.Point(29, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "app";
-            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
@@ -67,6 +57,16 @@
             this.label2.Size = new System.Drawing.Size(70, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "app";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label1.Location = new System.Drawing.Point(29, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "app";
             // 
             // guna2Panel1
             // 
@@ -80,6 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1185, 633);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2ShadowPanel1);

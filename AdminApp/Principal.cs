@@ -49,5 +49,24 @@ namespace AdminApp
             panContainer.Tag = fm;
             fm.Show();
         }
+
+        private void panContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Danh sach phong";
+            picboxTitle.Image = Properties.Resources.aaaaa;
+            container(new RoomManagement());
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Danh sach phong";
+            picboxTitle.Image = Properties.Resources.aaaaa;
+            container(new ContactMana());
+        }
     }
 }
