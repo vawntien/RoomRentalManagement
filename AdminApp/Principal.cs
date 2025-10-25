@@ -76,6 +76,8 @@ namespace AdminApp
             //container(new TenantMana());
             TenantMana tenantMana = new TenantMana();
             container(tenantMana);
+
+            
         }
     }
 }
