@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Facilities";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/facilities.css")">
+}
+
+<div class="container">
+    <div class="page-header-container">
+    </div>
+    <section class="upper-section">
+        <div class="row center-lg">
+            <div class="col image-col right-marg">
+                <div class="large-image-container">
+                    <img src="@Url.Content("~/assets/img/telephone.webp")" alt="room-image-large" class="large-image">
+                </div>
+            </div>
+            <div class="col">
+                <ul class="facilities-list">
+                    <li>
+                        <div>
+                            <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
+                            <p class="list-text">Unlimited Long Distance</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
+                            <p class="list-text">Caller ID</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
+                            <p class="list-text">Caller Waiting</p>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-fill btn-large">View More</a>
+            </div>
+        </div>
+    </section>
+    <div class="up">
+    </div>
+
+    <div class="container">
+        <div class="containera">
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img class="gallery-image" src="@Url.Content("~/assets/img/gymnasium.webp")" alt="gym">
+                </div>
+                <div class="gallery-item">
+                    <img class="gallery-image" src="@Url.Content("~/assets/img/helipad.webp")" alt="helipad">
+                </div>
+                <div class="gallery-item">
+                    <img class="gallery-image" src="@Url.Content("~/assets/img/restaurants.webp")" alt="restaurants">
+                </div>
+                <div class="gallery-item">
+                    <img class="gallery-image" src="@Url.Content("~/assets/img/swimming_pool.webp")" alt="swim">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "Rooms and Suites";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/rooms-and-suites.css")">
+}
+
+<div class="container">
+    <div class="page-header-container">
+    </div>
+
+    <section class="special-offers">
+        <div class="row center-lg">
+            <div class="col image-col right-marg">
+                <img src="@Url.Content("~/assets/img/hotel-1.webp")" alt="room-image" class="small-image">
+                <img src="@Url.Content("~/assets/img/hotel-2.webp")" alt="room-image" class="small-image">
+                <img src="@Url.Content("~/assets/img/hotel-3.webp")" alt="room-image" class="small-image">
+                <div class="side-by-side-container">
+                    <div class="large-image-container">
+                        <img src="@Url.Content("~/assets/img/hotel-4-large.webp")" alt="room-image-large" class="large-image">
+                    </div>
+                    <section class="stacked-image-container">
+                        <div><img src="@Url.Content("~/assets/img/hotel-5.webp")" alt="room-image" class="small-image"></div>
+                        <div><img src="@Url.Content("~/assets/img/hotel-6.webp")" alt="room-image" class="small-image"></div>
+                    </section>
+                </div>
+            </div>
+            <div class="col">
+                <h3 class="offers-title">Special Offers</h3>
+                <ul class="offers-list">
+                    <li>
+                        <div>
+                            <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
+                            <p class="list-text">Free Wi-Fi Service</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
+                            <p class="list-text">Best Rate Guarantee</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
+                            <p class="list-text">Free DSTV Access</p>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-fill btn-large">View More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="rooms-section">
+        <div class="row center-lg">
+            <div class="rooms col col-2">
+                <img src="https://res.cloudinary.com/start-ng/image/upload/v1591638448/Rectangle_42_nastdj.png"
+                     alt="" class="rooms-img">
+                <div>
+                    <div class="details-container">
+                        <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
+                        <p class="list-text">2 Persons</p>
+                    </div>
+                    <div class="details-container">
+                        <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
+                        <p class="list-text">1 Kingsize bed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rooms col col-2">
+                <img src="https://res.cloudinary.com/start-ng/image/upload/v1591638449/Rectangle_43_d9eepu.png"
+                     alt="" class="rooms-img">
+                <div>
+                    <div class="details-container">
+                        <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
+                        <p class="list-text">2 Persons</p>
+                    </div>
+                    <div class="details-container">
+                        <img src="@Url.Content("~/assets/img/bed.png")" alt="tick" class="list-icon">
+                        <p class="list-text">1 Kingsize bed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rooms col col-2">
+                <img src="https://res.cloudinary.com/start-ng/image/upload/v1591638448/Rectangle_44_anerdv.png"
+                     alt="" class="rooms-img">
+                <div>
+                    <div class="details-container">
+                        <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
+                        <p class="list-text">2 Persons</p>
+                    </div>
+                    <div class="details-container">
+                        <img src="@Url.Content("~/assets/img/bed.png")" alt="tick" class="list-icon">
+                        <p class="list-text">1 Kingsize bed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rooms col col-2">
+                <img src="https://res.cloudinary.com/start-ng/image/upload/v1591638449/Rectangle_45_mtl458.png"
+                     alt="" class="rooms-img">
+                <div>
+                    <div class="details-container">
+                        <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
+                        <p class="list-text">2 Persons</p>
+                    </div>
+                    <div class="details-container">
+                        <img src="@Url.Content("~/assets/img/bed.png")" alt="tick" class="list-icon">
+                        <p class="list-text">1 Kingsize bed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+@section Scripts {
+    <script src="@Url.Content("~/assets/js/switchRooms.js")"></script>
+}

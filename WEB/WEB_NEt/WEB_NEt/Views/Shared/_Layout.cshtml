@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Star Hotels</title>
+    <style>
+        /* CSS cho Loader */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #ffffff; /* Màu nền trắng che phủ trang */
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out; /* Hiệu ứng mờ dần */
+        }
+
+            /* Đây là class .none mà script dùng để ẨN loader đi */
+            #loader.none {
+                opacity: 0;
+                visibility: hidden; /* Ẩn hoàn toàn */
+                pointer-events: none; /* Không cho click xuyên qua */
+            }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/global-header.css")">
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/global-footer.css")">
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/accesibility.css")">
+
+    @RenderSection("Styles", required: false)
+
+    <link rel="shortcut icon" href="@Url.Content("~/assets/img/favicon.webp")" type="image/x-icon">
+</head>
+<body class="scroll-bar">
+
+    <div id="loader">
+        <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+        <path fill="#d4af37" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+        <animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          dur="1s"
+                          from="0 50 50"
+                          to="360 50 50"
+                          repeatCount="indefinite" />
+		    </path>
+		</svg>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <nav class="header-nav-bar">
+                <div class="header-nav-logo">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="https://res.cloudinary.com/joshuafolorunsho/image/upload/v1591615159/star_hotels_logo.png"
+                             alt="star hotels logo">
+                    </a>
+                </div>
+
+                @{
+                    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+                    var action = ViewContext.RouteData.Values["action"]?.ToString();
+                }
+
+                <ul class="header-nav-lists">
+                    <li class="header-nav-list">
+                        <a class="header-nav-link @(controller == "Home" && action == "Index" ? "header-active" : "")" href="@Url.Action("Index", "Home")">Home</a>
+                    </li>
+                    <li class="header-nav-list">
+                        <a class="header-nav-link @(controller == "Room" ? "header-active" : "")" href="@Url.Action("Index", "Room")">Rooms and Suites</a>
+                    </li>
+                    <li class="header-nav-list">
+                        <a class="header-nav-link @(controller == "Home" && action == "Facilities" ? "header-active" : "")" href="@Url.Action("Facilities", "Home")">Facilities</a>
+                    </li>
+                    <li class="header-nav-list">
+                        <a class="header-nav-link @(controller == "Home" && action == "Contact" ? "header-active" : "")" href="@Url.Action("Contact", "Home")">Contact Us</a>
+                    </li>
+                    <li class="header-nav-list"><a class="header-btn header-btn-custom" href="https://timbu.com/search?query=hotel">BOOK NOW</a></li>
+                </ul>
+
+                <div class="header-hamburger-icon">
+                    <div class="header-hamburger-line-1"></div>
+                    <div class="header-hamburger-line-2"></div>
+                    <div class="header-hamburger-line-3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <div class="footer-description">
+                    <h3 class="footer-description-title">Star Hotels</h3>
+                    <p>Hospitality and Comfort are our watchwords</p>
+                </div>
+                <div class="footer-contact-us">
+                    <h3 class="footer-description-title">Contact Us</h3>
+                    <p class="footer-description-detail">
+                        <img src="@Url.Content("~/assets/img/map-pin.svg")" class="footer-description-icon" alt="star hotel location">
+                        <span>23, Fola Osibo, Lekki Phase 1</span>
+                    </p>
+                    <p class="footer-description-detail">
+                        <img src="@Url.Content("~/assets/img/phone.svg")" class="footer-description-icon" alt="star hotels phone number">
+                        <span>08185956620</span>
+                    </p>
+                    <p class="footer-description-detail">
+                        <img src="@Url.Content("~/assets/img/mail.svg")" class="footer-description-icon" alt="star hotels email">
+                        <span>support@starhotels.com</span>
+                    </p>
+                </div>
+                <div class="footer-follow-us">
+                    <h3 class="footer-description-title">Follow Us</h3>
+                    <ul class="footer-follow-us-lists">
+                        <li class="follow-us-list">
+                            <a href="">
+                                <img src="@Url.Content("~/assets/img/facebook.svg")" alt="star hotels facebook page">
+                            </a>
+                        </li>
+                        <li class="follow-us-list">
+                            <a href="">
+                                <img src="@Url.Content("~/assets/img/twitter.svg")" alt="star hotels twitter page">
+                            </a>
+                        </li>
+                        <li class="follow-us-list">
+                            <a href="">
+                                <img src="@Url.Content("~/assets/img/instagram.svg")" alt="star hotels instagram page">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </footer>
+
+    <script defer async>
+        (() => {
+            const loader = document.getElementById('loader');
+            const scrollBar = document.getElementsByClassName('scroll-bar')[0];
+            window.addEventListener('load', () => {
+                loader.classList.add('none');
+                scrollBar.classList.remove('scroll-bar')
+            });
+        })();
+    </script>
+
+    <script src="@Url.Content("~/assets/js/toggleHamburger.js")"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
