@@ -68,5 +68,14 @@ namespace AdminApp
             picboxTitle.Image = Properties.Resources.aaaaa;
             container(new ContactMana());
         }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Danh sach khach hang";
+            picboxTitle.Image = Properties.Resources.aaaaa;
+            //container(new TenantMana());
+            TenantMana tenantMana = new TenantMana();
+            container(tenantMana);
+        }
     }
 }
