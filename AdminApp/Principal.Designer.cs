@@ -84,7 +84,7 @@
             this.panLeft.FillColor = System.Drawing.Color.Honeydew;
             this.panLeft.Location = new System.Drawing.Point(0, 0);
             this.panLeft.Name = "panLeft";
-            this.panLeft.Size = new System.Drawing.Size(297, 703);
+            this.panLeft.Size = new System.Drawing.Size(297, 900);
             this.panLeft.TabIndex = 0;
             this.panLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panLeft_Paint);
             // 
@@ -346,7 +346,7 @@
             this.panTop.FillColor = System.Drawing.Color.Transparent;
             this.panTop.Location = new System.Drawing.Point(297, 0);
             this.panTop.Name = "panTop";
-            this.panTop.Size = new System.Drawing.Size(1185, 81);
+            this.panTop.Size = new System.Drawing.Size(1303, 81);
             this.panTop.TabIndex = 1;
             // 
             // lblTitle
@@ -369,6 +369,7 @@
             this.picboxTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picboxTitle.TabIndex = 5;
             this.picboxTitle.TabStop = false;
+            this.picboxTitle.Click += new System.EventHandler(this.picboxTitle_Click);
             // 
             // guna2CircleButton2
             // 
@@ -434,7 +435,7 @@
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.ForeColor = System.Drawing.Color.DimGray;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(1031, 0);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(1149, 0);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(52, 31);
             this.guna2ControlBox2.TabIndex = 3;
@@ -447,7 +448,7 @@
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.ForeColor = System.Drawing.Color.DimGray;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1082, 0);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1200, 0);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(52, 31);
             this.guna2ControlBox1.TabIndex = 3;
@@ -459,7 +460,7 @@
             this.ctrlbExit.FillColor = System.Drawing.Color.Transparent;
             this.ctrlbExit.ForeColor = System.Drawing.Color.DimGray;
             this.ctrlbExit.IconColor = System.Drawing.Color.DimGray;
-            this.ctrlbExit.Location = new System.Drawing.Point(1133, 0);
+            this.ctrlbExit.Location = new System.Drawing.Point(1251, 0);
             this.ctrlbExit.Name = "ctrlbExit";
             this.ctrlbExit.Size = new System.Drawing.Size(52, 31);
             this.ctrlbExit.TabIndex = 2;
@@ -475,7 +476,7 @@
             this.panContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panContainer.Location = new System.Drawing.Point(297, 81);
             this.panContainer.Name = "panContainer";
-            this.panContainer.Size = new System.Drawing.Size(1185, 622);
+            this.panContainer.Size = new System.Drawing.Size(1303, 819);
             this.panContainer.TabIndex = 2;
             this.panContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panContainer_Paint);
             // 
@@ -483,7 +484,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1482, 703);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.panContainer);
             this.Controls.Add(this.panTop);
             this.Controls.Add(this.panLeft);

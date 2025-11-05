@@ -43,10 +43,7 @@ namespace AdminApp
 
         private void RoomManagement_Load(object sender, EventArgs e)
         {
-            
-            
             loaddgvphong();
-            
         }
 
         private void dgvPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -64,6 +61,18 @@ namespace AdminApp
                 sophopng = map.Last().ToString();
                 anhphong= r.Cells["AnhChinh"].Value.ToString();
                 //pbPhong.ImageLocation = @"Resources\ImagesRooms\room1\P101_main.jpg";
+                
+                grbRoom.Text = "Room " + sophopng;
+
+                lblMPhong.Text = map;
+                lblTenPhong.Text = r.Cells["TenPhong"].Value.ToString();
+                lblGiaPhong.Text= r.Cells["GiaPhong"].Value.ToString();
+                lblNoiThat.Text= r.Cells["NoiThat"].Value.ToString();
+                lblDienTich.Text= r.Cells["DienTich"].Value.ToString();
+                lblTinhTrang.Text= r.Cells["TinhTrang"].Value.ToString();
+                lblSoNguoiToiDa.Text= r.Cells["SoNguoiToiDa"].Value.ToString();
+                lblMoTa.Text= r.Cells["MoTaChiTiet"].Value.ToString();
+
                 pbPhong.ImageLocation = @"Resources\ImagesRooms\room"+sophopng+@"\"+anhphong;
             }
             else
@@ -73,6 +82,11 @@ namespace AdminApp
         }
 
         private void pbPhong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grbRoom_Click(object sender, EventArgs e)
         {
 
         }

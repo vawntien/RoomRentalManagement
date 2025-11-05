@@ -84,5 +84,10 @@ namespace AdminApp
         {
 
         }
+
+        private void picboxTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

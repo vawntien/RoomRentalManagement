@@ -28,145 +28,248 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomManagement));
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.dgvPhong = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.grbRoom = new Guna.UI2.WinForms.Guna2GroupBox();
             this.pbPhong = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
+            this.btnChiTiet = new Guna.UI2.WinForms.Guna2Button();
+            this.lblMaPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblSoPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.dgvPhong = new System.Windows.Forms.DataGridView();
+            this.lblTenPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblMPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblDienTich = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblGiaPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblTinhTrang = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblSoNguoiToiDa = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblNoiThat = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblMoTa = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.grbRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2GroupBox1
+            // grbRoom
             // 
-            this.guna2GroupBox1.Controls.Add(this.guna2Button1);
-            this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel3);
-            this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel2);
-            this.guna2GroupBox1.Controls.Add(this.guna2PictureBox1);
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(760, 62);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(271, 237);
-            this.guna2GroupBox1.TabIndex = 2;
-            this.guna2GroupBox1.Text = "The room";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.CadetBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(65, 176);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(134, 41);
-            this.guna2Button1.TabIndex = 3;
-            this.guna2Button1.Text = "Chi tiet";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(151, 97);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(63, 18);
-            this.guna2HtmlLabel3.TabIndex = 2;
-            this.guna2HtmlLabel3.Text = "Ma phong";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(151, 56);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(52, 18);
-            this.guna2HtmlLabel2.TabIndex = 1;
-            this.guna2HtmlLabel2.Text = "Phong 1";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BorderRadius = 10;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(18, 56);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(127, 95);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // dgvPhong
-            // 
-            this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhong.Location = new System.Drawing.Point(675, 370);
-            this.dgvPhong.Name = "dgvPhong";
-            this.dgvPhong.RowHeadersWidth = 51;
-            this.dgvPhong.RowTemplate.Height = 24;
-            this.dgvPhong.Size = new System.Drawing.Size(384, 101);
-            this.dgvPhong.TabIndex = 6;
-            this.dgvPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellClick);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(63, 81);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(385, 251);
-            this.flowLayoutPanel1.TabIndex = 7;
+            this.grbRoom.Controls.Add(this.guna2TextBox1);
+            this.grbRoom.Controls.Add(this.lblMoTa);
+            this.grbRoom.Controls.Add(this.lblNoiThat);
+            this.grbRoom.Controls.Add(this.lblSoNguoiToiDa);
+            this.grbRoom.Controls.Add(this.lblTinhTrang);
+            this.grbRoom.Controls.Add(this.lblGiaPhong);
+            this.grbRoom.Controls.Add(this.lblDienTich);
+            this.grbRoom.Controls.Add(this.lblMPhong);
+            this.grbRoom.Controls.Add(this.lblTenPhong);
+            this.grbRoom.Controls.Add(this.pbPhong);
+            this.grbRoom.Controls.Add(this.btnChiTiet);
+            this.grbRoom.Controls.Add(this.lblMaPhong);
+            this.grbRoom.Controls.Add(this.lblSoPhong);
+            this.grbRoom.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grbRoom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.grbRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.grbRoom.Location = new System.Drawing.Point(0, 0);
+            this.grbRoom.Name = "grbRoom";
+            this.grbRoom.Size = new System.Drawing.Size(1303, 500);
+            this.grbRoom.TabIndex = 2;
+            this.grbRoom.Click += new System.EventHandler(this.grbRoom_Click);
             // 
             // pbPhong
             // 
             this.pbPhong.ImageRotate = 0F;
-            this.pbPhong.Location = new System.Drawing.Point(161, 351);
+            this.pbPhong.Location = new System.Drawing.Point(22, 61);
             this.pbPhong.Name = "pbPhong";
-            this.pbPhong.Size = new System.Drawing.Size(300, 200);
+            this.pbPhong.Size = new System.Drawing.Size(418, 416);
             this.pbPhong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPhong.TabIndex = 8;
             this.pbPhong.TabStop = false;
             this.pbPhong.Click += new System.EventHandler(this.pbPhong_Click);
+            // 
+            // btnChiTiet
+            // 
+            this.btnChiTiet.AutoRoundedCorners = true;
+            this.btnChiTiet.BackColor = System.Drawing.Color.Transparent;
+            this.btnChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChiTiet.FillColor = System.Drawing.Color.CadetBlue;
+            this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btnChiTiet.Location = new System.Drawing.Point(1125, 393);
+            this.btnChiTiet.Name = "btnChiTiet";
+            this.btnChiTiet.Size = new System.Drawing.Size(134, 41);
+            this.btnChiTiet.TabIndex = 3;
+            this.btnChiTiet.Text = "Chi tiet";
+            this.btnChiTiet.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // lblMaPhong
+            // 
+            this.lblMaPhong.BackColor = System.Drawing.Color.Transparent;
+            this.lblMaPhong.Location = new System.Drawing.Point(380, 110);
+            this.lblMaPhong.Name = "lblMaPhong";
+            this.lblMaPhong.Size = new System.Drawing.Size(0, 0);
+            this.lblMaPhong.TabIndex = 2;
+            this.lblMaPhong.Text = null;
+            // 
+            // lblSoPhong
+            // 
+            this.lblSoPhong.BackColor = System.Drawing.Color.Transparent;
+            this.lblSoPhong.Location = new System.Drawing.Point(380, 61);
+            this.lblSoPhong.Name = "lblSoPhong";
+            this.lblSoPhong.Size = new System.Drawing.Size(0, 0);
+            this.lblSoPhong.TabIndex = 1;
+            this.lblSoPhong.Text = null;
+            // 
+            // dgvPhong
+            // 
+            this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhong.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvPhong.Location = new System.Drawing.Point(0, 506);
+            this.dgvPhong.Name = "dgvPhong";
+            this.dgvPhong.RowHeadersWidth = 51;
+            this.dgvPhong.RowTemplate.Height = 24;
+            this.dgvPhong.Size = new System.Drawing.Size(1303, 313);
+            this.dgvPhong.TabIndex = 6;
+            this.dgvPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellClick);
+            // 
+            // lblTenPhong
+            // 
+            this.lblTenPhong.BackColor = System.Drawing.Color.Transparent;
+            this.lblTenPhong.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblTenPhong.Location = new System.Drawing.Point(446, 86);
+            this.lblTenPhong.Name = "lblTenPhong";
+            this.lblTenPhong.Size = new System.Drawing.Size(65, 24);
+            this.lblTenPhong.TabIndex = 17;
+            this.lblTenPhong.Text = "Tên phòng";
+            // 
+            // lblMPhong
+            // 
+            this.lblMPhong.BackColor = System.Drawing.Color.Transparent;
+            this.lblMPhong.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblMPhong.Location = new System.Drawing.Point(450, 45);
+            this.lblMPhong.Name = "lblMPhong";
+            this.lblMPhong.Size = new System.Drawing.Size(61, 24);
+            this.lblMPhong.TabIndex = 18;
+            this.lblMPhong.Text = "Mã phòng";
+            // 
+            // lblDienTich
+            // 
+            this.lblDienTich.BackColor = System.Drawing.Color.Transparent;
+            this.lblDienTich.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblDienTich.Location = new System.Drawing.Point(615, 86);
+            this.lblDienTich.Name = "lblDienTich";
+            this.lblDienTich.Size = new System.Drawing.Size(58, 24);
+            this.lblDienTich.TabIndex = 19;
+            this.lblDienTich.Text = "Diện tích";
+            // 
+            // lblGiaPhong
+            // 
+            this.lblGiaPhong.BackColor = System.Drawing.Color.Transparent;
+            this.lblGiaPhong.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblGiaPhong.Location = new System.Drawing.Point(448, 162);
+            this.lblGiaPhong.Name = "lblGiaPhong";
+            this.lblGiaPhong.Size = new System.Drawing.Size(63, 24);
+            this.lblGiaPhong.TabIndex = 20;
+            this.lblGiaPhong.Text = "Giá phòng";
+            // 
+            // lblTinhTrang
+            // 
+            this.lblTinhTrang.BackColor = System.Drawing.Color.Transparent;
+            this.lblTinhTrang.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblTinhTrang.Location = new System.Drawing.Point(448, 226);
+            this.lblTinhTrang.Name = "lblTinhTrang";
+            this.lblTinhTrang.Size = new System.Drawing.Size(66, 24);
+            this.lblTinhTrang.TabIndex = 21;
+            this.lblTinhTrang.Text = "Tình trạng";
+            // 
+            // lblSoNguoiToiDa
+            // 
+            this.lblSoNguoiToiDa.BackColor = System.Drawing.Color.Transparent;
+            this.lblSoNguoiToiDa.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblSoNguoiToiDa.Location = new System.Drawing.Point(579, 226);
+            this.lblSoNguoiToiDa.Name = "lblSoNguoiToiDa";
+            this.lblSoNguoiToiDa.Size = new System.Drawing.Size(94, 24);
+            this.lblSoNguoiToiDa.TabIndex = 22;
+            this.lblSoNguoiToiDa.Text = "Số người tối đa";
+            // 
+            // lblNoiThat
+            // 
+            this.lblNoiThat.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoiThat.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblNoiThat.Location = new System.Drawing.Point(448, 277);
+            this.lblNoiThat.Name = "lblNoiThat";
+            this.lblNoiThat.Size = new System.Drawing.Size(51, 24);
+            this.lblNoiThat.TabIndex = 23;
+            this.lblNoiThat.Text = "Nội thất";
+            // 
+            // lblMoTa
+            // 
+            this.lblMoTa.BackColor = System.Drawing.Color.Transparent;
+            this.lblMoTa.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblMoTa.Location = new System.Drawing.Point(448, 382);
+            this.lblMoTa.Name = "lblMoTa";
+            this.lblMoTa.Size = new System.Drawing.Size(36, 24);
+            this.lblMoTa.TabIndex = 24;
+            this.lblMoTa.Text = "Mô tả";
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.AutoRoundedCorners = true;
+            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.LightGray;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FillColor = System.Drawing.Color.Silver;
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(1085, 74);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(196, 36);
+            this.guna2TextBox1.TabIndex = 25;
             // 
             // RoomManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1167, 586);
-            this.Controls.Add(this.pbPhong);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(1303, 819);
             this.Controls.Add(this.dgvPhong);
-            this.Controls.Add(this.guna2GroupBox1);
+            this.Controls.Add(this.grbRoom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RoomManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoomManagement";
             this.Load += new System.EventHandler(this.RoomManagement_Load);
-            this.guna2GroupBox1.ResumeLayout(false);
-            this.guna2GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).EndInit();
+            this.grbRoom.ResumeLayout(false);
+            this.grbRoom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2GroupBox grbRoom;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblMaPhong;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblSoPhong;
+        private Guna.UI2.WinForms.Guna2Button btnChiTiet;
         private System.Windows.Forms.DataGridView dgvPhong;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2PictureBox pbPhong;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblTenPhong;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblMoTa;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblNoiThat;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblSoNguoiToiDa;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblTinhTrang;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblGiaPhong;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDienTich;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblMPhong;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
 }
