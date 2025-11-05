@@ -28,53 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2ShadowPanel1.SuspendLayout();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.guna2Panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2ShadowPanel1
-            // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.label2);
-            this.guna2ShadowPanel1.Controls.Add(this.label1);
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(781, 21);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(383, 364);
-            this.guna2ShadowPanel1.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label2.Location = new System.Drawing.Point(250, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 30);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "app";
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Location = new System.Drawing.Point(29, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "app";
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel1.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Panel1.Location = new System.Drawing.Point(47, 21);
+            this.guna2Panel1.Location = new System.Drawing.Point(107, 35);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(642, 364);
+            this.guna2Panel1.Size = new System.Drawing.Size(221, 195);
             this.guna2Panel1.TabIndex = 2;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(29, 27);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(71, 18);
+            this.guna2HtmlLabel1.TabIndex = 0;
+            this.guna2HtmlLabel1.Text = "Daily views";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.guna2Panel1);
+            this.groupBox1.Location = new System.Drawing.Point(37, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1083, 272);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "WELCOME!";
             // 
             // Dashboard
             // 
@@ -82,22 +69,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1185, 633);
-            this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.guna2ShadowPanel1);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
-            this.guna2ShadowPanel1.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

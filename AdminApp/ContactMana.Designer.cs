@@ -36,7 +36,9 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pcbtest = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbtest)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2DataGridView1
@@ -95,9 +97,9 @@
             // 
             this.guna2Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Panel1.BackgroundImage")));
             this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2Panel1.Location = new System.Drawing.Point(102, 110);
+            this.guna2Panel1.Location = new System.Drawing.Point(319, 12);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(342, 233);
+            this.guna2Panel1.Size = new System.Drawing.Size(237, 154);
             this.guna2Panel1.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -120,12 +122,22 @@
             this.guna2HtmlLabel2.TabIndex = 3;
             this.guna2HtmlLabel2.Text = "Contact list";
             // 
+            // pcbtest
+            // 
+            this.pcbtest.ImageRotate = 0F;
+            this.pcbtest.Location = new System.Drawing.Point(32, 138);
+            this.pcbtest.Name = "pcbtest";
+            this.pcbtest.Size = new System.Drawing.Size(244, 131);
+            this.pcbtest.TabIndex = 4;
+            this.pcbtest.TabStop = false;
+            // 
             // ContactMana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1149, 539);
+            this.Controls.Add(this.pcbtest);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2Panel1);
@@ -135,6 +147,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ContactMana";
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbtest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +159,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2PictureBox pcbtest;
     }
 }
