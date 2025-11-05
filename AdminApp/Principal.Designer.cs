@@ -86,6 +86,7 @@
             this.panLeft.Name = "panLeft";
             this.panLeft.Size = new System.Drawing.Size(297, 703);
             this.panLeft.TabIndex = 0;
+            this.panLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panLeft_Paint);
             // 
             // guna2CirclePictureBox2
             // 

@@ -95,8 +95,8 @@
       <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
     <Compile Include="model\ConnectionModel.cs" />
-    <Compile Include="model\DSPhong.cs" />
-    <Compile Include="model\Phong.cs" />
+    <Compile Include="model\MPhong\DSPhong.cs" />
+    <Compile Include="model\MPhong\Phong.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,11 +168,17 @@
   <ItemGroup>
     <None Include="Resources\aaaaa.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\ImagesRooms\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ImagesRooms\room1\P101_main.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ImagesRooms\room2\P102_main.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

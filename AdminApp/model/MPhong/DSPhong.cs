@@ -30,7 +30,7 @@ namespace AdminApp.model
                 p.DienTich = row["DienTich"].ToString();
                 p.GiaPhong = row["GiaPhong"].ToString();
                 p.TinhTrang = row["TinhTrang"].ToString();
-                p.SoNguoiToiDa = row["SoNguoiToiDa"].ToString();
+                p.SoNguoiToiDa = int.Parse(row["SoNguoiToiDa"].ToString());
                 p.AnhChinh = row["AnhChinh"].ToString();
                 p.MoTaChiTiet = row["MoTaChiTiet"].ToString();
                 p.NoiThat = row["NoiThat"].ToString();

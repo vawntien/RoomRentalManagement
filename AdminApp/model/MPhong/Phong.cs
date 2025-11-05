@@ -8,14 +8,15 @@ namespace AdminApp.model
 {
     public class Phong
     {
-        string maPhong, tenPhong, dienTich, giaPhong, tinhTrang, soNguoiToiDa, anhChinh, moTaChiTiet, noiThat, coGac, tang, loaiPhong, maChu;
+        string maPhong, tenPhong, dienTich, giaPhong, tinhTrang, coGac,  anhChinh, moTaChiTiet, noiThat, tang, loaiPhong, maChu;
+        int soNguoiToiDa;
 
         public string MaPhong { get => maPhong; set => maPhong = value; }
         public string TenPhong { get => tenPhong; set => tenPhong = value; }
         public string DienTich { get => dienTich; set => dienTich = value; }
         public string GiaPhong { get => giaPhong; set => giaPhong = value; }
         public string TinhTrang { get => tinhTrang; set => tinhTrang = value; }
-        public string SoNguoiToiDa { get => soNguoiToiDa; set => soNguoiToiDa = value; }
+        public int SoNguoiToiDa { get => soNguoiToiDa; set => soNguoiToiDa = value; }
         public string AnhChinh { get => anhChinh; set => anhChinh = value; }
         public string MoTaChiTiet { get => moTaChiTiet; set => moTaChiTiet = value; }
         public string NoiThat { get => noiThat; set => noiThat = value; }

@@ -79,5 +79,10 @@ namespace AdminApp
 
             
         }
+
+        private void panLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
