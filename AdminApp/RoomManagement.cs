@@ -16,6 +16,82 @@ namespace AdminApp
     {
         DSPhong dsp = new DSPhong();
 
+        #region methods hide show everythings
+        void hidetext()
+        {
+            txtMaPhong.Visible = false;
+            txtTenPhong.Visible = false;
+            txtGiaPhong.Visible = false;
+            txtNoiThat.Visible = false;
+            txtDienTich.Visible = false;
+            txtTinhTrang.Visible = false;
+            txtSoNguoiToiDa.Visible = false;
+            txtMoTa.Visible = false;
+
+        }
+        void showtext()
+        {
+            txtMaPhong.Visible = true;
+            txtTenPhong.Visible = true;
+            txtGiaPhong.Visible = true;
+            txtNoiThat.Visible = true;
+            txtDienTich.Visible = true;
+            txtTinhTrang.Visible = true;
+            txtSoNguoiToiDa.Visible = true;
+            txtMoTa.Visible = true;
+        }
+        void show_bordertext()
+        {
+
+            txtMaPhong.BorderColor = Color.Silver;
+            txtTenPhong.BorderColor = Color.Silver;
+            txtGiaPhong.BorderColor = Color.Silver;
+            txtNoiThat.BorderColor = Color.Silver;
+            txtDienTich.BorderColor = Color.Silver;
+            txtTinhTrang.BorderColor = Color.Silver;
+            txtSoNguoiToiDa.BorderColor = Color.Silver;
+            txtMoTa.BorderColor = Color.Silver;
+        }
+        void hide_bordertext()
+        {
+            txtMaPhong.BorderColor = Color.White;
+            txtTenPhong.BorderColor = Color.White;
+            txtGiaPhong.BorderColor = Color.White;
+            txtNoiThat.BorderColor = Color.White;
+            txtDienTich.BorderColor = Color.White;
+            txtTinhTrang.BorderColor = Color.White;
+            txtSoNguoiToiDa.BorderColor = Color.White;
+            txtMoTa.BorderColor = Color.White;
+        }
+
+        void txtReadOnly()
+        {
+            txtMaPhong.ReadOnly = true;
+            txtTenPhong.ReadOnly = true;
+            txtGiaPhong.ReadOnly = true;
+            txtNoiThat.ReadOnly = true;
+            txtDienTich.ReadOnly = true;
+            txtTinhTrang.ReadOnly = true;
+            txtSoNguoiToiDa.ReadOnly = true;
+            txtMoTa.ReadOnly = true;
+        }
+
+        void txtNonRdonly()
+        {
+            txtMaPhong.ReadOnly = false;
+            txtTenPhong.ReadOnly = false;
+            txtGiaPhong.ReadOnly = false;
+            txtNoiThat.ReadOnly = false;
+            txtDienTich.ReadOnly = false;
+            txtTinhTrang.ReadOnly = false;
+            txtSoNguoiToiDa.ReadOnly = false;
+            txtMoTa.ReadOnly = false;
+
+            
+        }
+        #endregion
+
+
         void loaddgvphong()
         {
             dgvPhong.DataSource = null;
@@ -27,13 +103,10 @@ namespace AdminApp
             InitializeComponent();
         }
 
-        #region load anh phong
-        
-        #endregion
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            show_bordertext();
+            txtNonRdonly();
         }
 
         private void guna2GroupBox4_Click(object sender, EventArgs e)
@@ -44,6 +117,9 @@ namespace AdminApp
         private void RoomManagement_Load(object sender, EventArgs e)
         {
             loaddgvphong();
+
+            hidetext();
+            hide_bordertext();
         }
 
         private void dgvPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -56,7 +132,9 @@ namespace AdminApp
 
                 DataGridViewRow r = dgvPhong.Rows[e.RowIndex];
 
-                
+                showtext();
+                hide_bordertext();
+                txtReadOnly();
                 string map = r.Cells["MaPhong"].Value.ToString();
                 sophopng = map.Last().ToString();
                 anhphong= r.Cells["AnhChinh"].Value.ToString();
@@ -64,14 +142,15 @@ namespace AdminApp
                 
                 grbRoom.Text = "Room " + sophopng;
 
-                lblMPhong.Text = map;
-                lblTenPhong.Text = r.Cells["TenPhong"].Value.ToString();
-                lblGiaPhong.Text= r.Cells["GiaPhong"].Value.ToString();
-                lblNoiThat.Text= r.Cells["NoiThat"].Value.ToString();
-                lblDienTich.Text= r.Cells["DienTich"].Value.ToString();
-                lblTinhTrang.Text= r.Cells["TinhTrang"].Value.ToString();
-                lblSoNguoiToiDa.Text= r.Cells["SoNguoiToiDa"].Value.ToString();
-                lblMoTa.Text= r.Cells["MoTaChiTiet"].Value.ToString();
+                txtMaPhong.Text = map;
+
+                txtTenPhong.Text = r.Cells["TenPhong"].Value.ToString();
+                txtGiaPhong.Text= r.Cells["GiaPhong"].Value.ToString();
+                txtNoiThat.Text= r.Cells["NoiThat"].Value.ToString();
+                txtDienTich.Text= r.Cells["DienTich"].Value.ToString();
+                txtTinhTrang.Text= r.Cells["TinhTrang"].Value.ToString();
+                txtSoNguoiToiDa.Text= r.Cells["SoNguoiToiDa"].Value.ToString();
+                txtMoTa.Text= r.Cells["MoTaChiTiet"].Value.ToString();
 
                 pbPhong.ImageLocation = @"Resources\ImagesRooms\room"+sophopng+@"\"+anhphong;
             }
@@ -87,6 +166,16 @@ namespace AdminApp
         }
 
         private void grbRoom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThemPhong_Click(object sender, EventArgs e)
         {
 
         }
