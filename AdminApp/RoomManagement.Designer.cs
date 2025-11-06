@@ -30,42 +30,54 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomManagement));
             this.grbRoom = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblMPhong = new System.Windows.Forms.Label();
             this.txtMoTa = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtSoNguoiToiDa = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtDienTich = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtNoiThat = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTinhTrang = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtGiaPhong = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTenPhong = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnThemPhong = new Guna.UI2.WinForms.Guna2Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtMaPhong = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSoNguoiToiDa = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblTenPhong = new System.Windows.Forms.Label();
+            this.txtDienTich = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblGiaPhong = new System.Windows.Forms.Label();
+            this.txtNoiThat = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblTinhTrang = new System.Windows.Forms.Label();
+            this.txtTinhTrang = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblNoiThat = new System.Windows.Forms.Label();
+            this.txtGiaPhong = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblMoTa = new System.Windows.Forms.Label();
+            this.txtTenPhong = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblDienTich = new System.Windows.Forms.Label();
+            this.lblSoNguoiToiDa = new System.Windows.Forms.Label();
             this.pbPhong = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnChiTiet = new Guna.UI2.WinForms.Guna2Button();
             this.lblMaPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSoPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvPhong = new System.Windows.Forms.DataGridView();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnThemPhong = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.imgbtnFI1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.imgbtnFI2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.imgbtnFI3 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnChiTiet = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.imgbtnFI4 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnXoaPhong = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.grbRoom.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbRoom
             // 
-            this.grbRoom.Controls.Add(this.groupBox1);
-            this.grbRoom.Controls.Add(this.btnThemPhong);
-            this.grbRoom.Controls.Add(this.pbPhong);
+            this.grbRoom.Controls.Add(this.guna2GradientButton1);
+            this.grbRoom.Controls.Add(this.btnXoaPhong);
+            this.grbRoom.Controls.Add(this.imgbtnFI4);
             this.grbRoom.Controls.Add(this.btnChiTiet);
+            this.grbRoom.Controls.Add(this.imgbtnFI3);
+            this.grbRoom.Controls.Add(this.imgbtnFI2);
+            this.grbRoom.Controls.Add(this.imgbtnFI1);
+            this.grbRoom.Controls.Add(this.btnThemPhong);
+            this.grbRoom.Controls.Add(this.groupBox1);
+            this.grbRoom.Controls.Add(this.pbPhong);
             this.grbRoom.Controls.Add(this.lblMaPhong);
             this.grbRoom.Controls.Add(this.lblSoPhong);
             this.grbRoom.Dock = System.Windows.Forms.DockStyle.Top;
@@ -76,6 +88,43 @@
             this.grbRoom.Size = new System.Drawing.Size(1303, 500);
             this.grbRoom.TabIndex = 2;
             this.grbRoom.Click += new System.EventHandler(this.grbRoom_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.lblMPhong);
+            this.groupBox1.Controls.Add(this.txtMoTa);
+            this.groupBox1.Controls.Add(this.txtMaPhong);
+            this.groupBox1.Controls.Add(this.txtSoNguoiToiDa);
+            this.groupBox1.Controls.Add(this.lblTenPhong);
+            this.groupBox1.Controls.Add(this.txtDienTich);
+            this.groupBox1.Controls.Add(this.lblGiaPhong);
+            this.groupBox1.Controls.Add(this.txtNoiThat);
+            this.groupBox1.Controls.Add(this.lblTinhTrang);
+            this.groupBox1.Controls.Add(this.txtTinhTrang);
+            this.groupBox1.Controls.Add(this.lblNoiThat);
+            this.groupBox1.Controls.Add(this.txtGiaPhong);
+            this.groupBox1.Controls.Add(this.lblMoTa);
+            this.groupBox1.Controls.Add(this.txtTenPhong);
+            this.groupBox1.Controls.Add(this.lblDienTich);
+            this.groupBox1.Controls.Add(this.lblSoNguoiToiDa);
+            this.groupBox1.Location = new System.Drawing.Point(492, 52);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(512, 320);
+            this.groupBox1.TabIndex = 51;
+            this.groupBox1.TabStop = false;
+            // 
+            // lblMPhong
+            // 
+            this.lblMPhong.AutoSize = true;
+            this.lblMPhong.BackColor = System.Drawing.Color.Transparent;
+            this.lblMPhong.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblMPhong.ForeColor = System.Drawing.Color.Teal;
+            this.lblMPhong.Location = new System.Drawing.Point(6, 36);
+            this.lblMPhong.Name = "lblMPhong";
+            this.lblMPhong.Size = new System.Drawing.Size(76, 24);
+            this.lblMPhong.TabIndex = 34;
+            this.lblMPhong.Text = "Mã phòng:";
             // 
             // txtMoTa
             // 
@@ -98,6 +147,29 @@
             this.txtMoTa.SelectedText = "";
             this.txtMoTa.Size = new System.Drawing.Size(346, 61);
             this.txtMoTa.TabIndex = 50;
+            // 
+            // txtMaPhong
+            // 
+            this.txtMaPhong.AutoRoundedCorners = true;
+            this.txtMaPhong.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaPhong.BorderColor = System.Drawing.Color.Silver;
+            this.txtMaPhong.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaPhong.DefaultText = "";
+            this.txtMaPhong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaPhong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaPhong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtMaPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaPhong.Location = new System.Drawing.Point(128, 36);
+            this.txtMaPhong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaPhong.Name = "txtMaPhong";
+            this.txtMaPhong.PlaceholderText = "";
+            this.txtMaPhong.SelectedText = "";
+            this.txtMaPhong.Size = new System.Drawing.Size(102, 31);
+            this.txtMaPhong.TabIndex = 25;
             // 
             // txtSoNguoiToiDa
             // 
@@ -122,6 +194,18 @@
             this.txtSoNguoiToiDa.Size = new System.Drawing.Size(102, 31);
             this.txtSoNguoiToiDa.TabIndex = 49;
             // 
+            // lblTenPhong
+            // 
+            this.lblTenPhong.AutoSize = true;
+            this.lblTenPhong.BackColor = System.Drawing.Color.Transparent;
+            this.lblTenPhong.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTenPhong.ForeColor = System.Drawing.Color.Teal;
+            this.lblTenPhong.Location = new System.Drawing.Point(6, 88);
+            this.lblTenPhong.Name = "lblTenPhong";
+            this.lblTenPhong.Size = new System.Drawing.Size(79, 24);
+            this.lblTenPhong.TabIndex = 35;
+            this.lblTenPhong.Text = "Tên phòng:";
+            // 
             // txtDienTich
             // 
             this.txtDienTich.AutoRoundedCorners = true;
@@ -144,6 +228,18 @@
             this.txtDienTich.SelectedText = "";
             this.txtDienTich.Size = new System.Drawing.Size(102, 31);
             this.txtDienTich.TabIndex = 48;
+            // 
+            // lblGiaPhong
+            // 
+            this.lblGiaPhong.AutoSize = true;
+            this.lblGiaPhong.BackColor = System.Drawing.Color.Transparent;
+            this.lblGiaPhong.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblGiaPhong.ForeColor = System.Drawing.Color.Teal;
+            this.lblGiaPhong.Location = new System.Drawing.Point(252, 87);
+            this.lblGiaPhong.Name = "lblGiaPhong";
+            this.lblGiaPhong.Size = new System.Drawing.Size(78, 24);
+            this.lblGiaPhong.TabIndex = 36;
+            this.lblGiaPhong.Text = "Giá phòng:";
             // 
             // txtNoiThat
             // 
@@ -169,6 +265,18 @@
             this.txtNoiThat.Size = new System.Drawing.Size(346, 31);
             this.txtNoiThat.TabIndex = 46;
             // 
+            // lblTinhTrang
+            // 
+            this.lblTinhTrang.AutoSize = true;
+            this.lblTinhTrang.BackColor = System.Drawing.Color.Transparent;
+            this.lblTinhTrang.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTinhTrang.ForeColor = System.Drawing.Color.Teal;
+            this.lblTinhTrang.Location = new System.Drawing.Point(6, 137);
+            this.lblTinhTrang.Name = "lblTinhTrang";
+            this.lblTinhTrang.Size = new System.Drawing.Size(79, 24);
+            this.lblTinhTrang.TabIndex = 37;
+            this.lblTinhTrang.Text = "Tình trạng:";
+            // 
             // txtTinhTrang
             // 
             this.txtTinhTrang.AutoRoundedCorners = true;
@@ -191,6 +299,18 @@
             this.txtTinhTrang.SelectedText = "";
             this.txtTinhTrang.Size = new System.Drawing.Size(102, 31);
             this.txtTinhTrang.TabIndex = 45;
+            // 
+            // lblNoiThat
+            // 
+            this.lblNoiThat.AutoSize = true;
+            this.lblNoiThat.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoiThat.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblNoiThat.ForeColor = System.Drawing.Color.Teal;
+            this.lblNoiThat.Location = new System.Drawing.Point(6, 195);
+            this.lblNoiThat.Name = "lblNoiThat";
+            this.lblNoiThat.Size = new System.Drawing.Size(64, 24);
+            this.lblNoiThat.TabIndex = 38;
+            this.lblNoiThat.Text = "Nội thất:";
             // 
             // txtGiaPhong
             // 
@@ -215,6 +335,18 @@
             this.txtGiaPhong.Size = new System.Drawing.Size(102, 31);
             this.txtGiaPhong.TabIndex = 44;
             // 
+            // lblMoTa
+            // 
+            this.lblMoTa.AutoSize = true;
+            this.lblMoTa.BackColor = System.Drawing.Color.Transparent;
+            this.lblMoTa.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblMoTa.ForeColor = System.Drawing.Color.Teal;
+            this.lblMoTa.Location = new System.Drawing.Point(6, 248);
+            this.lblMoTa.Name = "lblMoTa";
+            this.lblMoTa.Size = new System.Drawing.Size(49, 24);
+            this.lblMoTa.TabIndex = 39;
+            this.lblMoTa.Text = "Mô tả:";
+            // 
             // txtTenPhong
             // 
             this.txtTenPhong.AutoRoundedCorners = true;
@@ -238,142 +370,29 @@
             this.txtTenPhong.Size = new System.Drawing.Size(102, 31);
             this.txtTenPhong.TabIndex = 43;
             // 
-            // btnThemPhong
+            // lblDienTich
             // 
-            this.btnThemPhong.AutoRoundedCorners = true;
-            this.btnThemPhong.BackColor = System.Drawing.Color.Transparent;
-            this.btnThemPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThemPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThemPhong.FillColor = System.Drawing.Color.CadetBlue;
-            this.btnThemPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThemPhong.ForeColor = System.Drawing.Color.White;
-            this.btnThemPhong.Location = new System.Drawing.Point(1103, 71);
-            this.btnThemPhong.Name = "btnThemPhong";
-            this.btnThemPhong.Size = new System.Drawing.Size(134, 41);
-            this.btnThemPhong.TabIndex = 42;
-            this.btnThemPhong.Text = "Thêm phòng";
-            this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click);
+            this.lblDienTich.AutoSize = true;
+            this.lblDienTich.BackColor = System.Drawing.Color.Transparent;
+            this.lblDienTich.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDienTich.ForeColor = System.Drawing.Color.Teal;
+            this.lblDienTich.Location = new System.Drawing.Point(252, 36);
+            this.lblDienTich.Name = "lblDienTich";
+            this.lblDienTich.Size = new System.Drawing.Size(71, 24);
+            this.lblDienTich.TabIndex = 40;
+            this.lblDienTich.Text = "Diện tích:";
             // 
-            // label8
+            // lblSoNguoiToiDa
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.Teal;
-            this.label8.Location = new System.Drawing.Point(252, 137);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 24);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Số người tối đa:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.Teal;
-            this.label7.Location = new System.Drawing.Point(252, 36);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 24);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "Diện tích:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Teal;
-            this.label6.Location = new System.Drawing.Point(6, 248);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 24);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "Mô tả:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(6, 195);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 24);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Nội thất:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(6, 137);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 24);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Tình trạng:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(252, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 24);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Giá phòng:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(6, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 24);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Tên phòng:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(6, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 24);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Mã phòng:";
-            // 
-            // txtMaPhong
-            // 
-            this.txtMaPhong.AutoRoundedCorners = true;
-            this.txtMaPhong.BackColor = System.Drawing.Color.Transparent;
-            this.txtMaPhong.BorderColor = System.Drawing.Color.Silver;
-            this.txtMaPhong.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaPhong.DefaultText = "";
-            this.txtMaPhong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaPhong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaPhong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMaPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaPhong.Location = new System.Drawing.Point(128, 36);
-            this.txtMaPhong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.PlaceholderText = "";
-            this.txtMaPhong.SelectedText = "";
-            this.txtMaPhong.Size = new System.Drawing.Size(102, 31);
-            this.txtMaPhong.TabIndex = 25;
+            this.lblSoNguoiToiDa.AutoSize = true;
+            this.lblSoNguoiToiDa.BackColor = System.Drawing.Color.Transparent;
+            this.lblSoNguoiToiDa.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSoNguoiToiDa.ForeColor = System.Drawing.Color.Teal;
+            this.lblSoNguoiToiDa.Location = new System.Drawing.Point(252, 137);
+            this.lblSoNguoiToiDa.Name = "lblSoNguoiToiDa";
+            this.lblSoNguoiToiDa.Size = new System.Drawing.Size(112, 24);
+            this.lblSoNguoiToiDa.TabIndex = 41;
+            this.lblSoNguoiToiDa.Text = "Số người tối đa:";
             // 
             // pbPhong
             // 
@@ -388,24 +407,6 @@
             this.pbPhong.TabIndex = 8;
             this.pbPhong.TabStop = false;
             this.pbPhong.Click += new System.EventHandler(this.pbPhong_Click);
-            // 
-            // btnChiTiet
-            // 
-            this.btnChiTiet.AutoRoundedCorners = true;
-            this.btnChiTiet.BackColor = System.Drawing.Color.Transparent;
-            this.btnChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChiTiet.FillColor = System.Drawing.Color.CadetBlue;
-            this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnChiTiet.Location = new System.Drawing.Point(1103, 139);
-            this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(134, 41);
-            this.btnChiTiet.TabIndex = 3;
-            this.btnChiTiet.Text = "Chi tiet";
-            this.btnChiTiet.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // lblMaPhong
             // 
@@ -434,9 +435,11 @@
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.RowHeadersWidth = 51;
             this.dgvPhong.RowTemplate.Height = 24;
+            this.dgvPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhong.Size = new System.Drawing.Size(1303, 313);
             this.dgvPhong.TabIndex = 6;
             this.dgvPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellClick);
+            this.dgvPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellContentClick);
             // 
             // guna2ContextMenuStrip1
             // 
@@ -453,30 +456,151 @@
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // groupBox1
+            // btnThemPhong
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtMoTa);
-            this.groupBox1.Controls.Add(this.txtMaPhong);
-            this.groupBox1.Controls.Add(this.txtSoNguoiToiDa);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtDienTich);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtNoiThat);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtTinhTrang);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtGiaPhong);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtTenPhong);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(461, 52);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(544, 328);
-            this.groupBox1.TabIndex = 51;
-            this.groupBox1.TabStop = false;
+            this.btnThemPhong.AutoRoundedCorners = true;
+            this.btnThemPhong.BackColor = System.Drawing.Color.Transparent;
+            this.btnThemPhong.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.btnThemPhong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnThemPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThemPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThemPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThemPhong.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThemPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThemPhong.FillColor = System.Drawing.Color.Teal;
+            this.btnThemPhong.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnThemPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThemPhong.ForeColor = System.Drawing.Color.White;
+            this.btnThemPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnThemPhong.Image")));
+            this.btnThemPhong.ImageOffset = new System.Drawing.Point(0, 1);
+            this.btnThemPhong.Location = new System.Drawing.Point(1082, 97);
+            this.btnThemPhong.Name = "btnThemPhong";
+            this.btnThemPhong.Size = new System.Drawing.Size(155, 45);
+            this.btnThemPhong.TabIndex = 53;
+            this.btnThemPhong.Text = "Thêm phòng";
+            this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click_1);
+            // 
+            // imgbtnFI1
+            // 
+            this.imgbtnFI1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI1.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI1.Image")));
+            this.imgbtnFI1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgbtnFI1.ImageRotate = 0F;
+            this.imgbtnFI1.Location = new System.Drawing.Point(492, 379);
+            this.imgbtnFI1.Name = "imgbtnFI1";
+            this.imgbtnFI1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI1.Size = new System.Drawing.Size(116, 108);
+            this.imgbtnFI1.TabIndex = 54;
+            // 
+            // imgbtnFI2
+            // 
+            this.imgbtnFI2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI2.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI2.Image")));
+            this.imgbtnFI2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgbtnFI2.ImageRotate = 0F;
+            this.imgbtnFI2.Location = new System.Drawing.Point(620, 379);
+            this.imgbtnFI2.Name = "imgbtnFI2";
+            this.imgbtnFI2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI2.Size = new System.Drawing.Size(116, 108);
+            this.imgbtnFI2.TabIndex = 55;
+            // 
+            // imgbtnFI3
+            // 
+            this.imgbtnFI3.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI3.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI3.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI3.Image")));
+            this.imgbtnFI3.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgbtnFI3.ImageRotate = 0F;
+            this.imgbtnFI3.Location = new System.Drawing.Point(754, 379);
+            this.imgbtnFI3.Name = "imgbtnFI3";
+            this.imgbtnFI3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI3.Size = new System.Drawing.Size(116, 108);
+            this.imgbtnFI3.TabIndex = 56;
+            // 
+            // btnChiTiet
+            // 
+            this.btnChiTiet.AutoRoundedCorners = true;
+            this.btnChiTiet.BackColor = System.Drawing.Color.Transparent;
+            this.btnChiTiet.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.btnChiTiet.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChiTiet.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChiTiet.FillColor = System.Drawing.Color.Teal;
+            this.btnChiTiet.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btnChiTiet.Image = ((System.Drawing.Image)(resources.GetObject("btnChiTiet.Image")));
+            this.btnChiTiet.ImageOffset = new System.Drawing.Point(-8, 1);
+            this.btnChiTiet.Location = new System.Drawing.Point(1082, 189);
+            this.btnChiTiet.Name = "btnChiTiet";
+            this.btnChiTiet.Size = new System.Drawing.Size(155, 45);
+            this.btnChiTiet.TabIndex = 57;
+            this.btnChiTiet.Text = "Chi tiết";
+            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
+            // 
+            // imgbtnFI4
+            // 
+            this.imgbtnFI4.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI4.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI4.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI4.Image")));
+            this.imgbtnFI4.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgbtnFI4.ImageRotate = 0F;
+            this.imgbtnFI4.Location = new System.Drawing.Point(888, 379);
+            this.imgbtnFI4.Name = "imgbtnFI4";
+            this.imgbtnFI4.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI4.Size = new System.Drawing.Size(116, 108);
+            this.imgbtnFI4.TabIndex = 58;
+            // 
+            // btnXoaPhong
+            // 
+            this.btnXoaPhong.AutoRoundedCorners = true;
+            this.btnXoaPhong.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoaPhong.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.btnXoaPhong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnXoaPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoaPhong.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoaPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoaPhong.FillColor = System.Drawing.Color.Teal;
+            this.btnXoaPhong.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnXoaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoaPhong.ForeColor = System.Drawing.Color.White;
+            this.btnXoaPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaPhong.Image")));
+            this.btnXoaPhong.ImageOffset = new System.Drawing.Point(-1, 1);
+            this.btnXoaPhong.Location = new System.Drawing.Point(1082, 290);
+            this.btnXoaPhong.Name = "btnXoaPhong";
+            this.btnXoaPhong.Size = new System.Drawing.Size(155, 45);
+            this.btnXoaPhong.TabIndex = 59;
+            this.btnXoaPhong.Text = "Xóa phòng";
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.AutoRoundedCorners = true;
+            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButton1.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.guna2GradientButton1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.Teal;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton1.Image")));
+            this.guna2GradientButton1.ImageOffset = new System.Drawing.Point(-1, 1);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(1082, 392);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(155, 45);
+            this.guna2GradientButton1.TabIndex = 60;
+            this.guna2GradientButton1.Text = "In thông tin";
             // 
             // RoomManagement
             // 
@@ -493,10 +617,10 @@
             this.Load += new System.EventHandler(this.RoomManagement_Load);
             this.grbRoom.ResumeLayout(false);
             this.grbRoom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPhong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -505,19 +629,17 @@
         private Guna.UI2.WinForms.Guna2GroupBox grbRoom;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblMaPhong;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSoPhong;
-        private Guna.UI2.WinForms.Guna2Button btnChiTiet;
         private System.Windows.Forms.DataGridView dgvPhong;
         private Guna.UI2.WinForms.Guna2PictureBox pbPhong;
         private Guna.UI2.WinForms.Guna2TextBox txtMaPhong;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button btnThemPhong;
+        private System.Windows.Forms.Label lblMPhong;
+        private System.Windows.Forms.Label lblSoNguoiToiDa;
+        private System.Windows.Forms.Label lblDienTich;
+        private System.Windows.Forms.Label lblMoTa;
+        private System.Windows.Forms.Label lblNoiThat;
+        private System.Windows.Forms.Label lblTinhTrang;
+        private System.Windows.Forms.Label lblGiaPhong;
+        private System.Windows.Forms.Label lblTenPhong;
         private Guna.UI2.WinForms.Guna2TextBox txtTenPhong;
         private Guna.UI2.WinForms.Guna2TextBox txtNoiThat;
         private Guna.UI2.WinForms.Guna2TextBox txtTinhTrang;
@@ -527,5 +649,13 @@
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
         private Guna.UI2.WinForms.Guna2TextBox txtMoTa;
         private System.Windows.Forms.GroupBox groupBox1;
+        private Guna.UI2.WinForms.Guna2ImageButton imgbtnFI1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnThemPhong;
+        private Guna.UI2.WinForms.Guna2ImageButton imgbtnFI3;
+        private Guna.UI2.WinForms.Guna2ImageButton imgbtnFI2;
+        private Guna.UI2.WinForms.Guna2GradientButton btnChiTiet;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnXoaPhong;
+        private Guna.UI2.WinForms.Guna2ImageButton imgbtnFI4;
     }
 }

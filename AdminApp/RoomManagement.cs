@@ -89,6 +89,38 @@ namespace AdminApp
 
             
         }
+
+        void hidelbl()
+        {
+            lblMPhong.Visible = false;
+            lblTenPhong.Visible = false;
+            lblGiaPhong.Visible = false;
+            lblNoiThat.Visible = false;
+            lblDienTich.Visible = false;
+            lblTinhTrang.Visible = false;
+            lblSoNguoiToiDa.Visible = false;
+            lblMoTa.Visible = false;
+        }
+
+        void showlbl()
+        {
+            lblMPhong.Visible = true;
+            lblTenPhong.Visible = true;
+            lblGiaPhong.Visible = true;
+            lblNoiThat.Visible = true;
+            lblDienTich.Visible = true;
+            lblTinhTrang.Visible = true;
+            lblSoNguoiToiDa.Visible = true;
+            lblMoTa.Visible = true;
+        }
+
+        void hideimagebtn()
+        {
+            imgbtnFI1.Visible = false;
+            imgbtnFI2.Visible = false;
+            imgbtnFI3.Visible = false;
+            imgbtnFI4.Visible = false;
+        }
         #endregion
 
 
@@ -114,12 +146,22 @@ namespace AdminApp
 
         }
 
+        
+
+        void loadthings()
+        {
+            hidelbl();
+            hidetext();
+            hide_bordertext();
+            hideimagebtn();
+        }
+
         private void RoomManagement_Load(object sender, EventArgs e)
         {
             loaddgvphong();
 
-            hidetext();
-            hide_bordertext();
+            loadthings();
+            
         }
 
         private void dgvPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -134,6 +176,7 @@ namespace AdminApp
 
                 showtext();
                 hide_bordertext();
+                showlbl();
                 txtReadOnly();
                 string map = r.Cells["MaPhong"].Value.ToString();
                 sophopng = map.Last().ToString();
@@ -176,6 +219,21 @@ namespace AdminApp
         }
 
         private void btnThemPhong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThemPhong_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChiTiet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

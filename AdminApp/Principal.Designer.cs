@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panLeft = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
@@ -55,9 +58,6 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.panContainer = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -67,7 +67,8 @@
             // 
             // panLeft
             // 
-            this.panLeft.BackColor = System.Drawing.Color.Cornsilk;
+            this.panLeft.BackColor = System.Drawing.Color.Honeydew;
+            this.panLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panLeft.Controls.Add(this.label3);
             this.panLeft.Controls.Add(this.label2);
             this.panLeft.Controls.Add(this.label1);
@@ -91,13 +92,49 @@
             this.panLeft.TabIndex = 0;
             this.panLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panLeft_Paint);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Honeydew;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(121, 795);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 22);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Contact:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Honeydew;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(48, 857);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(219, 22);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "nguyenvantien1122005@gmail.com";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Honeydew;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(121, 822);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 22);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "0971012723";
+            // 
             // guna2CirclePictureBox2
             // 
             this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Honeydew;
             this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Honeydew;
             this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
             this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(12, 632);
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(30, 790);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
             this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox2.Size = new System.Drawing.Size(64, 64);
@@ -118,7 +155,7 @@
             this.guna2Button10.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button10.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button10.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button10.Location = new System.Drawing.Point(0, 552);
+            this.guna2Button10.Location = new System.Drawing.Point(-2, 656);
             this.guna2Button10.Name = "guna2Button10";
             this.guna2Button10.Size = new System.Drawing.Size(299, 48);
             this.guna2Button10.TabIndex = 10;
@@ -154,7 +191,7 @@
             this.guna2Button8.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button8.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button8.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button8.Location = new System.Drawing.Point(-2, 435);
+            this.guna2Button8.Location = new System.Drawing.Point(-2, 545);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.Size = new System.Drawing.Size(299, 48);
             this.guna2Button8.TabIndex = 8;
@@ -174,7 +211,7 @@
             this.guna2Button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button7.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button7.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button7.Location = new System.Drawing.Point(-2, 387);
+            this.guna2Button7.Location = new System.Drawing.Point(-2, 497);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Size = new System.Drawing.Size(299, 48);
             this.guna2Button7.TabIndex = 7;
@@ -194,7 +231,7 @@
             this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button6.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button6.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button6.Location = new System.Drawing.Point(-2, 339);
+            this.guna2Button6.Location = new System.Drawing.Point(-2, 449);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(299, 48);
             this.guna2Button6.TabIndex = 6;
@@ -214,7 +251,7 @@
             this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button5.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button5.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button5.Location = new System.Drawing.Point(-2, 291);
+            this.guna2Button5.Location = new System.Drawing.Point(-2, 401);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(299, 48);
             this.guna2Button5.TabIndex = 5;
@@ -234,7 +271,7 @@
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button4.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button4.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button4.Location = new System.Drawing.Point(-2, 243);
+            this.guna2Button4.Location = new System.Drawing.Point(-2, 353);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(299, 48);
             this.guna2Button4.TabIndex = 4;
@@ -255,7 +292,7 @@
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button3.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button3.Location = new System.Drawing.Point(-2, 195);
+            this.guna2Button3.Location = new System.Drawing.Point(-2, 305);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(299, 48);
             this.guna2Button3.TabIndex = 3;
@@ -276,7 +313,7 @@
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button2.Location = new System.Drawing.Point(-2, 147);
+            this.guna2Button2.Location = new System.Drawing.Point(-2, 257);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(299, 48);
             this.guna2Button2.TabIndex = 2;
@@ -297,7 +334,7 @@
             this.btnOverview.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnOverview.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnOverview.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnOverview.Location = new System.Drawing.Point(3, 87);
+            this.btnOverview.Location = new System.Drawing.Point(-2, 185);
             this.btnOverview.Name = "btnOverview";
             this.btnOverview.Size = new System.Drawing.Size(299, 48);
             this.btnOverview.TabIndex = 1;
@@ -307,11 +344,12 @@
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Honeydew;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 3);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(168, 81);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(197, 107);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -367,7 +405,7 @@
             this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton2.Image")));
-            this.guna2CircleButton2.Location = new System.Drawing.Point(979, 13);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(1080, 13);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton2.Size = new System.Drawing.Size(46, 48);
@@ -383,7 +421,7 @@
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.Image")));
-            this.guna2CircleButton1.Location = new System.Drawing.Point(919, 13);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(1012, 13);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(46, 48);
@@ -404,12 +442,12 @@
             this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
             this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(10, 0);
             this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.guna2TextBox1.Location = new System.Drawing.Point(636, 13);
+            this.guna2TextBox1.Location = new System.Drawing.Point(641, 13);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PlaceholderText = "Search";
             this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(266, 48);
+            this.guna2TextBox1.Size = new System.Drawing.Size(342, 48);
             this.guna2TextBox1.TabIndex = 4;
             this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
@@ -465,42 +503,6 @@
             this.panContainer.Size = new System.Drawing.Size(1303, 819);
             this.panContainer.TabIndex = 2;
             this.panContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panContainer_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Honeydew;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(103, 664);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 22);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "0971012723";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Honeydew;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(30, 699);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(219, 22);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "nguyenvantien1122005@gmail.com";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Honeydew;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(103, 637);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 22);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Contact:";
             // 
             // Principal
             // 
