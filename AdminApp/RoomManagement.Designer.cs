@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomManagement));
             this.grbRoom = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnXoaPhong = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.imgbtnFI4 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnChiTiet = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.imgbtnFI3 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.imgbtnFI2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.imgbtnFI1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnThemPhong = new Guna.UI2.WinForms.Guna2GradientButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblMPhong = new System.Windows.Forms.Label();
             this.txtMoTa = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,14 +60,6 @@
             this.lblSoPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvPhong = new System.Windows.Forms.DataGridView();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.btnThemPhong = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.imgbtnFI1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.imgbtnFI2 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.imgbtnFI3 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnChiTiet = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.imgbtnFI4 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnXoaPhong = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.grbRoom.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhong)).BeginInit();
@@ -88,6 +88,164 @@
             this.grbRoom.Size = new System.Drawing.Size(1303, 500);
             this.grbRoom.TabIndex = 2;
             this.grbRoom.Click += new System.EventHandler(this.grbRoom_Click);
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.AutoRoundedCorners = true;
+            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButton1.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.guna2GradientButton1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.Teal;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton1.Image")));
+            this.guna2GradientButton1.ImageOffset = new System.Drawing.Point(-1, 1);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(1082, 379);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(155, 45);
+            this.guna2GradientButton1.TabIndex = 60;
+            this.guna2GradientButton1.Text = "In thông tin";
+            // 
+            // btnXoaPhong
+            // 
+            this.btnXoaPhong.AutoRoundedCorners = true;
+            this.btnXoaPhong.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoaPhong.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.btnXoaPhong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnXoaPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoaPhong.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoaPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoaPhong.FillColor = System.Drawing.Color.Teal;
+            this.btnXoaPhong.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnXoaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoaPhong.ForeColor = System.Drawing.Color.White;
+            this.btnXoaPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaPhong.Image")));
+            this.btnXoaPhong.ImageOffset = new System.Drawing.Point(-1, 1);
+            this.btnXoaPhong.Location = new System.Drawing.Point(1082, 290);
+            this.btnXoaPhong.Name = "btnXoaPhong";
+            this.btnXoaPhong.Size = new System.Drawing.Size(155, 45);
+            this.btnXoaPhong.TabIndex = 59;
+            this.btnXoaPhong.Text = "Xóa phòng";
+            // 
+            // imgbtnFI4
+            // 
+            this.imgbtnFI4.BackColor = System.Drawing.Color.White;
+            this.imgbtnFI4.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI4.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI4.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI4.Image")));
+            this.imgbtnFI4.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
+            this.imgbtnFI4.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgbtnFI4.ImageRotate = 0F;
+            this.imgbtnFI4.ImageSize = new System.Drawing.Size(100, 100);
+            this.imgbtnFI4.Location = new System.Drawing.Point(888, 379);
+            this.imgbtnFI4.Name = "imgbtnFI4";
+            this.imgbtnFI4.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI4.Size = new System.Drawing.Size(116, 108);
+            this.imgbtnFI4.TabIndex = 58;
+            // 
+            // btnChiTiet
+            // 
+            this.btnChiTiet.AutoRoundedCorners = true;
+            this.btnChiTiet.BackColor = System.Drawing.Color.Transparent;
+            this.btnChiTiet.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.btnChiTiet.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChiTiet.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChiTiet.FillColor = System.Drawing.Color.Teal;
+            this.btnChiTiet.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btnChiTiet.Image = ((System.Drawing.Image)(resources.GetObject("btnChiTiet.Image")));
+            this.btnChiTiet.ImageOffset = new System.Drawing.Point(-8, 1);
+            this.btnChiTiet.Location = new System.Drawing.Point(1082, 189);
+            this.btnChiTiet.Name = "btnChiTiet";
+            this.btnChiTiet.Size = new System.Drawing.Size(155, 45);
+            this.btnChiTiet.TabIndex = 57;
+            this.btnChiTiet.Text = "Chi tiết";
+            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
+            // 
+            // imgbtnFI3
+            // 
+            this.imgbtnFI3.BackColor = System.Drawing.Color.White;
+            this.imgbtnFI3.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI3.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI3.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI3.Image")));
+            this.imgbtnFI3.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
+            this.imgbtnFI3.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgbtnFI3.ImageRotate = 0F;
+            this.imgbtnFI3.ImageSize = new System.Drawing.Size(100, 100);
+            this.imgbtnFI3.Location = new System.Drawing.Point(754, 379);
+            this.imgbtnFI3.Name = "imgbtnFI3";
+            this.imgbtnFI3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI3.Size = new System.Drawing.Size(116, 108);
+            this.imgbtnFI3.TabIndex = 56;
+            // 
+            // imgbtnFI2
+            // 
+            this.imgbtnFI2.BackColor = System.Drawing.Color.White;
+            this.imgbtnFI2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI2.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI2.Image")));
+            this.imgbtnFI2.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
+            this.imgbtnFI2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgbtnFI2.ImageRotate = 0F;
+            this.imgbtnFI2.ImageSize = new System.Drawing.Size(100, 100);
+            this.imgbtnFI2.Location = new System.Drawing.Point(620, 379);
+            this.imgbtnFI2.Name = "imgbtnFI2";
+            this.imgbtnFI2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI2.Size = new System.Drawing.Size(116, 108);
+            this.imgbtnFI2.TabIndex = 55;
+            // 
+            // imgbtnFI1
+            // 
+            this.imgbtnFI1.BackColor = System.Drawing.Color.White;
+            this.imgbtnFI1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI1.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI1.Image")));
+            this.imgbtnFI1.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
+            this.imgbtnFI1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgbtnFI1.ImageRotate = 0F;
+            this.imgbtnFI1.ImageSize = new System.Drawing.Size(100, 100);
+            this.imgbtnFI1.Location = new System.Drawing.Point(492, 379);
+            this.imgbtnFI1.Name = "imgbtnFI1";
+            this.imgbtnFI1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnFI1.Size = new System.Drawing.Size(116, 108);
+            this.imgbtnFI1.TabIndex = 54;
+            // 
+            // btnThemPhong
+            // 
+            this.btnThemPhong.AutoRoundedCorners = true;
+            this.btnThemPhong.BackColor = System.Drawing.Color.Transparent;
+            this.btnThemPhong.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.btnThemPhong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnThemPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThemPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThemPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThemPhong.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThemPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThemPhong.FillColor = System.Drawing.Color.Teal;
+            this.btnThemPhong.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnThemPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThemPhong.ForeColor = System.Drawing.Color.White;
+            this.btnThemPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnThemPhong.Image")));
+            this.btnThemPhong.ImageOffset = new System.Drawing.Point(0, 1);
+            this.btnThemPhong.Location = new System.Drawing.Point(1082, 97);
+            this.btnThemPhong.Name = "btnThemPhong";
+            this.btnThemPhong.Size = new System.Drawing.Size(155, 45);
+            this.btnThemPhong.TabIndex = 53;
+            this.btnThemPhong.Text = "Thêm phòng";
+            this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click_1);
             // 
             // groupBox1
             // 
@@ -455,152 +613,6 @@
             this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // btnThemPhong
-            // 
-            this.btnThemPhong.AutoRoundedCorners = true;
-            this.btnThemPhong.BackColor = System.Drawing.Color.Transparent;
-            this.btnThemPhong.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.btnThemPhong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.btnThemPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThemPhong.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThemPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThemPhong.FillColor = System.Drawing.Color.Teal;
-            this.btnThemPhong.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnThemPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThemPhong.ForeColor = System.Drawing.Color.White;
-            this.btnThemPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnThemPhong.Image")));
-            this.btnThemPhong.ImageOffset = new System.Drawing.Point(0, 1);
-            this.btnThemPhong.Location = new System.Drawing.Point(1082, 97);
-            this.btnThemPhong.Name = "btnThemPhong";
-            this.btnThemPhong.Size = new System.Drawing.Size(155, 45);
-            this.btnThemPhong.TabIndex = 53;
-            this.btnThemPhong.Text = "Thêm phòng";
-            this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click_1);
-            // 
-            // imgbtnFI1
-            // 
-            this.imgbtnFI1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI1.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI1.Image")));
-            this.imgbtnFI1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.imgbtnFI1.ImageRotate = 0F;
-            this.imgbtnFI1.Location = new System.Drawing.Point(492, 379);
-            this.imgbtnFI1.Name = "imgbtnFI1";
-            this.imgbtnFI1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI1.Size = new System.Drawing.Size(116, 108);
-            this.imgbtnFI1.TabIndex = 54;
-            // 
-            // imgbtnFI2
-            // 
-            this.imgbtnFI2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI2.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI2.Image")));
-            this.imgbtnFI2.ImageOffset = new System.Drawing.Point(0, 0);
-            this.imgbtnFI2.ImageRotate = 0F;
-            this.imgbtnFI2.Location = new System.Drawing.Point(620, 379);
-            this.imgbtnFI2.Name = "imgbtnFI2";
-            this.imgbtnFI2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI2.Size = new System.Drawing.Size(116, 108);
-            this.imgbtnFI2.TabIndex = 55;
-            // 
-            // imgbtnFI3
-            // 
-            this.imgbtnFI3.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI3.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI3.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI3.Image")));
-            this.imgbtnFI3.ImageOffset = new System.Drawing.Point(0, 0);
-            this.imgbtnFI3.ImageRotate = 0F;
-            this.imgbtnFI3.Location = new System.Drawing.Point(754, 379);
-            this.imgbtnFI3.Name = "imgbtnFI3";
-            this.imgbtnFI3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI3.Size = new System.Drawing.Size(116, 108);
-            this.imgbtnFI3.TabIndex = 56;
-            // 
-            // btnChiTiet
-            // 
-            this.btnChiTiet.AutoRoundedCorners = true;
-            this.btnChiTiet.BackColor = System.Drawing.Color.Transparent;
-            this.btnChiTiet.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.btnChiTiet.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.btnChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChiTiet.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChiTiet.FillColor = System.Drawing.Color.Teal;
-            this.btnChiTiet.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnChiTiet.Image = ((System.Drawing.Image)(resources.GetObject("btnChiTiet.Image")));
-            this.btnChiTiet.ImageOffset = new System.Drawing.Point(-8, 1);
-            this.btnChiTiet.Location = new System.Drawing.Point(1082, 189);
-            this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(155, 45);
-            this.btnChiTiet.TabIndex = 57;
-            this.btnChiTiet.Text = "Chi tiết";
-            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
-            // 
-            // imgbtnFI4
-            // 
-            this.imgbtnFI4.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI4.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI4.Image = ((System.Drawing.Image)(resources.GetObject("imgbtnFI4.Image")));
-            this.imgbtnFI4.ImageOffset = new System.Drawing.Point(0, 0);
-            this.imgbtnFI4.ImageRotate = 0F;
-            this.imgbtnFI4.Location = new System.Drawing.Point(888, 379);
-            this.imgbtnFI4.Name = "imgbtnFI4";
-            this.imgbtnFI4.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnFI4.Size = new System.Drawing.Size(116, 108);
-            this.imgbtnFI4.TabIndex = 58;
-            // 
-            // btnXoaPhong
-            // 
-            this.btnXoaPhong.AutoRoundedCorners = true;
-            this.btnXoaPhong.BackColor = System.Drawing.Color.Transparent;
-            this.btnXoaPhong.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.btnXoaPhong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.btnXoaPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoaPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoaPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXoaPhong.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXoaPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoaPhong.FillColor = System.Drawing.Color.Teal;
-            this.btnXoaPhong.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnXoaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXoaPhong.ForeColor = System.Drawing.Color.White;
-            this.btnXoaPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaPhong.Image")));
-            this.btnXoaPhong.ImageOffset = new System.Drawing.Point(-1, 1);
-            this.btnXoaPhong.Location = new System.Drawing.Point(1082, 290);
-            this.btnXoaPhong.Name = "btnXoaPhong";
-            this.btnXoaPhong.Size = new System.Drawing.Size(155, 45);
-            this.btnXoaPhong.TabIndex = 59;
-            this.btnXoaPhong.Text = "Xóa phòng";
-            // 
-            // guna2GradientButton1
-            // 
-            this.guna2GradientButton1.AutoRoundedCorners = true;
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.guna2GradientButton1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.Teal;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton1.Image")));
-            this.guna2GradientButton1.ImageOffset = new System.Drawing.Point(-1, 1);
-            this.guna2GradientButton1.Location = new System.Drawing.Point(1082, 392);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(155, 45);
-            this.guna2GradientButton1.TabIndex = 60;
-            this.guna2GradientButton1.Text = "In thông tin";
             // 
             // RoomManagement
             // 

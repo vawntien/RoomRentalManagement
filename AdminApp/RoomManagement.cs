@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace AdminApp
@@ -121,6 +122,20 @@ namespace AdminApp
             imgbtnFI3.Visible = false;
             imgbtnFI4.Visible = false;
         }
+
+        void showimagebtn()
+        {
+            imgbtnFI1.Visible = true;
+            imgbtnFI2.Visible = true;
+            imgbtnFI3.Visible = true;
+            imgbtnFI4.Visible = true;
+        }
+        #endregion
+
+        #region processthings
+
+        
+
         #endregion
 
 
@@ -161,7 +176,12 @@ namespace AdminApp
             loaddgvphong();
 
             loadthings();
-            
+
+            imgbtnFI1.Click += SubImage_Click;
+            imgbtnFI2.Click += SubImage_Click;
+            imgbtnFI3.Click += SubImage_Click;
+            imgbtnFI4.Click += SubImage_Click;
+
         }
 
         private void dgvPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -178,11 +198,45 @@ namespace AdminApp
                 hide_bordertext();
                 showlbl();
                 txtReadOnly();
+                showimagebtn();
+
+                
+
                 string map = r.Cells["MaPhong"].Value.ToString();
                 sophopng = map.Last().ToString();
                 anhphong= r.Cells["AnhChinh"].Value.ToString();
                 //pbPhong.ImageLocation = @"Resources\ImagesRooms\room1\P101_main.jpg";
+
+                //load anh lne imgbtn
+
+                imgbtnFI1.Image = null;
+                imgbtnFI2.Image = null;
+                imgbtnFI3.Image = null;
+                imgbtnFI4.Image = null;
+
+                string roomFolder = Path.Combine(Application.StartupPath, "Resources", "ImagesRooms", "room" + sophopng);
                 
+
+
+                for (int i = 1; i <= 4; i++)
+                {
+                    string subImagePath = Path.Combine(roomFolder, $"{map}_{i + 1}.jpg");
+                    if (File.Exists(subImagePath))
+                    {
+                        switch (i)
+                        {
+                            case 1: imgbtnFI1.Image = System.Drawing.Image.FromFile(subImagePath); break;
+                            case 2: imgbtnFI2.Image = System.Drawing.Image.FromFile(subImagePath); break;
+                            case 3: imgbtnFI3.Image = System.Drawing.Image.FromFile(subImagePath); break;
+                            case 4: imgbtnFI4.Image = System.Drawing.Image.FromFile(subImagePath); break;
+                        }
+                    }
+                }
+
+
+
+                //
+
                 grbRoom.Text = "Room " + sophopng;
 
                 txtMaPhong.Text = map;
@@ -195,7 +249,16 @@ namespace AdminApp
                 txtSoNguoiToiDa.Text= r.Cells["SoNguoiToiDa"].Value.ToString();
                 txtMoTa.Text= r.Cells["MoTaChiTiet"].Value.ToString();
 
-                pbPhong.ImageLocation = @"Resources\ImagesRooms\room"+sophopng+@"\"+anhphong;
+                pbPhong.ImageLocation = @"Resources\ImagesRooms\room" + sophopng + @"\" + anhphong;
+                string mainImagePath = Path.Combine(Application.StartupPath, "Resources", "ImagesRooms", "room" + sophopng, anhphong);
+                if (File.Exists(mainImagePath))
+                    pbPhong.Image = System.Drawing.Image.FromFile(mainImagePath);
+                else
+                    pbPhong.Image = null; // tránh lỗi nếu ảnh không tồn tại
+
+
+
+
             }
             else
             {
@@ -237,5 +300,17 @@ namespace AdminApp
         {
 
         }
+
+        // Hàm hoán đổi ảnh giữa ảnh chính và ảnh phụ
+        private void SubImage_Click(object sender, EventArgs e)
+        {
+            var clicked = sender as Guna.UI2.WinForms.Guna2ImageButton;
+            if (clicked == null) return;
+
+            System.Drawing.Image temp = pbPhong.Image;
+            pbPhong.Image = clicked.Image;
+            clicked.Image = temp;
+        }
+
     }
 }
