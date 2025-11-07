@@ -44,6 +44,11 @@ namespace AdminApp
         {
 
         }
+
+        private void dgvPhongTroo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

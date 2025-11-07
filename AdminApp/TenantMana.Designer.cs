@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenantMana));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -39,13 +36,13 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.dgvPhongTro = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pcbAnh = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.dgvPhongTro = new System.Windows.Forms.DataGridView();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhongTro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAnh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhongTro)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -140,66 +137,25 @@
             this.guna2PictureBox2.TabIndex = 0;
             this.guna2PictureBox2.TabStop = false;
             // 
-            // dgvPhongTro
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvPhongTro.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhongTro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPhongTro.ColumnHeadersHeight = 4;
-            this.dgvPhongTro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhongTro.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPhongTro.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPhongTro.Location = new System.Drawing.Point(807, 301);
-            this.dgvPhongTro.Name = "dgvPhongTro";
-            this.dgvPhongTro.RowHeadersVisible = false;
-            this.dgvPhongTro.RowHeadersWidth = 51;
-            this.dgvPhongTro.RowTemplate.Height = 24;
-            this.dgvPhongTro.Size = new System.Drawing.Size(323, 217);
-            this.dgvPhongTro.TabIndex = 1;
-            this.dgvPhongTro.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPhongTro.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvPhongTro.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvPhongTro.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvPhongTro.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvPhongTro.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPhongTro.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPhongTro.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvPhongTro.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvPhongTro.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPhongTro.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvPhongTro.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvPhongTro.ThemeStyle.HeaderStyle.Height = 4;
-            this.dgvPhongTro.ThemeStyle.ReadOnly = false;
-            this.dgvPhongTro.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPhongTro.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvPhongTro.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPhongTro.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvPhongTro.ThemeStyle.RowsStyle.Height = 24;
-            this.dgvPhongTro.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPhongTro.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
             // pcbAnh
             // 
             this.pcbAnh.ImageRotate = 0F;
-            this.pcbAnh.Location = new System.Drawing.Point(43, 319);
+            this.pcbAnh.Location = new System.Drawing.Point(977, 66);
             this.pcbAnh.Name = "pcbAnh";
             this.pcbAnh.Size = new System.Drawing.Size(245, 184);
             this.pcbAnh.TabIndex = 2;
             this.pcbAnh.TabStop = false;
+            // 
+            // dgvPhongTro
+            // 
+            this.dgvPhongTro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhongTro.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvPhongTro.Location = new System.Drawing.Point(0, 458);
+            this.dgvPhongTro.Name = "dgvPhongTro";
+            this.dgvPhongTro.RowHeadersWidth = 51;
+            this.dgvPhongTro.RowTemplate.Height = 24;
+            this.dgvPhongTro.Size = new System.Drawing.Size(1303, 361);
+            this.dgvPhongTro.TabIndex = 3;
             // 
             // TenantMana
             // 
@@ -207,8 +163,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1303, 819);
-            this.Controls.Add(this.pcbAnh);
             this.Controls.Add(this.dgvPhongTro);
+            this.Controls.Add(this.pcbAnh);
             this.Controls.Add(this.guna2GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TenantMana";
@@ -219,8 +175,8 @@
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhongTro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAnh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhongTro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,7 +190,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvPhongTro;
         private Guna.UI2.WinForms.Guna2PictureBox pcbAnh;
+        private System.Windows.Forms.DataGridView dgvPhongTro;
     }
 }
