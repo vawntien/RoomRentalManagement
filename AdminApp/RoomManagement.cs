@@ -186,7 +186,86 @@ namespace AdminApp
 
         private void dgvPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+            //string sophopng = "";
+            //string anhphong = "";
+            //if (e.RowIndex >= 0)
+            //{
+
+            //    DataGridViewRow r = dgvPhong.Rows[e.RowIndex];
+
+            //    showtext();
+            //    hide_bordertext();
+            //    showlbl();
+            //    txtReadOnly();
+            //    showimagebtn();
+
+
+
+            //    string map = r.Cells["MaPhong"].Value.ToString();
+            //    sophopng = map.Last().ToString();
+            //    anhphong= r.Cells["AnhChinh"].Value.ToString();
+            //    //pbPhong.ImageLocation = @"Resources\ImagesRooms\room1\P101_main.jpg";
+
+            //    //load anh lne imgbtn
+
+            //    imgbtnFI1.Image = null;
+            //    imgbtnFI2.Image = null;
+            //    imgbtnFI3.Image = null;
+            //    imgbtnFI4.Image = null;
+
+            //    string roomFolder = Path.Combine(Application.StartupPath, "Resources", "ImagesRooms", "room" + sophopng);
+
+
+
+            //    for (int i = 1; i <= 4; i++)
+            //    {
+            //        string subImagePath = Path.Combine(roomFolder, $"{map}_{i + 1}.jpg");
+            //        if (File.Exists(subImagePath))
+            //        {
+            //            switch (i)
+            //            {
+            //                case 1: imgbtnFI1.Image = System.Drawing.Image.FromFile(subImagePath); break;
+            //                case 2: imgbtnFI2.Image = System.Drawing.Image.FromFile(subImagePath); break;
+            //                case 3: imgbtnFI3.Image = System.Drawing.Image.FromFile(subImagePath); break;
+            //                case 4: imgbtnFI4.Image = System.Drawing.Image.FromFile(subImagePath); break;
+            //            }
+            //        }
+            //    }
+
+
+
+            //    //
+
+            //    grbRoom.Text = "Room " + sophopng;
+
+            //    txtMaPhong.Text = map;
+
+            //    txtTenPhong.Text = r.Cells["TenPhong"].Value.ToString();
+            //    txtGiaPhong.Text= r.Cells["GiaPhong"].Value.ToString();
+            //    txtNoiThat.Text= r.Cells["NoiThat"].Value.ToString();
+            //    txtDienTich.Text= r.Cells["DienTich"].Value.ToString();
+            //    txtTinhTrang.Text= r.Cells["TinhTrang"].Value.ToString();
+            //    txtSoNguoiToiDa.Text= r.Cells["SoNguoiToiDa"].Value.ToString();
+            //    txtMoTa.Text= r.Cells["MoTaChiTiet"].Value.ToString();
+
+            //    pbPhong.ImageLocation = @"Resources\ImagesRooms\room" + sophopng + @"\" + anhphong;
+            //    string mainImagePath = Path.Combine(Application.StartupPath, "Resources", "ImagesRooms", "room" + sophopng, anhphong);
+            //    if (File.Exists(mainImagePath))
+            //        pbPhong.Image = System.Drawing.Image.FromFile(mainImagePath);
+            //    else
+            //        pbPhong.Image = null; // tránh lỗi nếu ảnh không tồn tại
+
+
+
+
+            //}
+            //else
+            //{
+
+            //}
+
+
             string sophopng = "";
             string anhphong = "";
             if (e.RowIndex >= 0)
@@ -200,11 +279,11 @@ namespace AdminApp
                 txtReadOnly();
                 showimagebtn();
 
-                
+
 
                 string map = r.Cells["MaPhong"].Value.ToString();
                 sophopng = map.Last().ToString();
-                anhphong= r.Cells["AnhChinh"].Value.ToString();
+                anhphong = r.Cells["AnhChinh"].Value.ToString();
                 //pbPhong.ImageLocation = @"Resources\ImagesRooms\room1\P101_main.jpg";
 
                 //load anh lne imgbtn
@@ -215,12 +294,12 @@ namespace AdminApp
                 imgbtnFI4.Image = null;
 
                 string roomFolder = Path.Combine(Application.StartupPath, "Resources", "ImagesRooms", "room" + sophopng);
-                
+
 
 
                 for (int i = 1; i <= 4; i++)
                 {
-                    string subImagePath = Path.Combine(roomFolder, $"{map}_{i + 1}.jpg");
+                    string subImagePath = Path.Combine(roomFolder, $"Hinh{i}.jpg");
                     if (File.Exists(subImagePath))
                     {
                         switch (i)
@@ -242,15 +321,15 @@ namespace AdminApp
                 txtMaPhong.Text = map;
 
                 txtTenPhong.Text = r.Cells["TenPhong"].Value.ToString();
-                txtGiaPhong.Text= r.Cells["GiaPhong"].Value.ToString();
-                txtNoiThat.Text= r.Cells["NoiThat"].Value.ToString();
-                txtDienTich.Text= r.Cells["DienTich"].Value.ToString();
-                txtTinhTrang.Text= r.Cells["TinhTrang"].Value.ToString();
-                txtSoNguoiToiDa.Text= r.Cells["SoNguoiToiDa"].Value.ToString();
-                txtMoTa.Text= r.Cells["MoTaChiTiet"].Value.ToString();
+                txtGiaPhong.Text = r.Cells["GiaPhong"].Value.ToString();
+                txtNoiThat.Text = r.Cells["NoiThat"].Value.ToString();
+                txtDienTich.Text = r.Cells["DienTich"].Value.ToString();
+                txtTinhTrang.Text = r.Cells["TinhTrang"].Value.ToString();
+                txtSoNguoiToiDa.Text = r.Cells["SoNguoiToiDa"].Value.ToString();
+                txtMoTa.Text = r.Cells["MoTaChiTiet"].Value.ToString();
 
-                pbPhong.ImageLocation = @"Resources\ImagesRooms\room" + sophopng + @"\" + anhphong;
-                string mainImagePath = Path.Combine(Application.StartupPath, "Resources", "ImagesRooms", "room" + sophopng, anhphong);
+                pbPhong.ImageLocation = @"Resources\ImagesRooms\room" +anhphong;
+                string mainImagePath = Path.Combine(Application.StartupPath, "Resources", "ImagesRooms", anhphong);
                 if (File.Exists(mainImagePath))
                     pbPhong.Image = System.Drawing.Image.FromFile(mainImagePath);
                 else
@@ -262,7 +341,7 @@ namespace AdminApp
             }
             else
             {
-                
+
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using AdminApp.model;
+using AdminApp.model.MKhach;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,14 +16,13 @@ namespace AdminApp
 {
     public partial class TenantMana : Form
     {
-        DSPhong dsp = new DSPhong();
-        private object flpImages;
+        DSKhach dsk = new DSKhach();
 
-        void loaddgvPhongTro()
+        void loaddgvKhachThue()
         {
-            dgvPhongTro.DataSource = null;
+            dgvKhachThue.DataSource = null;
 
-            dgvPhongTro.DataSource = dsp.getAllPhong();
+            dgvKhachThue.DataSource = dsk.getAllKhach();
         }
         public TenantMana()
         {
@@ -37,7 +37,7 @@ namespace AdminApp
 
         private void TenantMana_Load(object sender, EventArgs e)
         {
-            loaddgvPhongTro();
+            loaddgvKhachThue();
         }
 
         private void LoadImages()

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -82,6 +83,29 @@ namespace AdminApp
         private void guna2CircleButton2_Click_1(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.settings.mute = !axWindowsMediaPlayer1.settings.mute;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2CircleButton2_Click_2(object sender, EventArgs e)
+        {
+            string recipient = "someone@example.com";
+            string subject = Uri.EscapeDataString("Thông báo từ hệ thống");
+            string body = Uri.EscapeDataString("Xin chào,\n\nĐây là nội dung email tự động.");
+
+            string mailto = $"mailto:{recipient}?subject={subject}&body={body}";
+
+            try
+            {
+                Process.Start(mailto);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể mở ứng dụng mail: " + ex.Message);
+            }
         }
     }
 }

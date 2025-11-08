@@ -37,12 +37,12 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pcbAnh = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.dgvPhongTro = new System.Windows.Forms.DataGridView();
+            this.dgvKhachThue = new System.Windows.Forms.DataGridView();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAnh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhongTro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachThue)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -146,16 +146,17 @@
             this.pcbAnh.TabIndex = 2;
             this.pcbAnh.TabStop = false;
             // 
-            // dgvPhongTro
+            // dgvKhachThue
             // 
-            this.dgvPhongTro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhongTro.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPhongTro.Location = new System.Drawing.Point(0, 458);
-            this.dgvPhongTro.Name = "dgvPhongTro";
-            this.dgvPhongTro.RowHeadersWidth = 51;
-            this.dgvPhongTro.RowTemplate.Height = 24;
-            this.dgvPhongTro.Size = new System.Drawing.Size(1303, 361);
-            this.dgvPhongTro.TabIndex = 3;
+            this.dgvKhachThue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKhachThue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhachThue.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvKhachThue.Location = new System.Drawing.Point(0, 458);
+            this.dgvKhachThue.Name = "dgvKhachThue";
+            this.dgvKhachThue.RowHeadersWidth = 51;
+            this.dgvKhachThue.RowTemplate.Height = 24;
+            this.dgvKhachThue.Size = new System.Drawing.Size(1303, 361);
+            this.dgvKhachThue.TabIndex = 3;
             // 
             // TenantMana
             // 
@@ -163,7 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1303, 819);
-            this.Controls.Add(this.dgvPhongTro);
+            this.Controls.Add(this.dgvKhachThue);
             this.Controls.Add(this.pcbAnh);
             this.Controls.Add(this.guna2GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -176,7 +177,7 @@
             this.guna2GroupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAnh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhongTro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachThue)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,6 +192,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2PictureBox pcbAnh;
-        private System.Windows.Forms.DataGridView dgvPhongTro;
+        private System.Windows.Forms.DataGridView dgvKhachThue;
     }
 }

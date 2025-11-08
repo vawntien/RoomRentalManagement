@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +21,21 @@ namespace AdminApp
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Dashboard Overview";
-            picboxTitle.Image = Properties.Resources.aaaaa;
+            //picboxTitle.Image = Properties.Resources.aaaaa;
+            
+            string gifPath = Path.Combine(Application.StartupPath, "Resources", "gifs", "title1.gif");
+            if (File.Exists(gifPath))
+            {
+                picboxTitle.Image = Image.FromFile(gifPath);
+                picboxTitle.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
+
+
+
             container(new Dashboard());
+
+
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -32,6 +46,9 @@ namespace AdminApp
         private void Principal_Load(object sender, EventArgs e)
         {
             guna2ShadowForm1.SetShadowForm(this);
+
+            
+
 
         }
 
@@ -59,6 +76,15 @@ namespace AdminApp
         {
             lblTitle.Text = "Danh sach phong";
             picboxTitle.Image = Properties.Resources.aaaaa;
+
+            string gifPath = Path.Combine(Application.StartupPath, "Resources", "gifs", "title1.gif");
+            if (File.Exists(gifPath))
+            {
+                picboxTitle.Image = Image.FromFile(gifPath);
+                picboxTitle.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
+
             container(new RoomManagement());
         }
 
@@ -88,6 +114,51 @@ namespace AdminApp
         private void picboxTitle_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void panTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSwap_Click(object sender, EventArgs e)
+        {
+            //string gifPath1 = Path.Combine(Application.StartupPath, "Resources", "gifs", "fire.gif");
+            //if (File.Exists(gifPath1))
+            //{
+            //    pictureChill2.Image = Image.FromFile(gifPath1);
+            //    pictureChill2.SizeMode = PictureBoxSizeMode.StretchImage;
+            //}
+
+
+            loadgif(picback, "back1.gif");
+            loadgif(pictureChill2, "fire.gif");
+            loadgif(pictureChill1, "chill.gif");
+
+
+
+        }
+
+        void loadgif(PictureBox p, string name)
+        {
+            string gifPath1 = Path.Combine(Application.StartupPath, "Resources", "gifs", name);
+            if (File.Exists(gifPath1))
+            {
+                p.Image = Image.FromFile(gifPath1);
+                p.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
     }
 }
