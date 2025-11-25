@@ -258,6 +258,7 @@
             this.btnSwap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSwap.ForeColor = System.Drawing.Color.White;
             this.btnSwap.Image = ((System.Drawing.Image)(resources.GetObject("btnSwap.Image")));
+            this.btnSwap.ImageSize = new System.Drawing.Size(25, 25);
             this.btnSwap.Location = new System.Drawing.Point(561, 11);
             this.btnSwap.Name = "btnSwap";
             this.btnSwap.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;

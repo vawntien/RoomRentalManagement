@@ -21,14 +21,14 @@ namespace AdminApp
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Dashboard Overview";
-            //picboxTitle.Image = Properties.Resources.aaaaa;
+            picboxTitle.Image = Properties.Resources.aaaaa;
             
-            string gifPath = Path.Combine(Application.StartupPath, "Resources", "gifs", "title1.gif");
-            if (File.Exists(gifPath))
-            {
-                picboxTitle.Image = Image.FromFile(gifPath);
-                picboxTitle.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
+            //string gifPath = Path.Combine(Application.StartupPath, "Resources", "gifs", "title1.gif");
+            //if (File.Exists(gifPath))
+            //{
+            //    picboxTitle.Image = Image.FromFile(gifPath);
+            //    picboxTitle.SizeMode = PictureBoxSizeMode.StretchImage;
+            //}
 
 
 
@@ -77,12 +77,12 @@ namespace AdminApp
             lblTitle.Text = "Danh sach phong";
             picboxTitle.Image = Properties.Resources.aaaaa;
 
-            string gifPath = Path.Combine(Application.StartupPath, "Resources", "gifs", "title1.gif");
-            if (File.Exists(gifPath))
-            {
-                picboxTitle.Image = Image.FromFile(gifPath);
-                picboxTitle.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
+            //string gifPath = Path.Combine(Application.StartupPath, "Resources", "gifs", "title1.gif");
+            //if (File.Exists(gifPath))
+            //{
+            //    picboxTitle.Image = Image.FromFile(gifPath);
+            //    picboxTitle.SizeMode = PictureBoxSizeMode.StretchImage;
+            //}
 
 
             container(new RoomManagement());

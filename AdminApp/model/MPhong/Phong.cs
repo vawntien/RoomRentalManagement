@@ -20,7 +20,7 @@ namespace AdminApp.model
         public string AnhChinh { get => anhChinh; set => anhChinh = value; }
         public string MoTaChiTiet { get => moTaChiTiet; set => moTaChiTiet = value; }
         public string NoiThat { get => noiThat; set => noiThat = value; }
-        public string CoGac { get => coGac; set => coGac = value; }
+        public bool CoGac { get; set; }
         public string Tang { get => tang; set => tang = value; }
         public string LoaiPhong { get => loaiPhong; set => loaiPhong = value; }
         public string MaChu { get => maChu; set => maChu = value; }

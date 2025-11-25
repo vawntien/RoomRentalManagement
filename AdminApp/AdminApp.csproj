@@ -96,8 +96,11 @@
       <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
     <Compile Include="model\ConnectionModel.cs" />
+    <Compile Include="model\MHopDong\DSHopDong.cs" />
+    <Compile Include="model\MHopDong\HopDong.cs" />
     <Compile Include="model\MKhach\DSKhach.cs" />
     <Compile Include="model\MKhach\Khach.cs" />
+    <Compile Include="model\MPhong\DSHinhAnhPhong.cs" />
     <Compile Include="model\MPhong\DSPhong.cs" />
     <Compile Include="model\MPhong\Phong.cs" />
     <Compile Include="Principal.cs">

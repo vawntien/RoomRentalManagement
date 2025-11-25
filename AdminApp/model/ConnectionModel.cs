@@ -11,6 +11,7 @@ namespace AdminApp.model
         public static string strcnn = "Data Source=LAPTOP-7NLDV66P\\SQLEXPRESS;Initial Catalog=QLPhongTro;Integrated Security=True;TrustServerCertificate=True";
         public static string execPhong = "select * from Phong";
         public static string execKhach = "select * from KhachThue";
+        public static string execHopDong = "select * from HopDong";
 
     }
 }
