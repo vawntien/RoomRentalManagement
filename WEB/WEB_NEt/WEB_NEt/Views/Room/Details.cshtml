@@ -1,0 +1,150 @@
+﻿@model WEB_NEt.Models.RoomViewModel
+
+@{
+    ViewBag.Title = "Chi tiết phòng";
+}
+
+<h2 class="text-center mb-4">Chi tiết phòng: @Model.Phong.TenPhong</h2>
+
+<div class="container">
+    <div class="row">
+
+        <!-- Bên trái: Ảnh chính + ảnh phụ -->
+        <div class="col-md-6 mb-4">
+            <div class="main-image-container text-center mb-3">
+                <img id="mainImage" src="@Url.Content("~/dataphong/" + Model.Phong.AnhChinh)"
+                     alt="Ảnh chính phòng" class="main-image" />
+            </div>
+
+            @if (Model.AnhPhu != null && Model.AnhPhu.Any())
+            {
+                <div id="thumbContainer" class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+                    @* 6 ô ảnh phụ *@
+                    @for (int i = 0; i < Math.Min(6, Model.AnhPhu.Count); i++)
+                    {
+                        <img src="@Url.Content(Model.AnhPhu[i])"
+                             alt="Ảnh phụ"
+                             class="thumb-image"
+                             onclick="document.getElementById('mainImage').src='@Url.Content(Model.AnhPhu[i])'" />
+                    }
+                </div>
+            }
+        </div>
+
+        <!-- Bên phải: Thông tin phòng -->
+        <div class="col-md-6">
+            <div class="room-info">
+                <p><strong>Diện tích:</strong> @Model.Phong.DienTich m²</p>
+                <p><strong>Giá phòng:</strong> @string.Format("{0:N0}", Model.Phong.GiaPhong) VNĐ</p>
+                <p><strong>Tình trạng:</strong> @Model.Phong.TinhTrang</p>
+                <p><strong>Số người tối đa:</strong> @Model.Phong.SoNguoiToiDa</p>
+                <p><strong>Tầng:</strong> @Model.Phong.Tang</p>
+                <p><strong>Loại phòng:</strong> @Model.Phong.LoaiPhong</p>
+                <p><strong>Gác:</strong> @(Model.Phong.CoGac ? "Có" : "Không")</p>
+                <p><strong>Chủ phòng:</strong> @Model.Phong.ChuPhong?.HoTen</p>
+                <p><strong>Nội thất:</strong> @Model.Phong.NoiThat</p>
+                <p><strong>Mô tả chi tiết:</strong> @Model.Phong.MoTaChiTiet</p>
+
+                <div class="mt-3">
+                    @Html.ActionLink(
+                                        "Đặt Phòng",
+                                        "CreateBooking",
+                                        "HopDongs",
+                                        new { id = Model.Phong.MaPhong },
+                                        new { @class = "btn btn-primary me-2" }
+                                    )
+                    @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-secondary" })
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        /* Ảnh chính */
+        .main-image-container {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 500px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Ảnh phụ */
+        .thumb-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .thumb-image:hover {
+            transform: scale(1.2);
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Thông tin phòng */
+        .room-info p {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        @@media (max-width: 768px) {
+            /* Responsive: cột ảnh và cột thông tin xếp dọc */
+            .row {
+                flex-direction: column;
+            }
+
+            .main-image {
+                max-width: 100%;
+            }
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        // Xoay vòng ảnh phụ nếu > 6
+        (function () {
+            const thumbContainer = document.getElementById('thumbContainer');
+            if (!thumbContainer) return;
+
+            const thumbs = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.AnhPhu));
+            let startIndex = 0;
+
+            if (thumbs.length <= 6) return; // Không cần xoay nếu <=6 ảnh
+
+            setInterval(() => {
+                startIndex = (startIndex + 1) % thumbs.length;
+
+                // Xoay 6 ảnh
+                let newThumbs = [];
+                for (let i = 0; i < 6; i++) {
+                    newThumbs.push(thumbs[(startIndex + i) % thumbs.length]);
+                }
+
+                thumbContainer.innerHTML = '';
+                newThumbs.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.className = 'thumb-image';
+                    img.onclick = () => document.getElementById('mainImage').src = src;
+                    thumbContainer.appendChild(img);
+                });
+            }, 3000); // 3 giây đổi ảnh
+        })();
+    </script>
+}

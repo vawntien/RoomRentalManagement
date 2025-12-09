@@ -42,5 +42,30 @@ namespace AdminApp.model.MKhach
 
             return lstKhach;
         }
+
+        public bool EditKhach(Khach k)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter(ConnectionModel.execKhach, ConnectionModel.strcnn);
+            DataSet ds = new DataSet();
+
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+
+            adapter.Fill(ds, "KHACHTHUE");
+            foreach (DataRow d in ds.Tables["KHACHTHUE"].Rows)
+            {
+                if (int.Parse(d["MaKhach"].ToString()) == k.MaKhach)
+                {
+                    d["HoTen"] = k.HoTen;
+                    d["CCCD"] = k.CCCD;
+                    d["SoDT"] = k.SoDT;
+                    d["Email"] = k.Email;
+                    d["DiaChi"] = k.DiaChi;
+                    d["NgaySinh"] = k.NgaySinh;
+                    break;
+                }
+            }
+            int r = adapter.Update(ds, "KHACHTHUE");
+            return r > 0;
+        }
     }
 }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomManagement));
             this.grbRoom = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnLuu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnIn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnXoaPhong = new Guna.UI2.WinForms.Guna2GradientButton();
             this.imgbtnFI4 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -59,8 +61,7 @@
             this.lblSoPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvPhong = new System.Windows.Forms.DataGridView();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnLuu = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.lblTrangThai = new System.Windows.Forms.Label();
             this.grbRoom.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhong)).BeginInit();
@@ -69,6 +70,7 @@
             // 
             // grbRoom
             // 
+            this.grbRoom.Controls.Add(this.lblTrangThai);
             this.grbRoom.Controls.Add(this.guna2GradientButton2);
             this.grbRoom.Controls.Add(this.btnLuu);
             this.grbRoom.Controls.Add(this.btnIn);
@@ -90,6 +92,54 @@
             this.grbRoom.Size = new System.Drawing.Size(1303, 500);
             this.grbRoom.TabIndex = 2;
             this.grbRoom.Click += new System.EventHandler(this.grbRoom_Click);
+            // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.AutoRoundedCorners = true;
+            this.guna2GradientButton2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButton2.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.guna2GradientButton2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.Teal;
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton2.Image")));
+            this.guna2GradientButton2.ImageOffset = new System.Drawing.Point(0, 1);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(132, 147);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.Size = new System.Drawing.Size(202, 202);
+            this.guna2GradientButton2.TabIndex = 61;
+            this.guna2GradientButton2.Text = "Thêm ảnh";
+            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.AutoRoundedCorners = true;
+            this.btnLuu.BackColor = System.Drawing.Color.Transparent;
+            this.btnLuu.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.btnLuu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLuu.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLuu.FillColor = System.Drawing.Color.Teal;
+            this.btnLuu.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.ImageOffset = new System.Drawing.Point(-1, 1);
+            this.btnLuu.Location = new System.Drawing.Point(1082, 410);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(155, 45);
+            this.btnLuu.TabIndex = 61;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnIn
             // 
@@ -593,53 +643,17 @@
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // guna2GradientButton2
+            // lblTrangThai
             // 
-            this.guna2GradientButton2.AutoRoundedCorners = true;
-            this.guna2GradientButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton2.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.guna2GradientButton2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.Teal;
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton2.Image")));
-            this.guna2GradientButton2.ImageOffset = new System.Drawing.Point(0, 1);
-            this.guna2GradientButton2.Location = new System.Drawing.Point(132, 147);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.Size = new System.Drawing.Size(202, 202);
-            this.guna2GradientButton2.TabIndex = 61;
-            this.guna2GradientButton2.Text = "Thêm ảnh";
-            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.AutoRoundedCorners = true;
-            this.btnLuu.BackColor = System.Drawing.Color.Transparent;
-            this.btnLuu.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.btnLuu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLuu.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.FillColor = System.Drawing.Color.Teal;
-            this.btnLuu.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.ImageOffset = new System.Drawing.Point(-1, 1);
-            this.btnLuu.Location = new System.Drawing.Point(1082, 410);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(155, 45);
-            this.btnLuu.TabIndex = 61;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.lblTrangThai.AutoSize = true;
+            this.lblTrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.lblTrangThai.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTrangThai.ForeColor = System.Drawing.Color.Teal;
+            this.lblTrangThai.Location = new System.Drawing.Point(105, 9);
+            this.lblTrangThai.Name = "lblTrangThai";
+            this.lblTrangThai.Size = new System.Drawing.Size(74, 24);
+            this.lblTrangThai.TabIndex = 51;
+            this.lblTrangThai.Text = "trạng thái";
             // 
             // RoomManagement
             // 
@@ -697,5 +711,6 @@
         private Guna.UI2.WinForms.Guna2ImageButton imgbtnFI4;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
         private Guna.UI2.WinForms.Guna2GradientButton btnLuu;
+        private System.Windows.Forms.Label lblTrangThai;
     }
 }

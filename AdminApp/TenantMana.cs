@@ -23,16 +23,37 @@ namespace AdminApp
             dgvKhachThue.DataSource = null;
 
             dgvKhachThue.DataSource = dsk.getAllKhach();
+            load();
         }
         public TenantMana()
         {
             InitializeComponent();
         }
 
+        void load()
+        {
+            txtMaKhach.Enabled= false;
+            txtTenKhach.Enabled= false;
+            txtCCCD.Enabled= false;
+            txtSDT.Enabled= false;
+            txtEmail.Enabled= false;
+            txtDiaChi.Enabled= false;
+            txtNgaySinh.Enabled= false;
+            txtNgayTao.Enabled= false;
+            btnCTiet.Enabled= false;
+            btnLuu.Enabled= false;
+        }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            txtTenKhach.Enabled = true;
+            txtCCCD.Enabled = true;
+            txtSDT.Enabled = true;
+            txtEmail.Enabled = true;
+            txtDiaChi.Enabled = true;
+            txtNgaySinh.Enabled = true;
+            btnLuu.Enabled = true;
+            
         }
         public void StyleDataGrid_KhachHang(DataGridView dgv)
         {
@@ -127,11 +148,44 @@ namespace AdminApp
             txtDiaChi.Text = r.Cells["DiaChi"].Value.ToString();
             txtNgaySinh.Text = r.Cells["NgaySinh"].Value.ToString();
             txtNgayTao.Text = r.Cells["NgayTao"].Value.ToString();
+            btnCTiet.Enabled = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvKhachThue_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            btnCTiet.Enabled = false;
+            btnLuu.Enabled = false;
+            Khach k = new Khach();
+            k.MaKhach = int.Parse( txtMaKhach.Text);
+            k.HoTen = txtTenKhach.Text;
+            k.CCCD = txtCCCD.Text;
+            k.SoDT = txtSDT.Text;
+            k.Email = txtEmail.Text;
+            k.DiaChi = txtDiaChi.Text;
+            k.NgaySinh = txtNgaySinh.Text;
+            if (dsk.EditKhach(k))
+            {
+                MessageBox.Show("Cập nhật thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật không thành công!");
+            }
         }
     }
 

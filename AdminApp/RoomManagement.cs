@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -102,6 +103,7 @@ namespace AdminApp
             lblTinhTrang.Visible = false;
             lblSoNguoiToiDa.Visible = false;
             lblMoTa.Visible = false;
+            lblTrangThai.Visible = false;
         }
 
         void showlbl()
@@ -462,6 +464,10 @@ namespace AdminApp
             txtTinhTrang.Text = r.Cells["TinhTrang"].Value.ToString();
             txtSoNguoiToiDa.Text = r.Cells["SoNguoiToiDa"].Value.ToString();
             txtMoTa.Text = r.Cells["MoTaChiTiet"].Value.ToString();
+
+            lblTrangThai.Visible=true;
+            lblTrangThai.Text = r.Cells["TinhTrang"].Value.ToString();
+
         }
 
         private void pbPhong_Click(object sender, EventArgs e)
@@ -767,18 +773,31 @@ namespace AdminApp
 
         private void DeleteRoomImages(string maPhong)
         {
-            // Lấy số phòng từ P022 → 22
             int soPhong = int.Parse(maPhong.Substring(1));
             string folderName = "room" + soPhong;
 
             string folderPath = Path.Combine(Application.StartupPath,
                 "Resources", "ImagesRooms", folderName);
 
-            if (Directory.Exists(folderPath))
+            //if (Directory.Exists(folderPath))
+            //    Directory.Delete(folderPath, true);
+        }
+
+
+
+        internal void DeleteImagesByRoom(string maPhong)
+        {
+            string sql = "DELETE FROM AnhPhong WHERE MaPhong = @MaPhong";
+            using (SqlConnection conn = new SqlConnection(ConnectionModel.strcnn))
             {
-                Directory.Delete(folderPath, true);  // xóa cả folder + file trong đó
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@MaPhong", maPhong);
+                cmd.ExecuteNonQuery();
             }
         }
+
+
 
 
         private void btnXoaPhong_Click(object sender, EventArgs e)

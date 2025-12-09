@@ -72,21 +72,23 @@
                     var action = ViewContext.RouteData.Values["action"]?.ToString();
                 }
 
-                <ul class="header-nav-lists">
-                    <li class="header-nav-list">
-                        <a class="header-nav-link @(controller == "Home" && action == "Index" ? "header-active" : "")" href="@Url.Action("Index", "Home")">Home</a>
-                    </li>
-                    <li class="header-nav-list">
-                        <a class="header-nav-link @(controller == "Room" ? "header-active" : "")" href="@Url.Action("Index", "Room")">Rooms and Suites</a>
-                    </li>
-                    <li class="header-nav-list">
-                        <a class="header-nav-link @(controller == "Home" && action == "Facilities" ? "header-active" : "")" href="@Url.Action("Facilities", "Home")">Facilities</a>
-                    </li>
-                    <li class="header-nav-list">
-                        <a class="header-nav-link @(controller == "Home" && action == "Contact" ? "header-active" : "")" href="@Url.Action("Contact", "Home")">Contact Us</a>
-                    </li>
-                    <li class="header-nav-list"><a class="header-btn header-btn-custom" href="https://timbu.com/search?query=hotel">BOOK NOW</a></li>
-                </ul>
+            <ul class="header-nav-lists">
+                <li class="header-nav-list">
+                    <a class="header-nav-link @(controller == "Home" && action == "Index" ? "header-active" : "")" href="@Url.Action("Index", "Home")">Home</a>
+                </li>
+                <li class="header-nav-list">
+                    <a class="header-nav-link @(controller == "Room" ? "header-active" : "")" href="@Url.Action("Index", "Room")">Rooms and Suites</a>
+                </li>
+                <li class="header-nav-list">
+                    <a class="header-nav-link @(controller == "Home" && action == "Facilities" ? "header-active" : "")" href="@Url.Action("Facilities", "Home")">Facilities</a>
+                </li>
+                <li class="header-nav-list">
+                    <a class="header-nav-link @(controller == "Home" && action == "Contact" ? "header-active" : "")" href="@Url.Action("Contact", "Home")">Contact Us</a>
+                </li>
+
+                @Html.Partial("_LoginPartial")
+
+            </ul>
 
                 <div class="header-hamburger-icon">
                     <div class="header-hamburger-line-1"></div>

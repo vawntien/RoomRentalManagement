@@ -1,0 +1,52 @@
+﻿@model WEB_NEt.Models.LoginViewModel
+@{
+    ViewBag.Title = "Đăng nhập";
+}
+
+<h2 class="text-center">Đăng nhập</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success text-center">
+                @TempData["Success"]
+            </div>
+        }
+
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class.form-group mb-3">
+                    @Html.LabelFor(m => m.TaiKhoan, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.TaiKhoan, new { @class = "form-control", placeholder = "Tên đăng nhập" })
+                    @Html.ValidationMessageFor(m => m.TaiKhoan, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.MatKhau, new { @class = "control-label" })
+                    @Html.PasswordFor(m => m.MatKhau, new { @class = "form-control", placeholder = "Mật khẩu" })
+                    @Html.ValidationMessageFor(m => m.MatKhau, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group mb-3 text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Đăng nhập</button>
+                </div>
+
+                <p class="text-center">
+                    @Html.ActionLink("Chưa có tài khoản? Đăng ký ngay", "Register")
+                </p>
+            }
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

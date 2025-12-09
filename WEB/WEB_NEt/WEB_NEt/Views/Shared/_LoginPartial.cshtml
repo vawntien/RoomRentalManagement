@@ -1,0 +1,24 @@
+﻿
+@if (Session["UserAccount"] != null)
+{
+    <li class="header-nav-list">
+        @Html.ActionLink("Xin chào, " + Session["UserName"], "MyRooms", "Account", routeValues: null, htmlAttributes: new { @class = "header-nav-link" })
+    </li>
+    <li class="header-nav-list">
+
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", style = "display: contents;" }))
+        {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()" class="header-nav-link">Đăng xuất</a>
+        }
+    </li>
+}
+else
+{
+    <li class="header-nav-list">
+        @Html.ActionLink("Đăng ký", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "header-nav-link" })
+    </li>
+    <li class="header-nav-list">
+        @Html.ActionLink("Đăng nhập", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "header-nav-link" })
+    </li>
+}

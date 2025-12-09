@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,9 +42,16 @@
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnVolume = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.pcbCauTruc = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pcbVew = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCauTruc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVew)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2PictureBox2
@@ -113,9 +121,9 @@
             this.picbxChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picbxChart.Image = ((System.Drawing.Image)(resources.GetObject("picbxChart.Image")));
             this.picbxChart.ImageRotate = 0F;
-            this.picbxChart.Location = new System.Drawing.Point(35, 119);
+            this.picbxChart.Location = new System.Drawing.Point(120, 92);
             this.picbxChart.Name = "picbxChart";
-            this.picbxChart.Size = new System.Drawing.Size(884, 295);
+            this.picbxChart.Size = new System.Drawing.Size(1064, 357);
             this.picbxChart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picbxChart.TabIndex = 0;
             this.picbxChart.TabStop = false;
@@ -147,7 +155,7 @@
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(1118, 93);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(1106, 54);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(173, 159);
@@ -214,12 +222,69 @@
             this.guna2CircleButton2.TabIndex = 24;
             this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click_2);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Black;
+            this.lblDate.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblDate.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblDate.Location = new System.Drawing.Point(1025, 21);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(124, 22);
+            this.lblDate.TabIndex = 25;
+            this.lblDate.Text = "APPRVAL REQUEST: ";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.Color.Black;
+            this.lblTime.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lblTime.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblTime.Location = new System.Drawing.Point(1155, 21);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(124, 22);
+            this.lblTime.TabIndex = 26;
+            this.lblTime.Text = "APPRVAL REQUEST: ";
+            // 
+            // pcbCauTruc
+            // 
+            this.pcbCauTruc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pcbCauTruc.Image = ((System.Drawing.Image)(resources.GetObject("pcbCauTruc.Image")));
+            this.pcbCauTruc.ImageRotate = 0F;
+            this.pcbCauTruc.Location = new System.Drawing.Point(104, 485);
+            this.pcbCauTruc.Name = "pcbCauTruc";
+            this.pcbCauTruc.Size = new System.Drawing.Size(561, 313);
+            this.pcbCauTruc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbCauTruc.TabIndex = 27;
+            this.pcbCauTruc.TabStop = false;
+            // 
+            // pcbVew
+            // 
+            this.pcbVew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pcbVew.Image = ((System.Drawing.Image)(resources.GetObject("pcbVew.Image")));
+            this.pcbVew.ImageRotate = 0F;
+            this.pcbVew.Location = new System.Drawing.Point(768, 485);
+            this.pcbVew.Name = "pcbVew";
+            this.pcbVew.Size = new System.Drawing.Size(416, 313);
+            this.pcbVew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbVew.TabIndex = 28;
+            this.pcbVew.TabStop = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1303, 819);
+            this.Controls.Add(this.pcbVew);
+            this.Controls.Add(this.pcbCauTruc);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.guna2CircleButton2);
             this.Controls.Add(this.btnVolume);
             this.Controls.Add(this.guna2CircleButton1);
@@ -240,6 +305,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCauTruc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVew)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +325,10 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2CircleButton btnVolume;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTime;
+        private Guna.UI2.WinForms.Guna2PictureBox pcbCauTruc;
+        private Guna.UI2.WinForms.Guna2PictureBox pcbVew;
     }
 }

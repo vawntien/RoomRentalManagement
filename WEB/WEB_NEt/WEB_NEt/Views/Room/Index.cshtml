@@ -1,119 +1,187 @@
-﻿@{
-    ViewData["Title"] = "Rooms and Suites";
-}
+﻿@model List<WEB_NEt.Models.RoomViewModel>
 
 @section Styles {
     <link rel="stylesheet" href="@Url.Content("~/assets/css/rooms-and-suites.css")">
+    <style>
+        .rooms {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+            .rooms:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            }
+
+        .rooms-img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .rooms h3 {
+            font-size: 18px;
+            line-height: 1.2;
+            height: 2.4em; /* giới hạn 2 dòng */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .btn-room {
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .details-container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+            .details-container .list-icon {
+                width: 16px;
+                height: 16px;
+            }
+
+            .details-container .list-text {
+                margin: 0;
+                font-size: 14px;
+            }
+
+        /* Phân trang */
+        .pagination-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+            .pagination-container a {
+                padding: 6px 12px;
+                background: #d4c16d;
+                color: black;
+                border-radius: 6px;
+                text-decoration: none;
+                transition: 0.2s;
+            }
+        .room-actions {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between; /* hai nút nằm hai bên */
+            gap: 10px;
+        }
+
+        .btn-room-action {
+            flex: 1; /* mỗi nút chiếm 50% */
+            text-align: center;
+        }
+
+                .pagination-container a.active {
+                    background: #b59e3a;
+                    font-weight: bold;
+                    color: #fff;
+                }
+
+                .pagination-container a:hover {
+                    background: #b59e3a;
+                    color: white;
+                }
+    </style>
 }
 
 <div class="container">
-    <div class="page-header-container">
-    </div>
 
-    <section class="special-offers">
-        <div class="row center-lg">
-            <div class="col image-col right-marg">
-                <img src="@Url.Content("~/assets/img/hotel-1.webp")" alt="room-image" class="small-image">
-                <img src="@Url.Content("~/assets/img/hotel-2.webp")" alt="room-image" class="small-image">
-                <img src="@Url.Content("~/assets/img/hotel-3.webp")" alt="room-image" class="small-image">
-                <div class="side-by-side-container">
-                    <div class="large-image-container">
-                        <img src="@Url.Content("~/assets/img/hotel-4-large.webp")" alt="room-image-large" class="large-image">
-                    </div>
-                    <section class="stacked-image-container">
-                        <div><img src="@Url.Content("~/assets/img/hotel-5.webp")" alt="room-image" class="small-image"></div>
-                        <div><img src="@Url.Content("~/assets/img/hotel-6.webp")" alt="room-image" class="small-image"></div>
-                    </section>
-                </div>
-            </div>
-            <div class="col">
-                <h3 class="offers-title">Special Offers</h3>
-                <ul class="offers-list">
-                    <li>
-                        <div>
-                            <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
-                            <p class="list-text">Free Wi-Fi Service</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
-                            <p class="list-text">Best Rate Guarantee</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
-                            <p class="list-text">Free DSTV Access</p>
-                        </div>
-                    </li>
-                </ul>
-                <a href="#" class="btn btn-fill btn-large">View More</a>
-            </div>
+    <h2 class="offers-title">Danh sách phòng cho thuê</h2>
+
+    <!-- Form lọc và tìm kiếm -->
+    <form method="get" class="row g-3 mb-4">
+        <div class="col-md-4">
+            <input type="text" name="keyword" value="@ViewBag.Keyword" class="form-control" placeholder="Tìm theo tên phòng hoặc địa chỉ">
         </div>
-    </section>
+        <div class="col-md-4">
+            <select name="loaiphong" class="form-select">
+                <option value="">-- Chọn loại phòng --</option>
+                @foreach (var lp in ViewBag.LoaiPhongList as List<string>)
+                {
+                    <option value="@lp" @(lp == ViewBag.SelectedLoaiPhong ? "selected" : "")>@lp</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary w-100">Lọc / Tìm kiếm</button>
+        </div>
+    </form>
 
     <section class="rooms-section">
         <div class="row center-lg">
-            <div class="rooms col col-2">
-                <img src="https://res.cloudinary.com/start-ng/image/upload/v1591638448/Rectangle_42_nastdj.png"
-                     alt="" class="rooms-img">
-                <div>
-                    <div class="details-container">
-                        <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
-                        <p class="list-text">2 Persons</p>
-                    </div>
-                    <div class="details-container">
-                        <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
-                        <p class="list-text">1 Kingsize bed</p>
-                    </div>
-                </div>
-            </div>
-            <div class="rooms col col-2">
-                <img src="https://res.cloudinary.com/start-ng/image/upload/v1591638449/Rectangle_43_d9eepu.png"
-                     alt="" class="rooms-img">
-                <div>
-                    <div class="details-container">
-                        <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
-                        <p class="list-text">2 Persons</p>
-                    </div>
-                    <div class="details-container">
-                        <img src="@Url.Content("~/assets/img/bed.png")" alt="tick" class="list-icon">
-                        <p class="list-text">1 Kingsize bed</p>
-                    </div>
-                </div>
-            </div>
-            <div class="rooms col col-2">
-                <img src="https://res.cloudinary.com/start-ng/image/upload/v1591638448/Rectangle_44_anerdv.png"
-                     alt="" class="rooms-img">
-                <div>
-                    <div class="details-container">
-                        <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
-                        <p class="list-text">2 Persons</p>
-                    </div>
-                    <div class="details-container">
-                        <img src="@Url.Content("~/assets/img/bed.png")" alt="tick" class="list-icon">
-                        <p class="list-text">1 Kingsize bed</p>
-                    </div>
-                </div>
-            </div>
-            <div class="rooms col col-2">
-                <img src="https://res.cloudinary.com/start-ng/image/upload/v1591638449/Rectangle_45_mtl458.png"
-                     alt="" class="rooms-img">
-                <div>
-                    <div class="details-container">
-                        <img src="@Url.Content("~/assets/img/check-square.svg")" alt="tick" class="list-icon">
-                        <p class="list-text">2 Persons</p>
-                    </div>
-                    <div class="details-container">
-                        <img src="@Url.Content("~/assets/img/bed.png")" alt="tick" class="list-icon">
-                        <p class="list-text">1 Kingsize bed</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
+            @foreach (var room in Model)
+            {
+                <div class="rooms col col-2">
+
+                    <!-- Ảnh chính -->
+                    <img src="@room.AnhChinh"
+                         alt="room-main-image"
+                         class="rooms-img">
+
+                    <div style="margin-top:10px">
+                        <h3>@room.Phong.TenPhong</h3>
+
+                        <div class="details-container">
+                            <img src="@Url.Content("~/assets/img/check-square.svg")" class="list-icon">
+                            <p class="list-text">Diện tích: @room.Phong.DienTich m²</p>
+                        </div>
+
+                        <div class="details-container">
+                            <img src="@Url.Content("~/assets/img/check-square.svg")" class="list-icon">
+                            <p class="list-text">Giá: @string.Format("{0:N0}", room.Phong.GiaPhong) VNĐ</p>
+                        </div>
+
+                        <div class="details-container">
+                            <img src="@Url.Content("~/assets/img/check-square.svg")" class="list-icon">
+                            <p class="list-text">Tình trạng: @room.Phong.TinhTrang</p>
+                        </div>
+
+                        @* Sửa lỗi Any() *@
+
+
+                    <div class="room-actions">
+                        <a href="@Url.Action("Details", "Room", new { id = room.Phong.MaPhong })" class="btn btn-fill btn-room-action">
+                            Xem chi tiết
+                        </a>
+
+                        <a href="@Url.Action("CreateBooking", "HopDongs", new { id = room.Phong.MaPhong })" class="btn btn-fill btn-room-action">
+                            Đặt phòng
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- PHÂN TRANG -->
+        <div class="pagination-container">
+            @{
+                int totalPages = ViewBag.TotalPages;
+                int currentPage = ViewBag.CurrentPage;
+            }
+
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <a class="@(i == currentPage ? "active" : "")"
+                   href="@Url.Action("Index", new { page = i, keyword = ViewBag.Keyword, loaiphong = ViewBag.SelectedLoaiPhong })">@i</a>
+            }
+        </div>
+
+    </section>
 </div>
 
 @section Scripts {

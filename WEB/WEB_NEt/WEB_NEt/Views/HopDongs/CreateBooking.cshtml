@@ -1,0 +1,143 @@
+﻿@model WEB_NEt.Models.HopDongViewModel
+
+@{
+    ViewBag.Title = "Đặt phòng";
+    var today = DateTime.Now.ToString("yyyy-MM-dd");
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success text-center">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger text-center">
+        @TempData["Error"]
+    </div>
+}
+
+<h2 class="text-center mb-4">Đặt phòng mới</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="card p-3 mb-3">
+        <h4>Thông tin khách thuê</h4>
+        <div class="row g-3">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Khach.HoTen)
+                @Html.TextBoxFor(m => m.Khach.HoTen, new { @class = "form-control", placeholder = "Họ và tên" })
+                @Html.ValidationMessageFor(m => m.Khach.HoTen, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Khach.CCCD)
+                @Html.TextBoxFor(m => m.Khach.CCCD, new { @class = "form-control", placeholder = "CCCD/CMND" })
+                @Html.ValidationMessageFor(m => m.Khach.CCCD, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Khach.SoDT)
+                @Html.TextBoxFor(m => m.Khach.SoDT, new { @class = "form-control", placeholder = "Số điện thoại" })
+                @Html.ValidationMessageFor(m => m.Khach.SoDT, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Khach.Email)
+                @Html.TextBoxFor(m => m.Khach.Email, new { @class = "form-control", placeholder = "Email" })
+                @Html.ValidationMessageFor(m => m.Khach.Email, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-12">
+                @Html.LabelFor(m => m.Khach.DiaChi)
+                @Html.TextBoxFor(m => m.Khach.DiaChi, new { @class = "form-control", placeholder = "Địa chỉ" })
+                @Html.ValidationMessageFor(m => m.Khach.DiaChi, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Khach.NgaySinh)
+                @Html.TextBoxFor(m => m.Khach.NgaySinh, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Khach.NgaySinh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="card p-3 mb-3">
+        <h4>Thông tin hợp đồng</h4>
+
+        <div class="form-group mb-3">
+            <label>Phòng:</label>
+            <input type="text" class="form-control" value="@ViewBag.PhongName" disabled />
+            @Html.HiddenFor(m => m.HopDong.MaPhong)  @* Lưu id phòng để POST *@
+        </div>
+
+        <div class="row g-3">
+
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.HopDong.NgayBatDau, "Ngày bắt đầu")
+                @Html.TextBoxFor(m => m.HopDong.NgayBatDau, "{0:yyyy-MM-dd}", new { type = "date", min = today, @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.HopDong.NgayBatDau, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.HopDong.NgayKetThuc, "Ngày kết thúc (có thể để trống)")
+                @Html.TextBoxFor(m => m.HopDong.NgayKetThuc, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.HopDong.NgayKetThuc, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.HopDong.TienCoc, "Tiền cọc (tối thiểu 2 triệu)")
+                @Html.TextBoxFor(m => m.HopDong.TienCoc, new { type = "number", min = "2000000", step = "100000", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.HopDong.TienCoc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label>Dịch vụ kèm theo:</label>
+            <div class="row row-cols-1 row-cols-md-3 g-3 mt-2">
+                @foreach (var dv in ViewBag.DichVuList)
+                {
+                    <div class="col">
+                        <div class="service-item p-2 border rounded text-center" data-id="@dv.MaDV">
+                            <strong>@dv.TenDV</strong> <br /> @dv.DonGia.ToString("N0") @dv.DonViTinh
+                            <input type="hidden" name="SelectedDV" value="@dv.MaDV" disabled />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-success btn-lg mt-3">Đặt phòng</button>
+    </div>
+}
+
+<style>
+    .service-item {
+        cursor: pointer;
+        transition: all 0.2s;
+        user-select: none;
+    }
+
+        .service-item.selected {
+            background-color: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+
+        .service-item:hover {
+            transform: scale(1.03);
+        }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".service-item").forEach(function (item) {
+            item.addEventListener("click", function () {
+                const input = item.querySelector("input[type=hidden]");
+                item.classList.toggle("selected");
+                input.disabled = !input.disabled;
+            });
+        });
+    });
+</script>

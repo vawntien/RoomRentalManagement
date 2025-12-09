@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
@@ -54,6 +61,8 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -125,10 +134,76 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HopDongsController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AnhPhong.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietHD.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChuPhong.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DichVu.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GhiSoDienNuoc.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HoaDon.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HopDong.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HopDongDichVu.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HopDongViewModel.cs" />
+    <Compile Include="Models\KhachThue.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LichSuHopDong.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\NguoiDung.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhanHoiDanhGia.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Phong.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLPhongTro.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLPhongTro.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLPhongTro.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLPhongTro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLPhongTro.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuanLyPhong.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\RoomViewModel.cs" />
+    <Compile Include="Models\SuCoBaoTri.cs">
+      <DependentUpon>QLPhongTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -172,9 +247,214 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="dataphong\room10\Hinh1.jpg" />
+    <Content Include="dataphong\room10\Hinh10.jpg" />
+    <Content Include="dataphong\room10\Hinh11.jpg" />
+    <Content Include="dataphong\room10\Hinh2.jpg" />
+    <Content Include="dataphong\room10\Hinh3.jpg" />
+    <Content Include="dataphong\room10\Hinh4.jpg" />
+    <Content Include="dataphong\room10\Hinh5.jpg" />
+    <Content Include="dataphong\room10\Hinh6.jpg" />
+    <Content Include="dataphong\room10\Hinh7.jpg" />
+    <Content Include="dataphong\room10\Hinh8.jpg" />
+    <Content Include="dataphong\room10\Hinh9.jpg" />
+    <Content Include="dataphong\room10\thongtin10.txt" />
+    <Content Include="dataphong\room11\Hinh1.jpg" />
+    <Content Include="dataphong\room11\Hinh10.jpg" />
+    <Content Include="dataphong\room11\Hinh11.jpg" />
+    <Content Include="dataphong\room11\Hinh2.jpg" />
+    <Content Include="dataphong\room11\Hinh3.jpg" />
+    <Content Include="dataphong\room11\Hinh4.jpg" />
+    <Content Include="dataphong\room11\Hinh5.jpg" />
+    <Content Include="dataphong\room11\Hinh6.jpg" />
+    <Content Include="dataphong\room11\Hinh7.jpg" />
+    <Content Include="dataphong\room11\Hinh8.jpg" />
+    <Content Include="dataphong\room11\Hinh9.jpg" />
+    <Content Include="dataphong\room11\thongtin11.txt" />
+    <Content Include="dataphong\room12\Hinh1.jpg" />
+    <Content Include="dataphong\room12\Hinh2.jpg" />
+    <Content Include="dataphong\room12\Hinh3.jpg" />
+    <Content Include="dataphong\room12\Hinh4.jpg" />
+    <Content Include="dataphong\room12\Hinh5.jpg" />
+    <Content Include="dataphong\room12\Hinh6.jpg" />
+    <Content Include="dataphong\room12\Hinh7.jpg" />
+    <Content Include="dataphong\room12\Hinh8.jpg" />
+    <Content Include="dataphong\room12\thongtin12.txt" />
+    <Content Include="dataphong\room13\Hinh1.jpg" />
+    <Content Include="dataphong\room13\Hinh2.jpg" />
+    <Content Include="dataphong\room13\Hinh3.jpg" />
+    <Content Include="dataphong\room13\Hinh4.jpg" />
+    <Content Include="dataphong\room13\Hinh5.jpg" />
+    <Content Include="dataphong\room13\Hinh6.jpg" />
+    <Content Include="dataphong\room13\Hinh7.jpg" />
+    <Content Include="dataphong\room13\Hinh8.jpg" />
+    <Content Include="dataphong\room13\Hinh9.jpg" />
+    <Content Include="dataphong\room13\thongtin13.txt" />
+    <Content Include="dataphong\room14\Hinh1.jpg" />
+    <Content Include="dataphong\room14\Hinh2.jpg" />
+    <Content Include="dataphong\room14\Hinh3.jpg" />
+    <Content Include="dataphong\room14\Hinh4.jpg" />
+    <Content Include="dataphong\room14\Hinh5.jpg" />
+    <Content Include="dataphong\room14\Hinh6.jpg" />
+    <Content Include="dataphong\room14\Hinh7.jpg" />
+    <Content Include="dataphong\room14\Hinh8.jpg" />
+    <Content Include="dataphong\room14\thong tin14.txt" />
+    <Content Include="dataphong\room15\Hinh1.jpg" />
+    <Content Include="dataphong\room15\Hinh2.jpg" />
+    <Content Include="dataphong\room15\Hinh3.jpg" />
+    <Content Include="dataphong\room15\Hinh4.jpg" />
+    <Content Include="dataphong\room15\Hinh5.jpg" />
+    <Content Include="dataphong\room15\Hinh6.jpg" />
+    <Content Include="dataphong\room15\Hinh7.jpg" />
+    <Content Include="dataphong\room15\Hinh8.jpg" />
+    <Content Include="dataphong\room15\thong tin15.txt" />
+    <Content Include="dataphong\room16\Hinh1.jpg" />
+    <Content Include="dataphong\room16\Hinh2.jpg" />
+    <Content Include="dataphong\room16\Hinh3.jpg" />
+    <Content Include="dataphong\room16\Hinh4.jpg" />
+    <Content Include="dataphong\room16\Hinh5.jpg" />
+    <Content Include="dataphong\room16\Hinh6.jpg" />
+    <Content Include="dataphong\room16\thong tin16.txt" />
+    <Content Include="dataphong\room17\Hinh1.jpg" />
+    <Content Include="dataphong\room17\Hinh10.jpg" />
+    <Content Include="dataphong\room17\Hinh2.jpg" />
+    <Content Include="dataphong\room17\Hinh3.jpg" />
+    <Content Include="dataphong\room17\Hinh4.jpg" />
+    <Content Include="dataphong\room17\Hinh5.jpg" />
+    <Content Include="dataphong\room17\Hinh6.jpg" />
+    <Content Include="dataphong\room17\Hinh7.jpg" />
+    <Content Include="dataphong\room17\Hinh8.jpg" />
+    <Content Include="dataphong\room17\Hinh9.jpg" />
+    <Content Include="dataphong\room17\thongtin17.txt" />
+    <Content Include="dataphong\room18\Hinh1.jpg" />
+    <Content Include="dataphong\room18\Hinh2.jpg" />
+    <Content Include="dataphong\room18\Hinh3.jpg" />
+    <Content Include="dataphong\room18\Hinh4.jpg" />
+    <Content Include="dataphong\room18\thongtin18.txt" />
+    <Content Include="dataphong\room19\Hinh1.jpg" />
+    <Content Include="dataphong\room19\Hinh2.jpg" />
+    <Content Include="dataphong\room19\Hinh3.jpg" />
+    <Content Include="dataphong\room19\Hinh4.jpg" />
+    <Content Include="dataphong\room19\Hinh5.jpg" />
+    <Content Include="dataphong\room19\Hinh6.jpg" />
+    <Content Include="dataphong\room19\thongtin19.txt" />
+    <Content Include="dataphong\room1\Hinh1.jpg" />
+    <Content Include="dataphong\room1\Hinh10.jpg" />
+    <Content Include="dataphong\room1\Hinh2.jpg" />
+    <Content Include="dataphong\room1\Hinh3.jpg" />
+    <Content Include="dataphong\room1\Hinh4.jpg" />
+    <Content Include="dataphong\room1\Hinh5.jpg" />
+    <Content Include="dataphong\room1\Hinh6.jpg" />
+    <Content Include="dataphong\room1\Hinh7.jpg" />
+    <Content Include="dataphong\room1\Hinh8.jpg" />
+    <Content Include="dataphong\room1\Hinh9.jpg" />
+    <Content Include="dataphong\room1\thongtin1.txt" />
+    <Content Include="dataphong\room20\Hinh1.jpg" />
+    <Content Include="dataphong\room20\Hinh2.jpg" />
+    <Content Include="dataphong\room20\Hinh3.jpg" />
+    <Content Include="dataphong\room20\Hinh4.jpg" />
+    <Content Include="dataphong\room20\Hinh5.jpg" />
+    <Content Include="dataphong\room20\Hinh6.jpg" />
+    <Content Include="dataphong\room20\Hinh7.jpg" />
+    <Content Include="dataphong\room20\Hinh8.jpg" />
+    <Content Include="dataphong\room20\Hinh9.jpg" />
+    <Content Include="dataphong\room20\thongtin20.txt" />
+    <Content Include="dataphong\room2\Hinh1.jpg" />
+    <Content Include="dataphong\room2\Hinh2.jpg" />
+    <Content Include="dataphong\room2\Hinh3.jpg" />
+    <Content Include="dataphong\room2\Hinh4.jpg" />
+    <Content Include="dataphong\room2\Hinh5.jpg" />
+    <Content Include="dataphong\room2\Hinh6.jpg" />
+    <Content Include="dataphong\room2\Hinh7.jpg" />
+    <Content Include="dataphong\room2\Hinh8.jpg" />
+    <Content Include="dataphong\room2\Hinh9.jpg" />
+    <Content Include="dataphong\room2\thongtin2.txt" />
+    <Content Include="dataphong\room3\Hinh1.jpg" />
+    <Content Include="dataphong\room3\Hinh2.jpg" />
+    <Content Include="dataphong\room3\Hinh3.jpg" />
+    <Content Include="dataphong\room3\Hinh4.jpg" />
+    <Content Include="dataphong\room3\Hinh5.jpg" />
+    <Content Include="dataphong\room3\Hinh6.jpg" />
+    <Content Include="dataphong\room3\thongtin3.txt" />
+    <Content Include="dataphong\room4\Hinh1.jpg" />
+    <Content Include="dataphong\room4\Hinh2.jpg" />
+    <Content Include="dataphong\room4\Hinh3.jpg" />
+    <Content Include="dataphong\room4\Hinh4.jpg" />
+    <Content Include="dataphong\room4\Hinh5.jpg" />
+    <Content Include="dataphong\room4\Hinh6.jpg" />
+    <Content Include="dataphong\room4\Hinh7.jpg" />
+    <Content Include="dataphong\room4\Hinh8.jpg" />
+    <Content Include="dataphong\room4\thongtin4.txt" />
+    <Content Include="dataphong\room5\Hinh1.jpg" />
+    <Content Include="dataphong\room5\Hinh10.jpg" />
+    <Content Include="dataphong\room5\Hinh2.jpg" />
+    <Content Include="dataphong\room5\Hinh3.jpg" />
+    <Content Include="dataphong\room5\Hinh4.jpg" />
+    <Content Include="dataphong\room5\Hinh5.jpg" />
+    <Content Include="dataphong\room5\Hinh6.jpg" />
+    <Content Include="dataphong\room5\Hinh7.jpg" />
+    <Content Include="dataphong\room5\Hinh8.jpg" />
+    <Content Include="dataphong\room5\Hinh9.jpg" />
+    <Content Include="dataphong\room5\thongtin5.txt" />
+    <Content Include="dataphong\room6\Hinh1.jpg" />
+    <Content Include="dataphong\room6\Hinh10.jpg" />
+    <Content Include="dataphong\room6\Hinh2.jpg" />
+    <Content Include="dataphong\room6\Hinh3.jpg" />
+    <Content Include="dataphong\room6\Hinh4.jpg" />
+    <Content Include="dataphong\room6\Hinh5.jpg" />
+    <Content Include="dataphong\room6\Hinh6.jpg" />
+    <Content Include="dataphong\room6\Hinh7.jpg" />
+    <Content Include="dataphong\room6\Hinh8.jpg" />
+    <Content Include="dataphong\room6\Hinh9.jpg" />
+    <Content Include="dataphong\room6\thongtin6.txt" />
+    <Content Include="dataphong\room7\Hinh1.jpg" />
+    <Content Include="dataphong\room7\Hinh2.jpg" />
+    <Content Include="dataphong\room7\Hinh3.jpg" />
+    <Content Include="dataphong\room7\Hinh4.jpg" />
+    <Content Include="dataphong\room7\Hinh5.jpg" />
+    <Content Include="dataphong\room7\Hinh6.jpg" />
+    <Content Include="dataphong\room7\Hinh7.jpg" />
+    <Content Include="dataphong\room7\Hinh8.jpg" />
+    <Content Include="dataphong\room7\thongtin7.txt" />
+    <Content Include="dataphong\room8\Hinh1.jpg" />
+    <Content Include="dataphong\room8\Hinh10.jpg" />
+    <Content Include="dataphong\room8\Hinh11.jpg" />
+    <Content Include="dataphong\room8\Hinh12.jpg" />
+    <Content Include="dataphong\room8\Hinh2.jpg" />
+    <Content Include="dataphong\room8\Hinh3.jpg" />
+    <Content Include="dataphong\room8\Hinh4.jpg" />
+    <Content Include="dataphong\room8\Hinh5.jpg" />
+    <Content Include="dataphong\room8\Hinh6.jpg" />
+    <Content Include="dataphong\room8\Hinh7.jpg" />
+    <Content Include="dataphong\room8\Hinh8.jpg" />
+    <Content Include="dataphong\room8\Hinh9.jpg" />
+    <Content Include="dataphong\room8\thongtin8.txt" />
+    <Content Include="dataphong\room9\Hinh1.jpg" />
+    <Content Include="dataphong\room9\Hinh10.jpg" />
+    <Content Include="dataphong\room9\Hinh11.jpg" />
+    <Content Include="dataphong\room9\Hinh12.jpg" />
+    <Content Include="dataphong\room9\Hinh2.jpg" />
+    <Content Include="dataphong\room9\Hinh3.jpg" />
+    <Content Include="dataphong\room9\Hinh4.jpg" />
+    <Content Include="dataphong\room9\Hinh5.jpg" />
+    <Content Include="dataphong\room9\Hinh6.jpg" />
+    <Content Include="dataphong\room9\Hinh7.jpg" />
+    <Content Include="dataphong\room9\Hinh8.jpg" />
+    <Content Include="dataphong\room9\Hinh9.jpg" />
+    <Content Include="dataphong\room9\thongtin9.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\QLPhongTro.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLPhongTro.edmx</DependentUpon>
+      <LastGenOutput>QLPhongTro.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QLPhongTro.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLPhongTro.edmx</DependentUpon>
+      <LastGenOutput>QLPhongTro.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -201,6 +481,13 @@
     <Content Include="assets\img\swimming_pool.webp" />
     <Content Include="assets\img\telephone.webp" />
     <Content Include="assets\img\video link.webp" />
+    <EntityDeploy Include="Models\QLPhongTro.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLPhongTro.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLPhongTro.edmx.diagram">
+      <DependentUpon>QLPhongTro.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -228,10 +515,23 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Room\Index.cshtml" />
     <Content Include="Views\Home\Facilities.cshtml" />
+    <Content Include="Views\Room\Create.cshtml" />
+    <Content Include="Views\Room\Delete.cshtml" />
+    <Content Include="Views\Room\Details.cshtml" />
+    <Content Include="Views\Room\Edit.cshtml" />
+    <Content Include="Views\HopDongs\Create.cshtml" />
+    <Content Include="Views\HopDongs\Delete.cshtml" />
+    <Content Include="Views\HopDongs\Details.cshtml" />
+    <Content Include="Views\HopDongs\Edit.cshtml" />
+    <Content Include="Views\HopDongs\Index.cshtml" />
+    <Content Include="Views\HopDongs\CreateBooking.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\MyRooms.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -259,6 +559,9 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -293,7 +596,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

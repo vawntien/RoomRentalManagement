@@ -18,6 +18,11 @@ namespace AdminApp
         {
             InitializeComponent();
         }
+        void loadbcao()
+        {
+            crystalReportViewer1.ReportSource = new HopDong();
+            crystalReportViewer1.Refresh();
+        }
 
       
         void loaddgvHopDong()
@@ -82,6 +87,18 @@ namespace AdminApp
             StyleGridView_Pro(dgvContact);
 
             loaddgvHopDong();
+
+        }
+
+        private void btnXemBaoCao_Click(object sender, EventArgs e)
+        {
+            //crystalReportViewer1.ReportSource = new HopDong();
+            //crystalReportViewer1.Refresh();
+        }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            loadbcao();
         }
     }
 }

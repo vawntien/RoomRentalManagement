@@ -31,11 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContactMana));
             this.dgvContact = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.btnXem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnIn = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContact)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,12 +62,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvContact.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvContact.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvContact.Location = new System.Drawing.Point(312, 93);
+            this.dgvContact.Location = new System.Drawing.Point(1255, 12);
             this.dgvContact.Name = "dgvContact";
             this.dgvContact.RowHeadersVisible = false;
             this.dgvContact.RowHeadersWidth = 51;
             this.dgvContact.RowTemplate.Height = 24;
-            this.dgvContact.Size = new System.Drawing.Size(991, 585);
+            this.dgvContact.Size = new System.Drawing.Size(36, 21);
             this.dgvContact.TabIndex = 0;
             this.dgvContact.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvContact.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -91,34 +91,56 @@
             this.dgvContact.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvContact.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Panel1.BackgroundImage")));
-            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2Panel1.Location = new System.Drawing.Point(27, 110);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(259, 179);
-            this.guna2Panel1.TabIndex = 1;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Lucida Handwriting", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(68, 40);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(173, 45);
-            this.guna2HtmlLabel1.TabIndex = 2;
-            this.guna2HtmlLabel1.Text = "Hợp đồng";
-            // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Lucida Handwriting", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(550, 23);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(534, 12);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(515, 45);
             this.guna2HtmlLabel2.TabIndex = 3;
             this.guna2HtmlLabel2.Text = "Danh Sach Ban Hop Dong";
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(12, 74);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1279, 733);
+            this.crystalReportViewer1.TabIndex = 4;
+            // 
+            // btnXem
+            // 
+            this.btnXem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXem.FillColor = System.Drawing.Color.Gray;
+            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXem.ForeColor = System.Drawing.Color.White;
+            this.btnXem.Location = new System.Drawing.Point(56, 12);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(135, 45);
+            this.btnXem.TabIndex = 5;
+            this.btnXem.Text = "Xem thống kê";
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
+            // 
+            // btnIn
+            // 
+            this.btnIn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnIn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnIn.FillColor = System.Drawing.Color.Gray;
+            this.btnIn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnIn.ForeColor = System.Drawing.Color.White;
+            this.btnIn.Location = new System.Drawing.Point(215, 12);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(135, 45);
+            this.btnIn.TabIndex = 6;
+            this.btnIn.Text = "In";
             // 
             // ContactMana
             // 
@@ -126,9 +148,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1303, 819);
+            this.Controls.Add(this.btnIn);
+            this.Controls.Add(this.btnXem);
+            this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.guna2HtmlLabel2);
-            this.Controls.Add(this.guna2HtmlLabel1);
-            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dgvContact);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ContactMana";
@@ -144,8 +167,9 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2DataGridView dgvContact;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private Guna.UI2.WinForms.Guna2Button btnXem;
+        private Guna.UI2.WinForms.Guna2Button btnIn;
     }
 }

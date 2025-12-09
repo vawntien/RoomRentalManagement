@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3d1eea221a2d454996d73eea95721ec8" Name="Diagram1" ZoomLevel="90">
+        <EntityTypeShape EntityType="QLPhongTroModel.AnhPhong" Width="1.5" PointX="5.25" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.ChiTietHD" Width="1.5" PointX="9.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.ChuPhong" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.DichVu" Width="1.5" PointX="5.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.GhiSoDienNuoc" Width="1.5" PointX="10.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.HoaDon" Width="1.5" PointX="7.5" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.HopDong" Width="1.5" PointX="5.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.HopDongDichVu" Width="1.5" PointX="7.5" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.KhachThue" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.LichSuHopDong" Width="1.5" PointX="7.5" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.NguoiDung" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.PhanHoiDanhGia" Width="1.5" PointX="5.25" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.Phong" Width="1.5" PointX="3" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.QuanLyPhong" Width="1.5" PointX="8.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongTroModel.SuCoBaoTri" Width="1.5" PointX="7.5" PointY="32.75" IsExpanded="true" />
+        <AssociationConnector Association="QLPhongTroModel.FK_AnhPhong_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_ChiTietHD_DichVu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_ChiTietHD_HoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_HopDong_ChuPhong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_NguoiDung_ChuPhong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_Phong_ChuPhong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_QuanLyPhong_ChuPhong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_GhiSo_DichVu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_HDDV_DichVu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_GhiSo_HopDong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_HoaDon_HopDong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_HDDV_HopDong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_HopDong_KhachThue" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_HopDong_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_LSHD_HopDong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_SuCo_HopDong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_NguoiDung_KhachThue" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_PhanHoi_Khach" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_PhanHoi_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongTroModel.FK_QuanLyPhong_Phong" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

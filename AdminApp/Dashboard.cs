@@ -33,8 +33,9 @@ namespace AdminApp
         private void Dashboard_Load(object sender, EventArgs e)
         {
             picbxChart.Visible = false;
-
-            
+            pcbCauTruc.Visible = false;
+            pcbVew.Visible = false;
+            timer1.Start();
 
 
 
@@ -78,6 +79,8 @@ namespace AdminApp
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
             picbxChart.Visible = true;
+            pcbCauTruc.Visible= true;
+            pcbVew.Visible= true;
         }
 
         private void guna2CircleButton2_Click_1(object sender, EventArgs e)
@@ -106,6 +109,12 @@ namespace AdminApp
             {
                 MessageBox.Show("Không thể mở ứng dụng mail: " + ex.Message);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblDate.Text = DateTime.Now.ToString("dddd, dd/MM/yyyy");
         }
     }
 }

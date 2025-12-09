@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WEB_NEt.Models.HopDong>
+@{
+    ViewBag.Title = "Phòng đã thuê của tôi";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center">Các hợp đồng đang thuê</h2>
+    <hr />
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center">
+            <p>Bạn hiện chưa thuê phòng nào.</p>
+            @Html.ActionLink("Tìm phòng ngay!", "Index", "Room", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var hd in Model)
+            {
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5 class="card-title">@hd.Phong.TenPhong</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Mã Hợp đồng:</strong> @hd.MaHopDong</p>
+                            <p><strong>Trạng thái:</strong> <span class="badge bg-success">@hd.TrangThai</span></p>
+                            <p><strong>Ngày bắt đầu:</strong> @hd.NgayBatDau.ToString("dd/MM/yyyy")</p>
+                            <p><strong>Ngày kết thúc:</strong> @hd.NgayKetThuc.ToString("dd/MM/yyyy")</p>
+                            <p><strong>Tiền cọc:</strong> @hd.TienCoc.Value.ToString("N0") VNĐ</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            @Html.ActionLink("Xem chi tiết phòng", "Details", "Room", new { id = hd.MaPhong }, new { @class = "btn btn-info" })
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
