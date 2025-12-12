@@ -1,5 +1,6 @@
 ﻿using AdminApp.model;
 using AdminApp.model.MPhong;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,10 +9,15 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json.Serialization;
+//using System.Text.Json;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using static System.Windows.Forms.MonthCalendar;
 
 namespace AdminApp
 {
@@ -90,7 +96,7 @@ namespace AdminApp
             txtSoNguoiToiDa.ReadOnly = false;
             txtMoTa.ReadOnly = false;
 
-            
+
         }
 
         void hidelbl()
@@ -217,7 +223,7 @@ namespace AdminApp
 
         }
 
-        
+
 
         void loadthings()
         {
@@ -226,6 +232,9 @@ namespace AdminApp
             hide_bordertext();
             hideimagebtn();
             guna2GradientButton2.Visible = false;
+            btnSuggestt.Visible = false;
+            lblGY.Visible = false;
+            lblPrice.Visible = false;
         }
 
         private void RoomManagement_Load(object sender, EventArgs e)
@@ -465,7 +474,7 @@ namespace AdminApp
             txtSoNguoiToiDa.Text = r.Cells["SoNguoiToiDa"].Value.ToString();
             txtMoTa.Text = r.Cells["MoTaChiTiet"].Value.ToString();
 
-            lblTrangThai.Visible=true;
+            lblTrangThai.Visible = true;
             lblTrangThai.Text = r.Cells["TinhTrang"].Value.ToString();
 
         }
@@ -493,9 +502,10 @@ namespace AdminApp
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
             guna2GradientButton2.Visible = true;
-            btnIn.Enabled= false;
-            btnThemPhong.Enabled= false;
-            btnXoaPhong.Enabled= false;
+            btnIn.Enabled = false;
+            btnThemPhong.Enabled = false;
+            btnXoaPhong.Enabled = false;
+            btnSuggestt.Visible = true;
             //DSPhong dsp = new DSPhong();
             //DSHinhAnhPhong dsImg = new DSHinhAnhPhong();
 
@@ -566,7 +576,7 @@ namespace AdminApp
             txtDienTich.Text = "";
             txtNoiThat.Text = "FUll";
             txtMoTa.Text = "Nhu hinh";
-            txtTinhTrang.Text = "Trống"; 
+            txtTinhTrang.Text = "Trống";
             txtSoNguoiToiDa.Text = "2";
 
             // Reset ảnh
@@ -655,7 +665,7 @@ namespace AdminApp
             }
         }
 
-        
+
 
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -766,6 +776,9 @@ namespace AdminApp
             //    MessageBox.Show("Lưu phòng + ảnh thành công!");
 
             //    loaddgvphong();
+            btnSuggestt.Visible = false;
+            lblGY.Visible = false;
+            lblPrice.Visible = false;
         }
         #endregion
 
@@ -834,6 +847,61 @@ namespace AdminApp
             loadthings();
         }
 
+        private void btnSuggest_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
         #endregion
+
+
+
+        
+
+        private async void btnSuggestt_Click(object sender, EventArgs e)
+        {
+            float area;
+            int maxPeople;
+
+            if (!float.TryParse(txtDienTich.Text, out area))
+            {
+                MessageBox.Show("Vui lòng nhập diện tích hợp lệ!");
+                return;
+            }
+
+            if (!int.TryParse(txtSoNguoiToiDa.Text, out maxPeople))
+            {
+                MessageBox.Show("Số người tối đa không hợp lệ!");
+                return;
+            }
+
+            var input = new
+            {
+                Area = area,
+                Location = 7,
+                HasFurniture = txtNoiThat.Text != "" ? 1 : 0,
+                HasAirConditioner = txtNoiThat.Text != "" ? 1 : 0,
+                MaxPeople = maxPeople,
+                Type = "Standard"
+            };
+
+            string json = JsonConvert.SerializeObject(input);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            using (var client = new HttpClient())
+            {
+                var response = await client.PostAsync("http://127.0.0.1:8000/predict-rent", content);
+                string responseText = await response.Content.ReadAsStringAsync();
+
+                dynamic result = JsonConvert.DeserializeObject(responseText);
+                float price = (float)result.suggested_price;
+
+                lblPrice.Text = $"{price:N0} VNĐ";
+            }
+            lblPrice.Visible=true;
+            lblGY.Visible = true;
+        }
     }
 }

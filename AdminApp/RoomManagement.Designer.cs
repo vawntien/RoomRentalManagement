@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomManagement));
             this.grbRoom = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblGY = new System.Windows.Forms.Label();
+            this.btnSuggestt = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.lblTrangThai = new System.Windows.Forms.Label();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnLuu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnIn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -61,7 +65,6 @@
             this.lblSoPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvPhong = new System.Windows.Forms.DataGridView();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.lblTrangThai = new System.Windows.Forms.Label();
             this.grbRoom.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhong)).BeginInit();
@@ -70,6 +73,9 @@
             // 
             // grbRoom
             // 
+            this.grbRoom.Controls.Add(this.lblPrice);
+            this.grbRoom.Controls.Add(this.lblGY);
+            this.grbRoom.Controls.Add(this.btnSuggestt);
             this.grbRoom.Controls.Add(this.lblTrangThai);
             this.grbRoom.Controls.Add(this.guna2GradientButton2);
             this.grbRoom.Controls.Add(this.btnLuu);
@@ -92,6 +98,66 @@
             this.grbRoom.Size = new System.Drawing.Size(1303, 500);
             this.grbRoom.TabIndex = 2;
             this.grbRoom.Click += new System.EventHandler(this.grbRoom_Click);
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrice.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblPrice.ForeColor = System.Drawing.Color.Teal;
+            this.lblPrice.Location = new System.Drawing.Point(1153, 52);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(69, 24);
+            this.lblPrice.TabIndex = 64;
+            this.lblPrice.Text = "Giá gợi ý:";
+            // 
+            // lblGY
+            // 
+            this.lblGY.AutoSize = true;
+            this.lblGY.BackColor = System.Drawing.Color.Transparent;
+            this.lblGY.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblGY.ForeColor = System.Drawing.Color.Teal;
+            this.lblGY.Location = new System.Drawing.Point(1078, 52);
+            this.lblGY.Name = "lblGY";
+            this.lblGY.Size = new System.Drawing.Size(69, 24);
+            this.lblGY.TabIndex = 63;
+            this.lblGY.Text = "Giá gợi ý:";
+            // 
+            // btnSuggestt
+            // 
+            this.btnSuggestt.AutoRoundedCorners = true;
+            this.btnSuggestt.BackColor = System.Drawing.Color.Transparent;
+            this.btnSuggestt.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.btnSuggestt.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnSuggestt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSuggestt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSuggestt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSuggestt.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSuggestt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSuggestt.FillColor = System.Drawing.Color.Teal;
+            this.btnSuggestt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSuggestt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSuggestt.ForeColor = System.Drawing.Color.White;
+            this.btnSuggestt.Image = ((System.Drawing.Image)(resources.GetObject("btnSuggestt.Image")));
+            this.btnSuggestt.ImageOffset = new System.Drawing.Point(-1, 1);
+            this.btnSuggestt.Location = new System.Drawing.Point(1082, 420);
+            this.btnSuggestt.Name = "btnSuggestt";
+            this.btnSuggestt.Size = new System.Drawing.Size(155, 45);
+            this.btnSuggestt.TabIndex = 62;
+            this.btnSuggestt.Text = "Goi y gia";
+            this.btnSuggestt.Click += new System.EventHandler(this.btnSuggestt_Click);
+            // 
+            // lblTrangThai
+            // 
+            this.lblTrangThai.AutoSize = true;
+            this.lblTrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.lblTrangThai.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTrangThai.ForeColor = System.Drawing.Color.Teal;
+            this.lblTrangThai.Location = new System.Drawing.Point(105, 9);
+            this.lblTrangThai.Name = "lblTrangThai";
+            this.lblTrangThai.Size = new System.Drawing.Size(74, 24);
+            this.lblTrangThai.TabIndex = 51;
+            this.lblTrangThai.Text = "trạng thái";
             // 
             // guna2GradientButton2
             // 
@@ -134,7 +200,7 @@
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageOffset = new System.Drawing.Point(-1, 1);
-            this.btnLuu.Location = new System.Drawing.Point(1082, 410);
+            this.btnLuu.Location = new System.Drawing.Point(1082, 345);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(155, 45);
             this.btnLuu.TabIndex = 61;
@@ -158,7 +224,7 @@
             this.btnIn.ForeColor = System.Drawing.Color.White;
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageOffset = new System.Drawing.Point(-1, 1);
-            this.btnIn.Location = new System.Drawing.Point(1082, 300);
+            this.btnIn.Location = new System.Drawing.Point(1082, 260);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(155, 45);
             this.btnIn.TabIndex = 60;
@@ -181,7 +247,7 @@
             this.btnXoaPhong.ForeColor = System.Drawing.Color.White;
             this.btnXoaPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaPhong.Image")));
             this.btnXoaPhong.ImageOffset = new System.Drawing.Point(-1, 1);
-            this.btnXoaPhong.Location = new System.Drawing.Point(1082, 202);
+            this.btnXoaPhong.Location = new System.Drawing.Point(1082, 175);
             this.btnXoaPhong.Name = "btnXoaPhong";
             this.btnXoaPhong.Size = new System.Drawing.Size(155, 45);
             this.btnXoaPhong.TabIndex = 59;
@@ -643,18 +709,6 @@
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // lblTrangThai
-            // 
-            this.lblTrangThai.AutoSize = true;
-            this.lblTrangThai.BackColor = System.Drawing.Color.Transparent;
-            this.lblTrangThai.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTrangThai.ForeColor = System.Drawing.Color.Teal;
-            this.lblTrangThai.Location = new System.Drawing.Point(105, 9);
-            this.lblTrangThai.Name = "lblTrangThai";
-            this.lblTrangThai.Size = new System.Drawing.Size(74, 24);
-            this.lblTrangThai.TabIndex = 51;
-            this.lblTrangThai.Text = "trạng thái";
-            // 
             // RoomManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -712,5 +766,8 @@
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
         private Guna.UI2.WinForms.Guna2GradientButton btnLuu;
         private System.Windows.Forms.Label lblTrangThai;
+        private Guna.UI2.WinForms.Guna2GradientButton btnSuggestt;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblGY;
     }
 }
