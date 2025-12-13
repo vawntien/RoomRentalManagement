@@ -20,6 +20,8 @@ namespace AdminApp
         private void Form1_Load(object sender, EventArgs e)
         {
             //tien dep try
+            txtUser.Text="tien";
+            txtPassword.Text="123";
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

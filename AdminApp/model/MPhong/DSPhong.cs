@@ -59,7 +59,7 @@ namespace AdminApp.model
             r["TenPhong"] = phong.TenPhong;
             r["DienTich"] = phong.DienTich;
             r["GiaPhong"] = phong.GiaPhong;
-            r["TinhTrang"] = "TRONG";
+            r["TinhTrang"] = "Trống";
             r["SoNguoiToiDa"] = phong.SoNguoiToiDa;
             r["AnhChinh"] = phong.AnhChinh;
             r["MoTaChiTiet"] = phong.MoTaChiTiet;
