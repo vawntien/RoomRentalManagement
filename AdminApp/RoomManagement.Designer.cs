@@ -119,9 +119,10 @@
             this.lblGY.ForeColor = System.Drawing.Color.Teal;
             this.lblGY.Location = new System.Drawing.Point(1078, 52);
             this.lblGY.Name = "lblGY";
-            this.lblGY.Size = new System.Drawing.Size(69, 24);
+            this.lblGY.Size = new System.Drawing.Size(78, 24);
             this.lblGY.TabIndex = 63;
-            this.lblGY.Text = "Giá gợi ý:";
+            this.lblGY.Text = "Giá hợp lý:";
+            this.lblGY.Click += new System.EventHandler(this.lblGY_Click);
             // 
             // btnSuggestt
             // 

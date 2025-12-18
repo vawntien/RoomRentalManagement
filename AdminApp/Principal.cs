@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminApp.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -158,6 +159,30 @@ namespace AdminApp
             {
                 p.Image = Image.FromFile(gifPath1);
                 p.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            DSPhong dsp = new DSPhong();
+
+            List<Phong> listPhong = dsp.getAllPhong();
+            List<Phong> room = new List<Phong>();
+
+
+            foreach (var item in listPhong)
+            {
+                if (txtFind.Text != null)
+                {
+                    if (item.MaPhong.ToString().Contains(txtFind.Text) || item.TenPhong.ToString().Contains(txtFind.Text))
+                    {
+                        MessageBox.Show("Tìm thấy phòng: " + item.TenPhong + "Trạng thái phòng: "+item.TinhTrang);
+                        return;
+                    }
+
+                    
+                }
+                
             }
         }
     }

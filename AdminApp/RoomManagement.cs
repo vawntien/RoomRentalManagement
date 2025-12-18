@@ -903,5 +903,10 @@ namespace AdminApp
             lblPrice.Visible=true;
             lblGY.Visible = true;
         }
+
+        private void lblGY_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
