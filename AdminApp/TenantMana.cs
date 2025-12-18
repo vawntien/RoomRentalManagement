@@ -186,6 +186,7 @@ namespace AdminApp
             {
                 MessageBox.Show("Cập nhật không thành công!");
             }
+            loaddgvKhachThue();
         }
     }
 

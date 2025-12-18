@@ -14,8 +14,7 @@ namespace WEB_NEt.Controllers
     {
         private QLPhongTroEntities db = new QLPhongTroEntities();
 
-
-
+        // GET: CreateBooking (Form đặt phòng)
         public ActionResult CreateBooking(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -29,29 +28,29 @@ namespace WEB_NEt.Controllers
             {
                 HopDong = new HopDong
                 {
-                    MaPhong = phong.MaPhong // Lưu id phòng để POST
+                    MaPhong = phong.MaPhong // Lưu id phòng
                 },
-                Khach = new KhachThue() // Thông tin khách mới
+                Khach = new KhachThue() // Object khách mới để điền form
             };
 
             ViewBag.PhongName = phong.TenPhong;
-
-            // Dịch vụ
             ViewBag.DichVuList = db.DichVu.ToList();
 
             return View(model);
         }
 
-        // POST: HopDong/CreateBooking
+        // POST: CreateBooking (Xử lý lưu dữ liệu)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateBooking(HopDongViewModel model, string[] SelectedDV)
         {
+            // 1. Validate ngày tháng
             if (model.HopDong.NgayKetThuc <= model.HopDong.NgayBatDau)
             {
                 ModelState.AddModelError("HopDong.NgayKetThuc", "Ngày kết thúc phải sau ngày bắt đầu.");
             }
 
+            // 2. Nếu Model không hợp lệ, trả về View
             if (!ModelState.IsValid)
             {
                 ViewBag.DichVuList = db.DichVu.ToList();
@@ -63,47 +62,72 @@ namespace WEB_NEt.Controllers
             {
                 try
                 {
-                    // Thêm khách thuê
-                    var khach = new KhachThue
-                    {
-                        HoTen = model.Khach.HoTen,
-                        CCCD = model.Khach.CCCD,
-                        SoDT = model.Khach.SoDT,
-                        Email = model.Khach.Email,
-                        DiaChi = model.Khach.DiaChi,
-                        NgaySinh = model.Khach.NgaySinh
-                    };
-                    db.KhachThue.Add(khach);
-                    db.SaveChanges();
+                    // --- BƯỚC 1: XỬ LÝ KHÁCH THUÊ (Đã sửa lỗi trùng lặp) ---
+                    int maKhachSuDung;
 
-                    // Lấy phòng
+                    // Kiểm tra xem trong DB đã có ai mang số CCCD này chưa
+                    var khachTonTai = db.KhachThue.FirstOrDefault(k => k.CCCD == model.Khach.CCCD);
+
+                    if (khachTonTai != null)
+                    {
+                        // Nếu ĐÃ CÓ: Cập nhật thông tin mới nhất và dùng lại ID cũ
+                        khachTonTai.HoTen = model.Khach.HoTen;
+                        khachTonTai.SoDT = model.Khach.SoDT;
+                        khachTonTai.Email = model.Khach.Email;
+                        khachTonTai.DiaChi = model.Khach.DiaChi;
+                        khachTonTai.NgaySinh = model.Khach.NgaySinh;
+
+                        db.Entry(khachTonTai).State = EntityState.Modified;
+                        db.SaveChanges(); // Lưu cập nhật
+
+                        maKhachSuDung = khachTonTai.MaKhach;
+                    }
+                    else
+                    {
+                        // Nếu CHƯA CÓ: Tạo mới hoàn toàn
+                        var khachMoi = new KhachThue
+                        {
+                            HoTen = model.Khach.HoTen,
+                            CCCD = model.Khach.CCCD,
+                            SoDT = model.Khach.SoDT,
+                            Email = model.Khach.Email,
+                            DiaChi = model.Khach.DiaChi,
+                            NgaySinh = model.Khach.NgaySinh
+                        };
+                        db.KhachThue.Add(khachMoi);
+                        db.SaveChanges(); // Lưu để sinh ID
+
+                        maKhachSuDung = khachMoi.MaKhach;
+                    }
+
+                    // --- BƯỚC 2: KIỂM TRA PHÒNG ---
                     var phong = db.Phong.Find(model.HopDong.MaPhong);
                     if (phong == null || phong.TinhTrang != "Trống")
                     {
                         TempData["Error"] = "Phòng không tồn tại hoặc đã được thuê!";
                         transaction.Rollback();
+
                         ViewBag.DichVuList = db.DichVu.ToList();
                         ViewBag.PhongName = db.Phong.Find(model.HopDong.MaPhong)?.TenPhong;
                         return View(model);
                     }
 
-                    // Thêm hợp đồng
+                    // --- BƯỚC 3: TẠO HỢP ĐỒNG ---
                     var hopDong = new HopDong
                     {
                         MaPhong = phong.MaPhong,
-                        MaKhach = khach.MaKhach,
+                        MaKhach = maKhachSuDung, // Sử dụng ID khách vừa xử lý ở trên
                         MaChu = phong.MaChu,
                         NgayBatDau = model.HopDong.NgayBatDau,
                         NgayKetThuc = model.HopDong.NgayKetThuc,
                         TienCoc = model.HopDong.TienCoc,
                         TrangThai = "Đang hiệu lực",
-
                         NguoiTaoDon = (Session["UserId"] != null) ? (int?)Session["UserId"] : null
                     };
                     db.HopDong.Add(hopDong);
                     db.SaveChanges();
 
-                    // Thêm dịch vụ
+                    // --- BƯỚC 4: THÊM DỊCH VỤ ---
                     if (SelectedDV != null)
                     {
                         foreach (var dvId in SelectedDV)
@@ -119,29 +143,34 @@ namespace WEB_NEt.Controllers
                         db.SaveChanges();
                     }
 
-                    // Cập nhật trạng thái phòng
+                    // --- BƯỚC 5: CẬP NHẬT TRẠNG THÁI PHÒNG ---
                     phong.TinhTrang = "Đã thuê";
                     db.Entry(phong).State = EntityState.Modified;
                     db.SaveChanges();
 
+                    // Hoàn tất mọi thứ
                     transaction.Commit();
 
                     TempData["Success"] = "Đặt phòng thành công!";
-                    // Chuyển hướng đến trang Details của HopDong, dùng MaHopDong vừa tạo
                     return RedirectToAction("Details", new { id = hopDong.MaHopDong });
                 }
                 catch (Exception ex)
                 {
+                    // Gặp lỗi thì hoàn tác toàn bộ database
                     transaction.Rollback();
+
+                    // Lấy thông báo lỗi chi tiết nhất
                     string message = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
                     TempData["Error"] = "Có lỗi xảy ra: " + message;
 
+                    // Load lại dữ liệu để hiện lại form
                     ViewBag.DichVuList = db.DichVu.ToList();
                     ViewBag.PhongName = db.Phong.Find(model.HopDong.MaPhong)?.TenPhong;
                     return View(model);
                 }
             }
         }
+
         // GET: HopDongs
         public ActionResult Index()
         {
@@ -164,7 +193,7 @@ namespace WEB_NEt.Controllers
             return View(hopDong);
         }
 
-        // GET: HopDongs/Create
+        // GET: HopDongs/Create (Tạo thủ công qua Admin - giữ nguyên logic cũ)
         public ActionResult Create()
         {
             ViewBag.MaChu = new SelectList(db.ChuPhong, "MaChu", "HoTen");
@@ -174,8 +203,6 @@ namespace WEB_NEt.Controllers
         }
 
         // POST: HopDongs/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaHopDong,MaPhong,MaKhach,MaChu,NgayBatDau,NgayKetThuc,TienCoc,TrangThai,NgayTao")] HopDong hopDong)
@@ -212,8 +239,6 @@ namespace WEB_NEt.Controllers
         }
 
         // POST: HopDongs/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaHopDong,MaPhong,MaKhach,MaChu,NgayBatDau,NgayKetThuc,TienCoc,TrangThai,NgayTao")] HopDong hopDong)

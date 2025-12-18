@@ -65,6 +65,7 @@
             this.lblSoPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvPhong = new System.Windows.Forms.DataGridView();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.grbRoom.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhong)).BeginInit();
@@ -73,6 +74,7 @@
             // 
             // grbRoom
             // 
+            this.grbRoom.Controls.Add(this.guna2GradientButton1);
             this.grbRoom.Controls.Add(this.lblPrice);
             this.grbRoom.Controls.Add(this.lblGY);
             this.grbRoom.Controls.Add(this.btnSuggestt);
@@ -141,7 +143,7 @@
             this.btnSuggestt.ForeColor = System.Drawing.Color.White;
             this.btnSuggestt.Image = ((System.Drawing.Image)(resources.GetObject("btnSuggestt.Image")));
             this.btnSuggestt.ImageOffset = new System.Drawing.Point(-1, 1);
-            this.btnSuggestt.Location = new System.Drawing.Point(1082, 420);
+            this.btnSuggestt.Location = new System.Drawing.Point(1082, 425);
             this.btnSuggestt.Name = "btnSuggestt";
             this.btnSuggestt.Size = new System.Drawing.Size(155, 45);
             this.btnSuggestt.TabIndex = 62;
@@ -201,7 +203,7 @@
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageOffset = new System.Drawing.Point(-1, 1);
-            this.btnLuu.Location = new System.Drawing.Point(1082, 345);
+            this.btnLuu.Location = new System.Drawing.Point(1082, 298);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(155, 45);
             this.btnLuu.TabIndex = 61;
@@ -225,7 +227,7 @@
             this.btnIn.ForeColor = System.Drawing.Color.White;
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageOffset = new System.Drawing.Point(-1, 1);
-            this.btnIn.Location = new System.Drawing.Point(1082, 260);
+            this.btnIn.Location = new System.Drawing.Point(1082, 231);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(155, 45);
             this.btnIn.TabIndex = 60;
@@ -248,7 +250,7 @@
             this.btnXoaPhong.ForeColor = System.Drawing.Color.White;
             this.btnXoaPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaPhong.Image")));
             this.btnXoaPhong.ImageOffset = new System.Drawing.Point(-1, 1);
-            this.btnXoaPhong.Location = new System.Drawing.Point(1082, 175);
+            this.btnXoaPhong.Location = new System.Drawing.Point(1082, 163);
             this.btnXoaPhong.Name = "btnXoaPhong";
             this.btnXoaPhong.Size = new System.Drawing.Size(155, 45);
             this.btnXoaPhong.TabIndex = 59;
@@ -693,7 +695,7 @@
             this.dgvPhong.Size = new System.Drawing.Size(1303, 313);
             this.dgvPhong.TabIndex = 6;
             this.dgvPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellClick);
-            this.dgvPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellContentClick);
+            this.dgvPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Z);
             // 
             // guna2ContextMenuStrip1
             // 
@@ -709,6 +711,30 @@
             this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.AutoRoundedCorners = true;
+            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButton1.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.guna2GradientButton1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.Teal;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton1.Image")));
+            this.guna2GradientButton1.ImageOffset = new System.Drawing.Point(-1, 1);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(1082, 362);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(155, 45);
+            this.guna2GradientButton1.TabIndex = 65;
+            this.guna2GradientButton1.Text = "Lưu thông tin sửa";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // RoomManagement
             // 
@@ -770,5 +796,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnSuggestt;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblGY;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
     }
 }

@@ -21,7 +21,7 @@
 
 <h2 class="text-center mb-4">Đặt phòng mới</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("CreateBooking", "HopDongs", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 

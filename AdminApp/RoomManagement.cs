@@ -477,6 +477,18 @@ namespace AdminApp
             lblTrangThai.Visible = true;
             lblTrangThai.Text = r.Cells["TinhTrang"].Value.ToString();
 
+            txtGiaPhong.Enabled = true;
+            txtMoTa.Enabled = true;
+            txtNoiThat.Enabled = true;
+            txtTenPhong.Enabled = true;
+            txtGiaPhong.ReadOnly = false;
+            txtMoTa.ReadOnly = false;
+            txtNoiThat.ReadOnly = false;
+            txtTenPhong.ReadOnly = false;
+            txtDienTich.Enabled = true;
+            txtDienTich.ReadOnly= false;
+            txtSoNguoiToiDa.ReadOnly = false;
+
         }
 
         private void pbPhong_Click(object sender, EventArgs e)
@@ -594,11 +606,6 @@ namespace AdminApp
 
         }
 
-        private void dgvPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         #region them phong
 
         // Hàm hoán đổi ảnh giữa ảnh chính và ảnh phụ
@@ -679,6 +686,24 @@ namespace AdminApp
                 return;
             }
 
+            if(int.Parse(txtDienTich.Text) <= 0)
+            {
+                MessageBox.Show("Diện tích phải là số dương ");
+                return;
+            }
+
+            if (int.Parse(txtGiaPhong.Text) <= 0)
+            {
+                MessageBox.Show("Giá phòng phải là số dương ");
+                return;
+            }
+
+            if(int.Parse(txtSoNguoiToiDa.Text) <= 0)
+            {
+                MessageBox.Show("Số người tối đa phải là số dương ");
+                return;
+            }
+
             // 2. Tạo object phòng
             Phong p = new Phong()
             {
@@ -696,6 +721,8 @@ namespace AdminApp
                 MaChu = "1",
                 AnhChinh = ""
             };
+
+            
 
             // 3. Insert phòng vào DB
             if (!dsp.addPhong(p))
@@ -907,6 +934,66 @@ namespace AdminApp
         private void lblGY_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Z(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+              
+            foreach(var i in dsp.getAllPhong())
+            {
+                if(i.MaPhong == txtMaPhong.Text)
+                {
+                    
+                    i.TenPhong = txtTenPhong.Text;
+                    i.DienTich = txtDienTich.Text.Trim();
+                    i.GiaPhong = txtGiaPhong.Text.Trim();
+                    if (double.Parse(i.DienTich.Trim()) <= 0)
+                    {
+                        MessageBox.Show("Diện tích phải là số dương ");
+                        break;
+                    }
+                    if(double.Parse(i.GiaPhong.Trim()) <= 0)
+                    {
+                        MessageBox.Show("Giá phòng phải là số dương ");
+                        break;
+                    }
+
+                    if (int.Parse(txtSoNguoiToiDa.Text) <= 0)
+                    {
+                        MessageBox.Show("Số người tối đa phải là số dương ");
+                        return;
+                    }
+                    if (dsp.updatePhong(i))
+                    {
+                        MessageBox.Show("Cập nhật phòng thành công");
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cap nhat that bai!"); return;
+                    }
+
+                }
+            }
+
+
+            
+
+            //if (dsp.updatePhong(p))
+            //{
+            //    MessageBox.Show("Cập nhật phòng thanh cong");
+            //    return;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Cap nhat that bai!"); return;
+            //}
+            
         }
     }
 }

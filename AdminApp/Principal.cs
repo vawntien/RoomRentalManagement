@@ -1,4 +1,5 @@
 ﻿using AdminApp.model;
+using AdminApp.model.MKhach;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -165,8 +166,10 @@ namespace AdminApp
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
             DSPhong dsp = new DSPhong();
+            DSKhach dsk = new DSKhach();
 
             List<Phong> listPhong = dsp.getAllPhong();
+            List<Khach> lstk = dsk.getAllKhach();
             List<Phong> room = new List<Phong>();
 
 
@@ -176,13 +179,27 @@ namespace AdminApp
                 {
                     if (item.MaPhong.ToString().Contains(txtFind.Text) || item.TenPhong.ToString().Contains(txtFind.Text))
                     {
-                        MessageBox.Show("Tìm thấy phòng: " + item.TenPhong + "Trạng thái phòng: "+item.TinhTrang);
+                        MessageBox.Show("Tìm thấy phòng: " + item.TenPhong + "Trạng thái phòng: " + item.TinhTrang);
                         return;
                     }
 
-                    
+
+
                 }
-                
+
+            }
+
+            foreach (var item in dsk.lstKhach)
+            {
+                if (txtFind.Text != null)
+                {
+                    if (item.MaKhach.ToString().Contains(txtFind.Text) || item.HoTen.ToString().Contains(txtFind.Text))
+                    {
+                        MessageBox.Show("Tìm thấy khách hàng: " + item.HoTen + " SĐT: " + item.SoDT + '\n'
+                            + item.NgaySinh + '\n' + "Địa chỉ: " + item.DiaChi + "\nEmail: " + item.Email);
+                        return;
+                    }
+                }
             }
         }
     }
