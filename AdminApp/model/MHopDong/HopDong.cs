@@ -11,7 +11,8 @@ namespace AdminApp.model.MHopDong
         int maHopDong;
         string maPhong;
         int maKhach, maChu;
-        string ngayBatDau,ngayKetThuc,tienCoc,trangThai,ngayTao;
+        string ngayBatDau,ngayKetThuc,trangThai,ngayTao;
+        double tienCoc;
 
         public int MaHopDong { get => maHopDong; set => maHopDong = value; }
         public string MaPhong { get => maPhong; set => maPhong = value; }
@@ -19,7 +20,7 @@ namespace AdminApp.model.MHopDong
         public int MaChu { get => maChu; set => maChu = value; }
         public string NgayBatDau { get => ngayBatDau; set => ngayBatDau = value; }
         public string NgayKetThuc { get => ngayKetThuc; set => ngayKetThuc = value; }
-        public string TienCoc { get => tienCoc; set => tienCoc = value; }
+        public double TienCoc { get => tienCoc; set => tienCoc = value; }
         public string TrangThai { get => trangThai; set => trangThai = value; }
         public string NgayTao { get => ngayTao; set => ngayTao = value; }
 

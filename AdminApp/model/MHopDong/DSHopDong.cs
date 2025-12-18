@@ -32,7 +32,7 @@ namespace AdminApp.model.MHopDong
                 h.MaChu = int.Parse(r["MaChu"].ToString());
                 h.NgayBatDau = r["NgayBatDau"].ToString();
                 h.NgayKetThuc = r["NgayKetThuc"].ToString();
-                h.TienCoc = r["TienCoc"].ToString();
+                h.TienCoc = double.Parse(r["TienCoc"].ToString());
                 h.TrangThai = r["TrangThai"].ToString();
                 h.NgayTao = r["NgayTao"].ToString();
                 lsthd.Add(h);
