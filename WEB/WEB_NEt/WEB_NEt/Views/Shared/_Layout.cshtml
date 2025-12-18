@@ -79,12 +79,22 @@
                 <li class="header-nav-list">
                     <a class="header-nav-link @(controller == "Room" ? "header-active" : "")" href="@Url.Action("Index", "Room")">Rooms and Suites</a>
                 </li>
-                <li class="header-nav-list">
-                    <a class="header-nav-link @(controller == "Home" && action == "Facilities" ? "header-active" : "")" href="@Url.Action("Facilities", "Home")">Facilities</a>
-                </li>
+
                 <li class="header-nav-list">
                     <a class="header-nav-link @(controller == "Home" && action == "Contact" ? "header-active" : "")" href="@Url.Action("Contact", "Home")">Contact Us</a>
                 </li>
+                @if (Session["UserAccount"] != null)
+                {
+                    var user = (WEB_NEt.Models.NguoiDung)Session["UserAccount"];
+
+                    <li class="header-nav-list">
+                        <a class="header-nav-link @(controller == "NguoiDungs" && action == "Edit" ? "header-active" : "")"
+                           href="@Url.Action("Edit", "NguoiDungs", new { id = user.TaiKhoan })">
+                            Account
+                        </a>
+                    </li>
+                }
+
 
                 @Html.Partial("_LoginPartial")
 

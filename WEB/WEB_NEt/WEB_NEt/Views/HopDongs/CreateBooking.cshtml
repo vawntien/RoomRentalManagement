@@ -79,7 +79,7 @@
             </div>
 
             <div class="col-md-6">
-                @Html.LabelFor(m => m.HopDong.NgayKetThuc, "Ngày kết thúc (có thể để trống)")
+                @Html.LabelFor(m => m.HopDong.NgayKetThuc, "Ngày kết thúc")
                 @Html.TextBoxFor(m => m.HopDong.NgayKetThuc, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.HopDong.NgayKetThuc, "", new { @class = "text-danger" })
             </div>

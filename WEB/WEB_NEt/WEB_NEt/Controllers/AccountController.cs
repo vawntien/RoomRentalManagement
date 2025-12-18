@@ -126,6 +126,12 @@ namespace WEB_NEt.Controllers
                 return View(model);
             }
 
+            if (user.TrangThai != "Hoạt động")
+            {
+                ModelState.AddModelError("", "Vui lòng liên hệ admin để xác thực tài khoản.");
+                return View(model);
+            }    
+
             // === 2. Lưu thông tin vào SESSION ===
             Session["UserAccount"] = user;
             Session["UserName"] = user.KhachThue?.HoTen ?? user.TaiKhoan; // Ưu tiên Họ tên
