@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.Shared;
 
 namespace AdminApp
 {
@@ -125,7 +126,6 @@ namespace AdminApp
                 int maHD = int.Parse(dataGridView1.CurrentRow.Cells["MaHopDong"].Value.ToString());
 
                 DSHopDong ds = new DSHopDong();
-
                 AdminApp.model.MHopDong.HopDong hopDongChiTiet = ds.getChiTiet(maHD);
 
                 List<AdminApp.model.MHopDong.HopDong> listData = new List<AdminApp.model.MHopDong.HopDong>();
@@ -136,10 +136,28 @@ namespace AdminApp
 
                 crystalReportViewer1.ReportSource = rpt;
                 crystalReportViewer1.Refresh();
+
+                
+                DialogResult result = MessageBox.Show("Bạn có muốn xuất hợp đồng này ra file PDF không?", "In Hợp Đồng", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "PDF Files|*.pdf";
+                    saveFileDialog.Title = "Lưu Hợp Đồng";
+                    saveFileDialog.FileName = "HopDong_" + maHD + ".pdf"; // Đặt tên file mặc định
+
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        // Xuất file ra đường dẫn người dùng chọn
+                        rpt.ExportToDisk(ExportFormatType.PortableDocFormat, saveFileDialog.FileName);
+                        MessageBox.Show("Xuất file PDF thành công!\nĐường dẫn: " + saveFileDialog.FileName, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tạo báo cáo: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
     }
