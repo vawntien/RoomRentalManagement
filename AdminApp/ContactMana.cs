@@ -105,7 +105,13 @@ namespace AdminApp
 
         private void btnXem_Click(object sender, EventArgs e)
         {
-            loadbcao();
+            AdminApp.HopDong rpt = PrepareReport();
+
+            if (rpt != null)
+            {
+                crystalReportViewer1.ReportSource = rpt;
+                crystalReportViewer1.Refresh();
+            }
         }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
@@ -113,12 +119,12 @@ namespace AdminApp
 
         }
 
-        private void btnIn_Click(object sender, EventArgs e)
+        private AdminApp.HopDong PrepareReport()
         {
             if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.Index < 0)
             {
-                MessageBox.Show("Vui lòng chọn một hợp đồng trong danh sách để in!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show("Vui lòng chọn một hợp đồng trong danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
 
             try
@@ -126,38 +132,56 @@ namespace AdminApp
                 int maHD = int.Parse(dataGridView1.CurrentRow.Cells["MaHopDong"].Value.ToString());
 
                 DSHopDong ds = new DSHopDong();
+                // Lấy dữ liệu chi tiết
                 AdminApp.model.MHopDong.HopDong hopDongChiTiet = ds.getChiTiet(maHD);
 
+                // Đưa vào list như code cũ của bạn
                 List<AdminApp.model.MHopDong.HopDong> listData = new List<AdminApp.model.MHopDong.HopDong>();
                 listData.Add(hopDongChiTiet);
 
+                // Khởi tạo Report
                 AdminApp.HopDong rpt = new AdminApp.HopDong();
                 rpt.SetDataSource(listData);
 
-                crystalReportViewer1.ReportSource = rpt;
-                crystalReportViewer1.Refresh();
+                return rpt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi lấy dữ liệu: " + ex.Message);
+                return null;
+            }
+        }
 
-                
-                DialogResult result = MessageBox.Show("Bạn có muốn xuất hợp đồng này ra file PDF không?", "In Hợp Đồng", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            // Gọi hàm chuẩn bị report (lấy lại dữ liệu mới nhất từ dòng đang chọn)
+            AdminApp.HopDong rpt = PrepareReport();
 
-                if (result == DialogResult.Yes)
+            if (rpt != null)
+            {
+                try
                 {
                     SaveFileDialog saveFileDialog = new SaveFileDialog();
                     saveFileDialog.Filter = "PDF Files|*.pdf";
                     saveFileDialog.Title = "Lưu Hợp Đồng";
-                    saveFileDialog.FileName = "HopDong_" + maHD + ".pdf"; // Đặt tên file mặc định
+
+                    // Lấy lại Mã HD để đặt tên file cho đẹp
+                    string maHD = dataGridView1.CurrentRow.Cells["MaHopDong"].Value.ToString();
+                    saveFileDialog.FileName = "HopDong_" + maHD + ".pdf";
 
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        // Xuất file ra đường dẫn người dùng chọn
+                        // Xuất file
                         rpt.ExportToDisk(ExportFormatType.PortableDocFormat, saveFileDialog.FileName);
-                        MessageBox.Show("Xuất file PDF thành công!\nĐường dẫn: " + saveFileDialog.FileName, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        MessageBox.Show("Xuất file PDF thành công!\nĐường dẫn: " + saveFileDialog.FileName,
+                                        "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xuất file: " + ex.Message);
+                }
             }
         }
     }
