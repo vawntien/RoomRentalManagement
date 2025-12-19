@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Data.Entity; // Cần cho .Include()
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web.Mvc;
-using System.Data.Entity; // Cần cho .Include()
 using WEB_NEt.Models; // Đảm bảo bạn đã import Models
 
 namespace WEB_NEt.Controllers
@@ -50,7 +51,8 @@ namespace WEB_NEt.Controllers
                         SoDT = model.SoDT,
                         Email = model.Email,
                         CCCD = model.CCCD,
-                        NgaySinh = model.NgaySinh
+                        NgaySinh = model.NgaySinh,
+                        DiaChi = "Chưa cập nhật"
                         // (Các trường khác có thể null hoặc có giá trị default)
                     };
                     db.KhachThue.Add(khach);
@@ -72,11 +74,35 @@ namespace WEB_NEt.Controllers
                     // c. Hoàn tất
                     transaction.Commit();
                 }
+                catch (DbEntityValidationException ex)
+                {
+                    transaction.Rollback();
+                    foreach (var entityError in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityError.ValidationErrors)
+                        {
+                            // Hiện tên cột bị lỗi và lý do ra màn hình
+                            ModelState.AddModelError("", "Lỗi tại " + validationError.PropertyName + ": " + validationError.ErrorMessage);
+                        }
+                    }
+                    return View(model);
+                }
                 catch (Exception ex)
                 {
                     transaction.Rollback();
-                    // Ghi log lỗi (ex.Message)
-                    ModelState.AddModelError("", "Đã có lỗi xảy ra trong quá trình đăng ký.");
+
+                    // --- SỬA ĐOẠN NÀY ĐỂ HIỆN LỖI CHI TIẾT ---
+                    ModelState.AddModelError("", "Lỗi chính: " + ex.Message);
+                    if (ex.InnerException != null)
+                    {
+                        ModelState.AddModelError("", "Chi tiết lỗi (SQL): " + ex.InnerException.Message);
+                        if (ex.InnerException.InnerException != null)
+                        {
+                            ModelState.AddModelError("", "Chi tiết sâu hơn: " + ex.InnerException.InnerException.Message);
+                        }
+                    }
+                    // ------------------------------------------
+
                     return View(model);
                 }
             }
@@ -125,6 +151,12 @@ namespace WEB_NEt.Controllers
                 ModelState.AddModelError("", "Tài khoản này đã bị khóa.");
                 return View(model);
             }
+
+            if (user.TrangThai != "Hoạt động")
+            {
+                ModelState.AddModelError("", "Vui lòng liên hệ admin để xác thực tài khoản.");
+                return View(model);
+            }    
 
             // === 2. Lưu thông tin vào SESSION ===
             Session["UserAccount"] = user;

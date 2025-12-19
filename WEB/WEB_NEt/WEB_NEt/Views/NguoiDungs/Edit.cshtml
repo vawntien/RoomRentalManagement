@@ -1,0 +1,79 @@
+﻿@model WEB_NEt.Models.NguoiDung
+
+@{
+    ViewBag.Title = "Chỉnh sửa tài khoản";
+}
+
+<div class="container mt-5" style="max-width: 650px;">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-primary text-white text-center py-3 rounded-top-4">
+            <h3 class="mb-0">Chỉnh sửa tài khoản</h3>
+        </div>
+
+        @using (Html.BeginForm("Edit", "NguoiDungs", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="card-body px-4 py-4">
+
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success text-center fw-bold">
+                        @TempData["Success"]
+                    </div>
+                }
+
+                @if (TempData["Error"] != null)
+                {
+                    <div class="alert alert-danger text-center fw-bold">
+                        @TempData["Error"]
+                    </div>
+                }
+
+
+        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+        <!-- Tài khoản -->
+        <div class="mb-3">
+            <label class="form-label fw-bold">Tài khoản</label>
+            @Html.TextBoxFor(model => model.TaiKhoan, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+
+        <!-- Mật khẩu -->
+        <div class="mb-3">
+            <label class="form-label fw-bold">Mật khẩu</label>
+            @Html.PasswordFor(model => model.MatKhau, new { @class = "form-control", placeholder = "Nhập mật khẩu mới" })
+            @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+            <label class="form-label fw-bold">Email</label>
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Nhập email" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Nút lưu -->
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success px-4 py-2 fw-bold">
+                ✅ Lưu thay đổi
+            </button>
+        </div>
+    </div>
+        }
+
+        <div class="card-footer text-center bg-light py-3">
+            @Html.ActionLink("⬅ Quay lại", "Index", "Room", null, new { @class = "btn btn-outline-secondary" })
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 16px;
+    }
+
+    .card-header {
+        border-radius: 16px 16px 0 0 !important;
+    }
+</style>

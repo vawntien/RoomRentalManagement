@@ -14,6 +14,32 @@ namespace AdminApp.model.MHopDong
 
         public DSHopDong() { }
 
+        public HopDong getChiTiet(int maHD)
+        {
+            HopDong h = new HopDong();
+            string sql = "SELECT * FROM HopDong WHERE MaHopDong = " + maHD;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, ConnectionModel.strcnn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow r = dt.Rows[0];
+                // Map dữ liệu từ SQL vào Class C#
+                h.MaHopDong = int.Parse(r["MaHopDong"].ToString());
+                h.MaPhong = r["MaPhong"].ToString();
+                h.MaKhach = int.Parse(r["MaKhach"].ToString());
+                h.MaChu = int.Parse(r["MaChu"].ToString());
+                h.NgayBatDau = r["NgayBatDau"].ToString();
+                h.NgayKetThuc = r["NgayKetThuc"].ToString();
+                h.TienCoc = double.Parse(r["TienCoc"].ToString());
+                h.TrangThai = r["TrangThai"].ToString();
+                h.NgayTao = r["NgayTao"].ToString();
+            }
+            return h;
+        }
+
         public List<HopDong> getallHopDong()
         {
             lsthd.Clear();

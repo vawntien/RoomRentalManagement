@@ -29,33 +29,86 @@
         <h4>Thông tin khách thuê</h4>
         <div class="row g-3">
             <div class="col-md-6">
-                @Html.LabelFor(m => m.Khach.HoTen)
-                @Html.TextBoxFor(m => m.Khach.HoTen, new { @class = "form-control", placeholder = "Họ và tên" })
+                @Html.LabelFor(m => m.Khach.HoTen, "Vui lòng nhập họ và tên")
+                @Html.TextBoxFor(m => m.Khach.HoTen, new
+                {
+                    @class = "form-control",
+                    placeholder = "Họ và tên",
+                    required = "required",
+                    oninvalid = "this.setCustomValidity('Vui lòng nhập họ và tên')",
+                    oninput = "this.setCustomValidity('')"
+                })
                 @Html.ValidationMessageFor(m => m.Khach.HoTen, "", new { @class = "text-danger" })
             </div>
+
             <div class="col-md-6">
-                @Html.LabelFor(m => m.Khach.CCCD)
-                @Html.TextBoxFor(m => m.Khach.CCCD, new { @class = "form-control", placeholder = "CCCD/CMND" })
+                @Html.LabelFor(m => m.Khach.CCCD, "CCCD phải bao gồm đúng 12 chữ số")
+                @Html.TextBoxFor(m => m.Khach.CCCD, new
+                {
+                    @class = "form-control",
+                    placeholder = "CCCD/CMND (12 số)",
+                    maxlength = "12",
+                    pattern = "[0-9]{12}",
+                    required = "required",
+                    oninvalid = "this.setCustomValidity('CCCD phải bao gồm đúng 12 chữ số')",
+                    oninput = "this.setCustomValidity('')"
+                })
                 @Html.ValidationMessageFor(m => m.Khach.CCCD, "", new { @class = "text-danger" })
             </div>
+
             <div class="col-md-6">
-                @Html.LabelFor(m => m.Khach.SoDT)
-                @Html.TextBoxFor(m => m.Khach.SoDT, new { @class = "form-control", placeholder = "Số điện thoại" })
+                @Html.LabelFor(m => m.Khach.SoDT, "Số điện thoại phải bắt đầu bằng 0 và có đủ 10 số")
+                @Html.TextBoxFor(m => m.Khach.SoDT, new
+                {
+                    @class = "form-control",
+                    placeholder = "Số điện thoại",
+                    maxlength = "10",
+                    type = "tel",
+                    pattern = "0[0-9]{9}",
+                    required = "required",
+                    oninvalid = "this.setCustomValidity('Số điện thoại phải bắt đầu bằng 0 và có đủ 10 số')",
+                    oninput = "this.setCustomValidity('')"
+                })
                 @Html.ValidationMessageFor(m => m.Khach.SoDT, "", new { @class = "text-danger" })
             </div>
+
             <div class="col-md-6">
-                @Html.LabelFor(m => m.Khach.Email)
-                @Html.TextBoxFor(m => m.Khach.Email, new { @class = "form-control", placeholder = "Email" })
+                @Html.LabelFor(m => m.Khach.Email, "Vui lòng nhập đúng định dạng email (ví dụ: abc@gmail.com)")
+                @Html.TextBoxFor(m => m.Khach.Email, new
+                {
+                    @class = "form-control",
+                    placeholder = "Email",
+                    type = "email",
+                    required = "required",
+                    oninvalid = "this.setCustomValidity('Vui lòng nhập đúng định dạng email (ví dụ: abc@gmail.com)')",
+                    oninput = "this.setCustomValidity('')"
+                })
                 @Html.ValidationMessageFor(m => m.Khach.Email, "", new { @class = "text-danger" })
             </div>
+
             <div class="col-12">
-                @Html.LabelFor(m => m.Khach.DiaChi)
-                @Html.TextBoxFor(m => m.Khach.DiaChi, new { @class = "form-control", placeholder = "Địa chỉ" })
+                @Html.LabelFor(m => m.Khach.DiaChi, "Vui lòng nhập địa chỉ")
+                @Html.TextBoxFor(m => m.Khach.DiaChi, new
+                {
+                    @class = "form-control",
+                    placeholder = "Địa chỉ thường trú",
+                    required = "required",
+                    oninvalid = "this.setCustomValidity('Vui lòng nhập địa chỉ')",
+                    oninput = "this.setCustomValidity('')"
+                })
                 @Html.ValidationMessageFor(m => m.Khach.DiaChi, "", new { @class = "text-danger" })
             </div>
+
             <div class="col-md-6">
-                @Html.LabelFor(m => m.Khach.NgaySinh)
-                @Html.TextBoxFor(m => m.Khach.NgaySinh, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.LabelFor(m => m.Khach.NgaySinh, "Vui lòng chọn ngày sinh")
+                @Html.TextBoxFor(m => m.Khach.NgaySinh, "{0:yyyy-MM-dd}", new
+                {
+                    type = "date",
+                    @class = "form-control",
+                    required = "required",
+                    oninvalid = "this.setCustomValidity('Vui lòng chọn ngày sinh')",
+                    oninput = "this.setCustomValidity('')"
+                })
                 @Html.ValidationMessageFor(m => m.Khach.NgaySinh, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -67,26 +120,49 @@
         <div class="form-group mb-3">
             <label>Phòng:</label>
             <input type="text" class="form-control" value="@ViewBag.PhongName" disabled />
-            @Html.HiddenFor(m => m.HopDong.MaPhong)  @* Lưu id phòng để POST *@
+            @Html.HiddenFor(m => m.HopDong.MaPhong)
         </div>
 
         <div class="row g-3">
-
             <div class="col-md-6">
                 @Html.LabelFor(m => m.HopDong.NgayBatDau, "Ngày bắt đầu")
-                @Html.TextBoxFor(m => m.HopDong.NgayBatDau, "{0:yyyy-MM-dd}", new { type = "date", min = today, @class = "form-control" })
+                @Html.TextBoxFor(m => m.HopDong.NgayBatDau, "{0:yyyy-MM-dd}", new
+                {
+                    type = "date",
+                    min = today,
+                    @class = "form-control",
+                    required = "required",
+                    oninvalid = "this.setCustomValidity('Vui lòng chọn ngày bắt đầu')",
+                    oninput = "this.setCustomValidity('')"
+                })
                 @Html.ValidationMessageFor(m => m.HopDong.NgayBatDau, "", new { @class = "text-danger" })
             </div>
 
             <div class="col-md-6">
-                @Html.LabelFor(m => m.HopDong.NgayKetThuc, "Ngày kết thúc (có thể để trống)")
-                @Html.TextBoxFor(m => m.HopDong.NgayKetThuc, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.LabelFor(m => m.HopDong.NgayKetThuc, "Ngày kết thúc")
+                @Html.TextBoxFor(m => m.HopDong.NgayKetThuc, "{0:yyyy-MM-dd}", new
+                {
+                    type = "date",
+                    @class = "form-control",
+                    required = "required",
+                    oninvalid = "this.setCustomValidity('Vui lòng chọn ngày kết thúc')",
+                    oninput = "this.setCustomValidity('')"
+                })
                 @Html.ValidationMessageFor(m => m.HopDong.NgayKetThuc, "", new { @class = "text-danger" })
             </div>
 
             <div class="col-md-6">
                 @Html.LabelFor(m => m.HopDong.TienCoc, "Tiền cọc (tối thiểu 2 triệu)")
-                @Html.TextBoxFor(m => m.HopDong.TienCoc, new { type = "number", min = "2000000", step = "100000", @class = "form-control" })
+                @Html.TextBoxFor(m => m.HopDong.TienCoc, new
+                {
+                    type = "number",
+                    min = "2000000",
+                    step = "100000",
+                    @class = "form-control",
+                    required = "required",
+                    oninvalid = "this.setCustomValidity('Tiền cọc tối thiểu là 2,000,000 VNĐ')",
+                    oninput = "this.setCustomValidity('')"
+                })
                 @Html.ValidationMessageFor(m => m.HopDong.TienCoc, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -94,14 +170,17 @@
         <div class="mb-3">
             <label>Dịch vụ kèm theo:</label>
             <div class="row row-cols-1 row-cols-md-3 g-3 mt-2">
-                @foreach (var dv in ViewBag.DichVuList)
+                @if (ViewBag.DichVuList != null)
                 {
-                    <div class="col">
-                        <div class="service-item p-2 border rounded text-center" data-id="@dv.MaDV">
-                            <strong>@dv.TenDV</strong> <br /> @dv.DonGia.ToString("N0") @dv.DonViTinh
-                            <input type="hidden" name="SelectedDV" value="@dv.MaDV" disabled />
+                    foreach (var dv in ViewBag.DichVuList)
+                    {
+                        <div class="col">
+                            <div class="service-item p-2 border rounded text-center" data-id="@dv.MaDV">
+                                <strong>@dv.TenDV</strong> <br /> @dv.DonGia.ToString("N0") @dv.DonViTinh
+                                <input type="hidden" name="SelectedDV" value="@dv.MaDV" disabled />
+                            </div>
                         </div>
-                    </div>
+                    }
                 }
             </div>
         </div>
@@ -128,6 +207,12 @@
         .service-item:hover {
             transform: scale(1.03);
         }
+
+    .field-validation-error {
+        color: #dc3545;
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
 </style>
 
 <script>

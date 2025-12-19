@@ -17,6 +17,10 @@ namespace WEB_NEt.Controllers
         // GET: CreateBooking (Form đặt phòng)
         public ActionResult CreateBooking(string id)
         {
+            if (Session["UserAccount"] == null )
+            {
+                return RedirectToAction("Login", "Account");
+            }    
             if (string.IsNullOrEmpty(id))
                 return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
 
@@ -152,7 +156,7 @@ namespace WEB_NEt.Controllers
                     transaction.Commit();
 
                     TempData["Success"] = "Đặt phòng thành công!";
-                    return RedirectToAction("Details", new { id = hopDong.MaHopDong });
+                    return RedirectToAction("MyRooms","Account");
                 }
                 catch (Exception ex)
                 {
