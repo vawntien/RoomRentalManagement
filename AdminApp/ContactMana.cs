@@ -20,15 +20,21 @@ namespace AdminApp
         }
         void loadbcao()
         {
-            crystalReportViewer1.ReportSource = new HopDong();
+            DSHopDong ds = new DSHopDong();
+            var danhSachHopDong = ds.getallHopDong(); 
+            
+            HopDong rpt = new HopDong();
+            rpt.SetDataSource(danhSachHopDong);
+
+            crystalReportViewer1.ReportSource = rpt;
             crystalReportViewer1.Refresh();
         }
 
       
         void loaddgvHopDong()
         {
-            dgvContact.DataSource = null;
-            dgvContact.DataSource=dsh.getallHopDong();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource=dsh.getallHopDong();
         }
         public void StyleGridView_Pro(DataGridView dgv)
         {
@@ -104,6 +110,37 @@ namespace AdminApp
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.Index < 0)
+            {
+                MessageBox.Show("Vui lòng chọn một hợp đồng trong danh sách để in!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                int maHD = int.Parse(dataGridView1.CurrentRow.Cells["MaHopDong"].Value.ToString());
+
+                DSHopDong ds = new DSHopDong();
+
+                AdminApp.model.MHopDong.HopDong hopDongChiTiet = ds.getChiTiet(maHD);
+
+                List<AdminApp.model.MHopDong.HopDong> listData = new List<AdminApp.model.MHopDong.HopDong>();
+                listData.Add(hopDongChiTiet);
+
+                AdminApp.HopDong rpt = new AdminApp.HopDong();
+                rpt.SetDataSource(listData);
+
+                crystalReportViewer1.ReportSource = rpt;
+                crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tạo báo cáo: " + ex.Message);
+            }
         }
     }
 }
