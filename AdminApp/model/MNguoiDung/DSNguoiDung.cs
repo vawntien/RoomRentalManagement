@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AdminApp.model.MNguoiDung
 {
@@ -13,6 +14,37 @@ namespace AdminApp.model.MNguoiDung
         public List<NguoiDung> lstNguoiDung = new List<NguoiDung>();
         public DSNguoiDung() { }
 
+        public List<NguoiDung> getNguoiDung_By_Name(string name)
+        {
+            lstNguoiDung.Clear();
+            SqlDataAdapter adapter = new SqlDataAdapter(ConnectionModel.execNguoiDung, ConnectionModel.strcnn);
+
+            DataSet ds = new DataSet();
+
+            adapter.Fill(ds, "NGUOIDUNG");
+
+            foreach (DataRow row in ds.Tables["NGUOIDUNG"].Rows)
+            {
+                if (row["TaiKhoan"].ToString().Contains(name))
+                {
+                    NguoiDung nd = new NguoiDung();
+                    nd.TaiKhoan = row["TaiKhoan"].ToString();
+                    nd.MatKhau = row["MatKhau"].ToString();
+                    nd.VaiTro = row["VaiTro"].ToString();
+                    nd.TrangThai = row["TrangThai"].ToString();
+                    if (row["MaKhach"] != DBNull.Value)
+                    {
+                        nd.MaKhach = int.Parse(row["MaKhach"].ToString());
+                    }
+
+                    nd.NgayDangKy = row["NgayDangKy"].ToString();
+                    nd.Email = row["Email"].ToString();
+                    lstNguoiDung.Add(nd);
+                }    
+                
+            }
+            return lstNguoiDung;
+        }
         public List<NguoiDung> getAllNguoiDung()
         {
             lstNguoiDung.Clear();
@@ -49,19 +81,27 @@ namespace AdminApp.model.MNguoiDung
             DataSet ds = new DataSet();
 
             adapter.Fill(ds, "NGUOIDUNG");
+            int n = 0;
+            try
+            {
+                DataRow r = ds.Tables["NGUOIDUNG"].NewRow();
 
-            DataRow r = ds.Tables["NGUOIDUNG"].NewRow();
+                r["TaiKhoan"] = nd.TaiKhoan;
+                r["MatKhau"] = nd.MatKhau;
+                r["VaiTro"] = nd.VaiTro;
+                r["TrangThai"] = nd.TrangThai;
+                //r["MaKhach"] = nd.MaKhach;
+                r["NgayDangKy"] = nd.NgayDangKy;
+                r["Email"] = nd.Email;
+                ds.Tables["NGUOIDUNG"].Rows.Add(r);
 
-            r["TaiKhoan"] = nd.TaiKhoan;
-            r["MatKhau"] = nd.MatKhau;
-            r["VaiTro"] = nd.VaiTro;
-            r["TrangThai"] = nd.TrangThai;
-            //r["MaKhach"] = nd.MaKhach;
-            //r["NgayDangKy"] = nd.NgayDangKy;
-            r["Email"] = nd.Email;
-            ds.Tables["NGUOIDUNG"].Rows.Add(r);
+                n = adapter.Update(ds, "NGUOIDUNG");
+            }
+            catch (Exception ex)
+            {
 
-            int n = adapter.Update(ds, "NGUOIDUNG");
+                MessageBox.Show("Loi: " + ex.Message);
+            }
             return n > 0;
         }
 

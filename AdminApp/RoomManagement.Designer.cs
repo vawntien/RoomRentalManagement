@@ -66,8 +66,9 @@
             this.lblSoPhong = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvPhong = new System.Windows.Forms.DataGridView();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_tenPhong_Search = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_search = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Refresh = new Guna.UI2.WinForms.Guna2Button();
             this.grbRoom.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhong)).BeginInit();
@@ -76,8 +77,9 @@
             // 
             // grbRoom
             // 
+            this.grbRoom.Controls.Add(this.btn_Refresh);
             this.grbRoom.Controls.Add(this.btn_search);
-            this.grbRoom.Controls.Add(this.guna2TextBox1);
+            this.grbRoom.Controls.Add(this.txt_tenPhong_Search);
             this.grbRoom.Controls.Add(this.guna2GradientButton1);
             this.grbRoom.Controls.Add(this.lblPrice);
             this.grbRoom.Controls.Add(this.lblGY);
@@ -769,24 +771,24 @@
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // guna2TextBox1
+            // txt_tenPhong_Search
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(648, 3);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(191, 34);
-            this.guna2TextBox1.TabIndex = 66;
-            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.txt_tenPhong_Search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_tenPhong_Search.DefaultText = "";
+            this.txt_tenPhong_Search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_tenPhong_Search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_tenPhong_Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_tenPhong_Search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_tenPhong_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_tenPhong_Search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_tenPhong_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_tenPhong_Search.Location = new System.Drawing.Point(648, 3);
+            this.txt_tenPhong_Search.Name = "txt_tenPhong_Search";
+            this.txt_tenPhong_Search.PlaceholderText = "";
+            this.txt_tenPhong_Search.SelectedText = "";
+            this.txt_tenPhong_Search.Size = new System.Drawing.Size(191, 34);
+            this.txt_tenPhong_Search.TabIndex = 66;
+            this.txt_tenPhong_Search.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // btn_search
             // 
@@ -802,6 +804,21 @@
             this.btn_search.TabIndex = 67;
             this.btn_search.Text = "Tìm";
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Refresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Refresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_Refresh.ForeColor = System.Drawing.Color.White;
+            this.btn_Refresh.Location = new System.Drawing.Point(934, 7);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(83, 26);
+            this.btn_Refresh.TabIndex = 68;
+            this.btn_Refresh.Text = "Refresh";
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // RoomManagement
             // 
@@ -866,6 +883,7 @@
         private System.Windows.Forms.Label lblGY;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
         private Guna.UI2.WinForms.Guna2Button btn_search;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txt_tenPhong_Search;
+        private Guna.UI2.WinForms.Guna2Button btn_Refresh;
     }
 }

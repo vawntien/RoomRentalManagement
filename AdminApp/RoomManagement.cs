@@ -185,6 +185,29 @@ namespace AdminApp
         }
 
 
+        void loaddgvphong_by_tenPhong(string tenPhong)
+        {
+
+            StyleDataGridView(dgvPhong);
+
+            dgvPhong.DataSource = null;
+
+            dgvPhong.DataSource = dsp.getPhongByName(tenPhong);
+            dgvPhong.Columns["MaPhong"].HeaderText = "Mã phòng";
+            dgvPhong.Columns["TenPhong"].HeaderText = "Tên phòng";
+            dgvPhong.Columns["DienTich"].HeaderText = "Diện tích (m²)";
+            dgvPhong.Columns["GiaPhong"].HeaderText = "Giá phòng";
+            dgvPhong.Columns["TinhTrang"].HeaderText = "Tình trạng";
+            dgvPhong.Columns["SoNguoiToiDa"].HeaderText = "Số người tối đa";
+            dgvPhong.Columns["AnhChinh"].HeaderText = "Ảnh";
+            dgvPhong.Columns["MoTaChiTiet"].HeaderText = "Mô tả chi tiết";
+            dgvPhong.Columns["NoiThat"].HeaderText = "Nội thất";
+
+            dgvPhong.Columns["GiaPhong"].DefaultCellStyle.Format = "N0";
+
+            dgvPhong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
         void loaddgvphong()
         {
 
@@ -816,6 +839,7 @@ namespace AdminApp
                     if (dsp.updatePhong(i))
                     {
                         MessageBox.Show("Cập nhật phòng thành công");
+                        loaddgvphong();
                         return;
                     }
                     else
@@ -825,7 +849,7 @@ namespace AdminApp
 
                 }
             }
-
+            
 
             
 
@@ -848,7 +872,18 @@ namespace AdminApp
 
         private void btn_search_Click(object sender, EventArgs e)
         {
+            string tenPhong = txt_tenPhong_Search.Text;
+            if (!string.IsNullOrEmpty(tenPhong))
+            {
+                loaddgvphong_by_tenPhong(tenPhong);
+            }
+            else
+                MessageBox.Show("Nhap ten phong can tim");
+        }
 
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            loaddgvphong();
         }
     }
 }

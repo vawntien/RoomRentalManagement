@@ -25,6 +25,14 @@ namespace AdminApp
             dgvKhachThue.DataSource = dsk.getAllKhach();
             load();
         }
+
+        void loaddgvKhachThue_By_Name(string name)
+        {
+            dgvKhachThue.DataSource = null;
+
+            dgvKhachThue.DataSource = dsk.getKhachByName(name);
+            load();
+        }
         public TenantMana()
         {
             InitializeComponent();
@@ -186,6 +194,22 @@ namespace AdminApp
             {
                 MessageBox.Show("Cập nhật không thành công!");
             }
+            loaddgvKhachThue();
+        }
+
+        private void btn_Search_KhachThue_Click(object sender, EventArgs e)
+        {
+            string tenKT = txt_TenKhachThue.Text;
+            if (!string.IsNullOrEmpty(tenKT))
+            {
+                loaddgvKhachThue_By_Name(tenKT);
+            }
+            else
+                MessageBox.Show("Nhap ten khach thue can tim");
+        }
+
+        private void btn_Refresh_KhachThue_Click(object sender, EventArgs e)
+        {
             loaddgvKhachThue();
         }
     }

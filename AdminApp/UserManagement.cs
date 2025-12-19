@@ -5,8 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +21,25 @@ namespace AdminApp
         public UserManagement()
         {
             InitializeComponent();
+        }
+
+        void loaddgvNguoiDung_By_Name(string name)
+        {
+            StyleDataGridView(dgvNguoiDung);
+
+
+            dgvNguoiDung.DataSource = null;
+            dgvNguoiDung.DataSource = dsn.getNguoiDung_By_Name(name);
+            dgvNguoiDung.Columns["TaiKhoan"].HeaderText = "Tài khoản";
+            dgvNguoiDung.Columns["MatKhau"].HeaderText = "Mật khẩu";
+            dgvNguoiDung.Columns["VaiTro"].HeaderText = "Vai trò";
+            dgvNguoiDung.Columns["MaKhach"].HeaderText = "Mã khách";
+            dgvNguoiDung.Columns["Email"].HeaderText = "Email";
+            dgvNguoiDung.Columns["TrangThai"].HeaderText = "Trạng thái tài khoản";
+            dgvNguoiDung.Columns["NgayDangKy"].HeaderText = "Ngày đăng ký";
+
+
+            dgvNguoiDung.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         void loaddgvNguoiDung()
         {
@@ -54,6 +75,7 @@ namespace AdminApp
             btnLuu.Enabled = false;
             btnXoa.Enabled = false;
             btnChinhSua.Enabled = false;
+            btn_SaveChange.Enabled = false;
         }
 
         private void StyleDataGridView(DataGridView dgv)
@@ -150,6 +172,7 @@ namespace AdminApp
             txtMaKhach.Enabled = true;
             txtNgayDangKy.Enabled = true; 
 
+            btn_SaveChange.Enabled = true;
             btnLuu.Enabled = true;
             btnXoa.Enabled = true;
         }
@@ -162,19 +185,27 @@ namespace AdminApp
                 nd.TaiKhoan = txtTaiKhoan.Text;
                 nd.MatKhau = txtMatKhau.Text;
                 nd.VaiTro = txtVaiTro.Text;
+                
+                if (nd.VaiTro.ToLower() != "admin" && nd.VaiTro.ToLower() != "user")
+                {
+                    MessageBox.Show("Vai tro khong hop le chi admin hoac user");
+                    return;
+                }    
                 nd.Email = txtEmail.Text;
                 //nd.MaKhach = int.Parse(txtMaKhach.Text);
                 nd.NgayDangKy = txtNgayDangKy.Text;
-                nd.TrangThai = "Không hoạt động";
+                nd.TrangThai = "Chưa hoạt động";
                 if (dsn.addNguoiDung(nd))
                 {
                     MessageBox.Show("Thêm người dùng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     loaddgvNguoiDung();
                     loadfirst();
+                    return;
                 }
                 else
                 {
                     MessageBox.Show("Thêm người dùng thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
             if (txtTaiKhoan.Text == "" || txtMatKhau.Text == "" || txtVaiTro.Text == "" || txtEmail.Text == "" || txtMaKhach.Text == "" || txtNgayDangKy.Text == "")
@@ -206,7 +237,7 @@ namespace AdminApp
                 }
                 else
                 {
-                    nd.TrangThai = "Không hoạt động";
+                    nd.TrangThai = "Chưa hoạt động";
                 }
                 // Cập nhật người dùng vào database
                 bool success = dsn.updateNGUOIDUNG(nd);
@@ -254,6 +285,72 @@ namespace AdminApp
             txtNgayDangKy.Enabled = true;
             btnLuu.Enabled = true;
             
+            
+        }
+
+        private void btn_Search_User_Click(object sender, EventArgs e)
+        {
+            string nameUser = txt_User.Text;
+            if (!string.IsNullOrEmpty(nameUser))
+            {
+                loaddgvNguoiDung_By_Name(nameUser);
+            }
+            else
+                MessageBox.Show("Nhap ten nguoi dung can tim");
+        }
+
+        private void btn_Refresh_User_Click(object sender, EventArgs e)
+        {
+            loaddgvNguoiDung();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_SaveChange_Click(object sender, EventArgs e)
+        {
+            string tk = txtTaiKhoan.Text;
+            SqlDataAdapter adapter = new SqlDataAdapter(ConnectionModel.execNguoiDung, ConnectionModel.strcnn);
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+
+            DataSet ds = new DataSet();
+
+            adapter.Fill(ds, "NGUOIDUNG");
+
+            if (txtTaiKhoan.Text == "" || txtMatKhau.Text == "" || txtVaiTro.Text == "" || txtEmail.Text == "" || txtMaKhach.Text == "" || txtNgayDangKy.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (rdHoatDong.Checked == false && rdKhoa.Checked == false && rdKhongHD.Checked == false)
+            {
+                MessageBox.Show("Vui lòng chọn trạng thái tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtVaiTro.Text.ToLower() != "admin" && txtVaiTro.Text.ToLower() != "user")
+            {
+                MessageBox.Show("Vai tro khong hop le chi admin hoac user");
+                return;
+            }
+
+            foreach (DataRow row in ds.Tables["NGUOIDUNG"].Rows)
+            {
+                if (row["TaiKhoan"].ToString() == tk)
+                {
+                    row["MatKhau"] = txtMatKhau.Text;
+                    row["VaiTro"] = txtVaiTro.Text;
+                    row["Email"] = txtEmail.Text;
+                    row["NgayDangKy"] = DateTime.Parse(txtNgayDangKy.Text); 
+
+
+                    adapter.Update(ds, "NGUOIDUNG");
+                    loaddgvNguoiDung();
+                    MessageBox.Show("Thay doi thong tin thanh cong");
+                    return;
+                }
+            }
             
         }
     }

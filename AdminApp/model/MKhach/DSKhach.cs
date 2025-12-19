@@ -14,6 +14,39 @@ namespace AdminApp.model.MKhach
 
         public DSKhach() { }
 
+
+        public List<Khach> getKhachByName(string name)
+        {
+
+            lstKhach.Clear();
+
+            SqlDataAdapter adapter = new SqlDataAdapter(ConnectionModel.execKhach, ConnectionModel.strcnn);
+
+            DataSet ds = new DataSet();
+
+            adapter.Fill(ds, "KHACHTHUE");
+
+            foreach (DataRow d in ds.Tables["KHACHTHUE"].Rows)
+            {
+                if (d["HoTen"].ToString().Contains(name))
+                {
+                    Khach k = new Khach();
+                    k.MaKhach = int.Parse(d["MaKhach"].ToString());
+                    k.HoTen = d["HoTen"].ToString();
+                    k.CCCD = d["CCCD"].ToString();
+                    k.SoDT = d["SoDT"].ToString();
+                    k.Email = d["Email"].ToString();
+                    k.DiaChi = d["DiaChi"].ToString();
+                    k.NgaySinh = d["NgaySinh"].ToString();
+                    k.NgayTao = d["NgayTao"].ToString();
+                    lstKhach.Add(k);
+                }    
+                
+            }
+
+
+            return lstKhach;
+        }
         public List<Khach> getAllKhach()
         {
 
