@@ -158,20 +158,33 @@ namespace WEB_NEt.Controllers
                     TempData["Success"] = "Đặt phòng thành công!";
                     return RedirectToAction("MyRooms","Account");
                 }
+                
                 catch (Exception ex)
                 {
-                    // Gặp lỗi thì hoàn tác toàn bộ database
                     transaction.Rollback();
 
-                    // Lấy thông báo lỗi chi tiết nhất
-                    string message = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
-                    TempData["Error"] = "Có lỗi xảy ra: " + message;
+                    // Gom thông tin lỗi chi tiết
+                    string errorMessage = "Có lỗi xảy ra: " + ex.Message;
 
-                    // Load lại dữ liệu để hiện lại form
+                    if (ex.InnerException != null)
+                    {
+                        errorMessage += " | Chi tiết: " + ex.InnerException.Message;
+
+                        if (ex.InnerException.InnerException != null)
+                        {
+                            errorMessage += " | Sâu hơn: " + ex.InnerException.InnerException.Message;
+                        }
+                    }
+
+                    // Đưa lỗi ra TempData để hiển thị trên View
+                    TempData["Error"] = errorMessage;
+
+                    // Load lại dữ liệu để hiện form
                     ViewBag.DichVuList = db.DichVu.ToList();
                     ViewBag.PhongName = db.Phong.Find(model.HopDong.MaPhong)?.TenPhong;
                     return View(model);
                 }
+
             }
         }
 

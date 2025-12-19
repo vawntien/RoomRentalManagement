@@ -840,5 +840,15 @@ namespace AdminApp
             //}
             
         }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
