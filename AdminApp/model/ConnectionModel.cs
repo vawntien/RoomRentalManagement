@@ -12,6 +12,7 @@ namespace AdminApp.model
         public static string execPhong = "select * from Phong";
         public static string execKhach = "select * from KhachThue";
         public static string execHopDong = "select * from HopDong";
+        public static string execNguoiDung = "select * from NguoiDung";
 
     }
 }

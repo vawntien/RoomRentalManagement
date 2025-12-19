@@ -201,7 +201,7 @@
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(299, 83);
             this.guna2Button5.TabIndex = 5;
-            this.guna2Button5.Text = "Sevice management";
+            this.guna2Button5.Text = "User management";
             this.guna2Button5.TextOffset = new System.Drawing.Point(5, 0);
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
@@ -223,7 +223,7 @@
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(299, 83);
             this.guna2Button4.TabIndex = 4;
-            this.guna2Button4.Text = "Contact management";
+            this.guna2Button4.Text = "Contract management";
             this.guna2Button4.TextOffset = new System.Drawing.Point(5, 0);
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 

@@ -1,5 +1,6 @@
 ﻿using AdminApp.model;
 using AdminApp.model.MKhach;
+using AdminApp.model.MNguoiDung;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -120,7 +121,9 @@ namespace AdminApp
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-
+            lblTitle.Text = "Danh sach nguoi dung";
+            picboxTitle.Image = Properties.Resources.aaaaa;
+            container(new UserManagement());
         }
 
         private void guna2PictureBox2_Click(object sender, EventArgs e)
@@ -167,10 +170,12 @@ namespace AdminApp
         {
             DSPhong dsp = new DSPhong();
             DSKhach dsk = new DSKhach();
+            DSNguoiDung dsn = new DSNguoiDung();
 
             List<Phong> listPhong = dsp.getAllPhong();
             List<Khach> lstk = dsk.getAllKhach();
             List<Phong> room = new List<Phong>();
+            List<NguoiDung> lstnd = dsn.getAllNguoiDung();
 
 
             foreach (var item in listPhong)
@@ -201,6 +206,20 @@ namespace AdminApp
                     }
                 }
             }
+
+            foreach (var item in lstnd)
+            {
+                if (txtFind.Text != null)
+                {
+                    if (item.TaiKhoan.ToString().Contains(txtFind.Text))
+                    {
+                        MessageBox.Show("Tìm thấy người dùng: " + item.TaiKhoan +"MK: "+item.MatKhau+ " Vai trò: " + item.VaiTro + '\n'
+                            + "Email: " + item.Email + "\nNgày đăng ký: " + item.NgayDangKy);
+                        return;
+                    }
+                }
+            }
+
         }
     }
 }

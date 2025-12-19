@@ -64,7 +64,7 @@ namespace WEB_NEt.Controllers
                         Email = model.Email,
                         MaKhach = khach.MaKhach, // <-- Liên kết với KhachThue
                         VaiTro = "User", // Mặc định là User
-                        TrangThai = "Hoạt động"
+                        TrangThai = "Chưa hoạt động"
                     };
                     db.NguoiDung.Add(nguoiDung);
                     db.SaveChanges();
