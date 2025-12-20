@@ -771,16 +771,35 @@ namespace AdminApp
                 MessageBox.Show("Số người tối đa không hợp lệ!");
                 return;
             }
+            string description = txtMoTa.Text.ToLower().Trim();
+            string des = txtNoiThat.Text.ToLower().Trim();
+
+            int hasAirConditioner =description.Contains("máy lạnh") || description.Contains("điều hòa") ||description.Contains("air conditioner")? 1 : 0;
+            int hasFurniture =des.Contains("nội thất") || des.Contains("đầy đủ đồ") || des.Contains("full đồ")? 1 : 0;
+            string type = "Standard";
+
+            if (description.Contains("Cao cấp") ||
+                description.Contains("Premium") ||
+                description.Contains("Vip"))
+            {
+                type = "Premium";
+            }
+            else if (description.Contains("Thường") ||
+                     description.Contains("Standard"))
+            {
+                type = "Standard";
+            }
 
             var input = new
             {
                 Area = area,
-                Location = 7,
-                HasFurniture = txtNoiThat.Text != "" ? 1 : 0,
-                HasAirConditioner = txtNoiThat.Text != "" ? 1 : 0,
+                Location = 5,
+                HasFurniture = hasFurniture,
+                HasAirConditioner = hasAirConditioner,
                 MaxPeople = maxPeople,
-                Type = "Standard"
+                Type = type
             };
+
 
             string json = JsonConvert.SerializeObject(input);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
