@@ -5,21 +5,11 @@
 
     -máy phải có sẵn crystal. (link tải: https://www.aspsnippets.com/Articles/3962/Download-Crystal-Reports-for-Visual-Studio-2022/ )
      
-    -chạy web khách hàng: Sửa connecstring trong webconfig thành sql server local
+    -chạy ứng dụng: Sửa datasource trong connecstring ở webconfig và class ConnectionModel thành sql server local
  
     -chạy web API để gọi ra mô hình ML gợi ý giá thuê hợp lý cho chủ nhà:
         api.py => terminal => uvicorn api:app --reload' => running on http://127.0.0.1:8000/docs
 
-
-
-- Lưu ý: Nếu trong quá trình thao tác bị lỗi không có thư mục packages hoặc thiếu NuGet package mà project đang tham chiếu — cụ thể là:
-Microsoft.CodeDom.Providers.DotNetCompilerPlatform 2.0.1
-  Cách xử lý:
-      Chuột phải vào project
-      Chọn Manage NuGet Packages…
-      Tab Browse
-      Tìm: Microsoft.CodeDom.Providers.DotNetCompilerPlatform
-          Cài bản 2.0.1 (hoặc bản mới hơn)
 
   
 #hướng dẫn sử dụng app
