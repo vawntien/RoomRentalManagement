@@ -8,8 +8,7 @@
     -chạy ứng dụng: Sửa datasource trong connecstring ở webconfig và class ConnectionModel thành sql server local
  
     -chạy web API để gọi ra mô hình ML gợi ý giá thuê hợp lý cho chủ nhà:
-        api.py => terminal => uvicorn api:app --reload' => running on http://127.0.0.1:8000/docs
-
+        Test API, Model: api.py => terminal => uvicorn api:app --reload' => running on http://127.0.0.1:8000/docs
 
   
 #hướng dẫn sử dụng app
